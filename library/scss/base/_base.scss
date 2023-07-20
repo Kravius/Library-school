@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=Forum&family=Inter:wght@400;700&display=swap');
+
+html {
+	font-size: 10px;
+}
+
+body {
+	@extend %font-prim;
+	@include font($size: 1.6rem, $height: 4rem)
+}
+
+h1 {
+	color: $color-light;
+	@extend %font-add;
+	@include font ($size: 3rem, $height: 5rem, $spacing: 0.6px);
+}
+
+//section
+h2 {
+	text-transform: capitalize;
+	color: $color-main;
+	font-family: $font-add;
+	@include font($size: 4rem)
+}
+
+//section cards
+h3 {
+	color: $color-text;
+	font-family: $font-add;
+	@include font($size: 3rem, $height: 5rem, $spacing: 0.6px);
+}
+
+//rss
+h4 {
+	color: $color-light;
+	font-family: $font-main;
+	@include font ($size: 2rem);
+}
+
+//staf books
+h5 {
+	color: $color-text;
+	font-family: $font-add;
+	@include font ($size: 2rem, $height: 4rem);
+	text-transform: capitalize;
+}
+
+//name book
+h6 {
+	color: $color-text;
+	font-family: $font-main;
+	@include font ($size: 1.5rem, $height: 4rem, $weight: 700);
+}
