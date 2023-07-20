@@ -6,7 +6,13 @@ html {
 
 body {
 	@extend %font-prim;
-	@include font($size: 1.6rem, $height: 4rem)
+	@include font($size: 1.6rem, $height: 4rem);
+	width: 1440px;
+}
+
+.wrapper {
+	width: $content-width;
+	margin: 0 auto;
 }
 
 h1 {

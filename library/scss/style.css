@@ -1,3 +1,16 @@
+@import url("https://fonts.googleapis.com/css2?family=Forum&family=Inter:wght@400;700&display=swap");
+body {
+  font-family: "Inter", sans-serif;
+}
+
+h1 {
+  font-family: "Forum", cursive;
+}
+
+.navigation__link {
+  transition: all 0.3s ease-in-out;
+}
+
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 /* Document
    ========================================================================== */
@@ -305,4 +318,121 @@ template {
  */
 [hidden] {
   display: none;
+}
+
+html {
+  font-size: 10px;
+}
+
+body {
+  font-size: 1.6rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 4rem;
+  letter-spacing: 0.2rem;
+  width: 1440px;
+}
+
+.wrapper {
+  width: 1400px;
+  margin: 0 auto;
+}
+
+h1 {
+  color: #FFFFFF;
+  font-size: 3rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 5rem;
+  letter-spacing: 0.6px;
+}
+
+h2 {
+  text-transform: capitalize;
+  color: #0C0C0E;
+  font-family: "Forum", cursive;
+  font-size: 4rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 4rem;
+  letter-spacing: 0.2rem;
+}
+
+h3 {
+  color: #000000;
+  font-family: "Forum", cursive;
+  font-size: 3rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 5rem;
+  letter-spacing: 0.6px;
+}
+
+h4 {
+  color: #FFFFFF;
+  font-family: "Inter", sans-serif;
+  font-size: 2rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 2rem;
+  letter-spacing: 0.2rem;
+}
+
+h5 {
+  color: #000000;
+  font-family: "Forum", cursive;
+  font-size: 2rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 4rem;
+  letter-spacing: 0.2rem;
+  text-transform: capitalize;
+}
+
+h6 {
+  color: #000000;
+  font-family: "Inter", sans-serif;
+  font-size: 1.5rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 4rem;
+  letter-spacing: 0.2rem;
+}
+
+.header {
+  background-color: #0C0C0E;
+}
+
+.header__wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.header__navigation {
+  margin-left: 454px;
+}
+
+.navigation {
+  display: flex;
+  gap: 30px;
+  list-style-type: none;
+  padding: 0;
+  color: #FFFFFF;
+  font-size: 2rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 5rem;
+  letter-spacing: normal;
+}
+
+.navigation__link {
+  cursor: pointer;
+}
+.navigation__link:hover {
+  color: #BB945F;
+}
+
+.menu {
+  line-height: 0;
+  margin-left: 40px;
 }/*# sourceMappingURL=style.css.map */
