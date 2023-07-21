@@ -1,0 +1,36 @@
+.welcom {
+	position: relative;
+	background-image: url("../img/welcome/welcom-library.jpeg");
+	background-size: cover;
+	background-position: center;
+	padding: 255px 0 195px 0;
+
+	&::after {
+		content: "";
+		background: linear-gradient(180deg, #0C0C0E 0%, #0C0C0E 0.01%, rgba(18, 18, 21, 0.10) 100%);
+		position: absolute;
+		width: 1440px;
+		height: 300px;
+		// z-index: 3;
+		top: 0;
+
+	}
+}
+
+.welcom__wrapper {
+	padding: 0;
+}
+
+.welcom__text-back {
+	background-color: $color-main;
+	max-width: 520px;
+	padding: 35px 40px;
+}
+
+.welcom__text {
+	margin: 0;
+	color: $color-light;
+	@include font($size: 4rem, $height: 5rem, $spacing: 0.3rem);
+	text-align: center;
+	text-transform: uppercase;
+}
