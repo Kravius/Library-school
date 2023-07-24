@@ -6,12 +6,15 @@
 //base
 @import "./base/normalize";
 @import "./base/base";
+@import "./base/buttons";
 
 //components
 @import "./components/welcom";
 @import "./components/about";
+@import "./components/favorites";
 
 
 
 //layouts
-@import "./layuots/header"
+@import "./layuots/header";
+@import "./layuots/book";

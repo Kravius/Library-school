@@ -28,7 +28,8 @@ h2 {
 	text-transform: capitalize;
 	color: $color-main;
 	font-family: $font-add;
-	@include font($size: 4rem)
+	@include font($size: 4rem);
+	text-align: center;
 }
 
 //section cards
@@ -58,19 +59,18 @@ h6 {
 	color: $color-text;
 	font-family: $font-main;
 	@include font ($size: 1.5rem, $height: 4rem, $weight: 700);
+	text-transform: uppercase;
+	text-transform: capitalize;
 }
 
 .line {
 	width: 50px;
-	height: 1px;
 	flex-shrink: 0;
-	color: $color-main;
 	margin: 20px auto 0;
+	border: 1px solid $color-main;;
 }
 
-.button {
-	cursor: pointer;
-}
+
 
 .none {
 	display: none;

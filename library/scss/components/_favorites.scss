@@ -1,0 +1,92 @@
+.favorites {
+	padding-top: 20px;
+	padding-bottom: 40px;
+}
+
+.favorites__title {}
+
+.favorites__title-text {
+	margin-top: 40px;
+	color: $color-main;
+	font-size: 20px;
+	font-weight: 700;
+}
+
+.favorites__radio-conteiner {
+	display: flex;
+	gap: 90px;
+	margin-top: 40px;
+	margin-left: -7px;
+}
+
+.favorites__radio {}
+
+/* Размер радиокнопки */
+// /* Размер радиокнопки */
+// border-radius: 50%;
+// /* Создание круглой формы */
+// border: 5px solid white;
+// /* Черная обводка */
+.favorites__radio input[type="radio"] {
+	cursor: pointer;
+	height: 30px;
+	width: 30px;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	background-image: url(../img/favorites/radio-btn/Ellipse\ 2.svg);
+	background-position: center;
+	background-repeat: no-repeat;
+
+	&:checked {
+		background-image: url(../img/favorites/radio-btn/Group.svg);
+
+		&+label {
+			font-size: 20px;
+			font-weight: 700;
+		}
+	}
+}
+
+.favorites__radio {
+	display: flex;
+	align-items: center;
+	flex-direction: row;
+}
+
+.favorites__radio input[type="radio"]:checked {
+	// background-image: url(../img/favorites/radio-btn/Group.svg);
+	// /* Черный фон для маленького круга радиокнопки */
+	// background-color: black;
+	// /* Расположение маленького круга в центре радиокнопки */
+	// background-position: center;
+	// /* Размер маленького круга */
+	// background-size: 1px;
+	// /* Форма маленького круга (может быть "circle", чтобы сделать его круглым) */
+	// background-clip: content-box;
+	// padding: 3px;
+
+	&+label {
+		font-size: 20px;
+		font-weight: 700;
+	}
+}
+
+.favorites__radio label {
+	margin-left: 20px;
+}
+
+// .book__button {
+// 	>* {
+// 		min-width: 75px;
+// 	}
+// }
+
+
+.favorites-season {
+	display: flex;
+	margin-top: 40px;
+	column-gap: 260px;
+	row-gap: 40px;
+	flex-wrap: wrap;
+}
