@@ -18,6 +18,11 @@ h1 {
  * 1. Correct the line height in all browsers.
  * 2. Prevent adjustments of font size after orientation changes in iOS.
  */
+* {
+  margin: 0;
+  padding: 0;
+}
+
 html {
   line-height: 1.15; /* 1 */
   -webkit-text-size-adjust: 100%; /* 2 */
@@ -400,12 +405,29 @@ h6 {
   letter-spacing: 0.2rem;
 }
 
+.line {
+  width: 50px;
+  height: 1px;
+  flex-shrink: 0;
+  color: #0C0C0E;
+  margin: 20px auto 0;
+}
+
+.button {
+  cursor: pointer;
+}
+
+.none {
+  display: none;
+}
+
 .welcom {
   position: relative;
   background-image: url("../img/welcome/welcom-library.jpeg");
   background-size: cover;
   background-position: center;
   padding: 255px 0 195px 0;
+  margin-top: -3px;
 }
 .welcom::after {
   content: "";
@@ -436,6 +458,53 @@ h6 {
   letter-spacing: 0.3rem;
   text-align: center;
   text-transform: uppercase;
+}
+
+.about {
+  padding-top: 20px;
+  padding-bottom: 40px;
+}
+
+.about__title {
+  text-align: center;
+}
+
+.about__text {
+  color: #000000;
+  line-height: 40px;
+  letter-spacing: normal;
+  text-align: center;
+  margin-top: 40px;
+}
+
+.about__slayder {
+  display: flex;
+  gap: 25px;
+  margin-top: 20px;
+}
+
+.about__slayder-buttons {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.about__button {
+  border: 5px solid white;
+  width: 21px;
+  height: 21px;
+  border-radius: 50%;
+  background-color: #0C0C0E;
+}
+.about__button:active, .about__button:hover {
+  background-color: #BB945F;
+}
+
+.active__button {
+  border: 5px solid white;
+  background-color: #BB945F;
+  width: 21px;
+  height: 21px;
+  border-radius: 50%;
 }
 
 .header {

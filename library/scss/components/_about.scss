@@ -1,0 +1,57 @@
+.about {
+	padding-top: 20px;
+	padding-bottom: 40px;
+}
+
+.about__title {
+	text-align: center;
+}
+
+.about__text {
+	color: $color-text;
+	line-height: 40px;
+	letter-spacing: normal;
+	text-align: center;
+	margin-top: 40px;
+}
+
+.about__slayder {
+	display: flex;
+	gap: 25px;
+	margin-top: 20px;
+}
+
+.about__link {}
+
+
+.about__img {}
+
+.about__slayder-buttons {
+	text-align: center;
+	margin-top: 40px;
+}
+
+//возможно нужно будет удалить тут и в html личшнию обертку
+.about__slayder-btn {}
+
+
+//active base
+.about__button {
+	border: 5px solid white;
+	width: 21px;
+	height: 21px;
+	border-radius: 50%;
+	background-color: $color-main;
+	&:active, &:hover {
+		background-color: $color-element;
+	}
+}
+
+.active__button{
+	border: 5px solid white;
+	background-color: $color-element;
+	width: 21px;
+	height: 21px;
+	border-radius: 50%;
+}
+
