@@ -60,41 +60,35 @@
 	@include font($size: 2rem, $height: normal, $spacing: normal)
 }
 
-.favorites__radio input[type="radio"]:checked {
-	// background-image: url(../img/favorites/radio-btn/Group.svg);
-	// /* Черный фон для маленького круга радиокнопки */
-	// background-color: black;
-	// /* Расположение маленького круга в центре радиокнопки */
-	// background-position: center;
-	// /* Размер маленького круга */
-	// background-size: 1px;
-	// /* Форма маленького круга (может быть "circle", чтобы сделать его круглым) */
-	// background-clip: content-box;
-	// padding: 3px;
+// .favorites__radio input[type="radio"]:checked {
+// 	background-image: url(../img/favorites/radio-btn/Group.svg);
+// 	/* Черный фон для маленького круга радиокнопки */
+// 	background-color: black;
+// 	/* Расположение маленького круга в центре радиокнопки */
+// 	background-position: center;
+// 	/* Размер маленького круга */
+// 	background-size: 1px;
+// 	/* Форма маленького круга (может быть "circle", чтобы сделать его круглым) */
+// 	background-clip: content-box;
+// 	padding: 3px;
 
-	&+label {
-		font-size: 20px;
-		font-weight: 700;
-	}
-}
+// 	&+label {
+// 		font-size: 20px;
+// 		font-weight: 700;
+// 	}
+// }
 
 .favorites__radio label {
 	margin-left: 20px;
 }
 
-// .book__button {
-// 	>* {
-// 		min-width: 75px;
-// 	}
-// }
+.book__button {
+	>* {
+		min-width: 75px;
+	}
+}
 
-//проблема при разрешении 1440 для боди
-//justify-content и
-.favorites-season {
-	display: flex;
-	margin-top: 40px;
-	// column-gap: 260px;
-	justify-content: space-between;
+.favorites__columns {
 	row-gap: 40px;
 	flex-wrap: wrap;
 	margin-right: 40px;

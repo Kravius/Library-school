@@ -89,7 +89,7 @@
 					</div>
 				</div>
 				<div id="favorites__winter" class="">
-					<div class="favorites-season">
+					<div class="favorites__columns two-columns">
 						<div class="favorites__book">
 							<h5>Staff Picks</h5>
 							<hr class="favorites__line">
@@ -151,7 +151,7 @@
 					</div>
 				</div>
 				<div id="favorites__spring" class="none">
-					<div class="favorites-season">
+					<div class="favorites__columns two-columns">
 						<div class="favorites__book">
 							<h5>Staff Picks</h5>
 							<hr class="favorites__line">
@@ -209,7 +209,7 @@
 					</div>
 				</div>
 				<div id="favorites__summer" class="none">
-					<div class="favorites-season">
+					<div class="favorites__columns two-columns">
 						<div class="favorites__book">
 							<h5>Staff Picks</h5>
 							<hr class="favorites__line">
@@ -270,7 +270,7 @@
 					</div>
 				</div>
 				<div id="favorites__autumn" class="none">
-					<div class="favorites-season">
+					<div class="favorites__columns two-columns">
 						<div class="favorites__book">
 							<h5>Staff Picks</h5>
 							<hr class="favorites__line">
@@ -340,62 +340,7 @@
 					cappuccinos and friendly conversation.
 					You can get a favorite book and read in coffee shop. Our barista to cook you best coffee, and also you
 					can try desserts from bakery.</p>
-				<!-- <div class="shop-price__two-column">
-					<div class="shop-price__menu shop-price__menu-left">
-						<h2 class="menu__title-left">Coffee & Tea</h2>
-						<ul class="menu">
-							<li class="price-teg">
-								<span class="price-teg__text">Cold Brew Coffee</span>
-								<hr class="price-teg__line">
-								<span class="price-teg__price">$3</span>
-							</li>
-							<li class="price-teg">
-								<span class="price-teg__text">French Press Pot</span>
-								<hr class="price-teg__line">
-								<span class="price-teg__price">$3</span>
-							</li>
-							<li class="price-teg">
-								<span class="price-teg__text">French Press Pot</span>
-								<hr class="price-teg__line">
-								<span class="price-teg__price">$3</span>
-							</li>
-							<li class="price-teg">
-								<span class="price-teg__text">Espresso</span>
-								<hr class="price-teg__line">
-								<span class="price-teg__price">$2</span>
-							</li>
-							<li class="price-teg">
-								<span class="price-teg__text">Cappuccino</span>
-								<hr class="price-teg__line">
-								<span class="price-teg__price">$4</span>
-							</li>
-							<li class="price-teg">
-								<span class="price-teg__text">Hot tea</span>
-								<hr class="price-teg__line">
-								<span class="price-teg__price">$2</span>
-							</li>
-							<li class="price-teg">
-								<span class="price-teg__text">Cold tea</span>
-								<hr class="price-teg__line">
-								<span class="price-teg__price">$2</span>
-							</li>
-						</ul>
-					</div>
-					<div class="shop-price__menu shop-price__menu-right">
-						<h2 class="menu__title-right">Coffee & Tea</h2>
-						<div class="price-teg">
-							<p class="price-teg__text">Cold Brew Coffee</p>
-							<hr class="price-teg__line">
-							<p class="price-teg__price">$3</p>
-						</div>
-						<div class="price-teg">
-							<p class="price-teg__text">Cold Brew CoffeeCold Brew Coffee</p>
-							<hr class="price-teg__line">
-							<p class="price-teg__price">$3</p>
-						</div>
-					</div>
-				</div> -->
-				<div class="shop-price__two-column">
+				<div class="shop-price__column two-columns">
 					<div class="shop-price__menu shop-price__menu-left">
 						<h2 class="menu__title-left">Coffee & Tea</h2>
 						<div class="price-teg">
@@ -469,7 +414,7 @@
 			<div class="wrapper">
 				<h2 class="contacts__title">Our Contacts</h2>
 				<hr class="line">
-				<div class="contacts__two-columns">
+				<div class="contacts__columns two-columns">
 					<div class="contacts__info">
 						<h5 class="contacts__info-title">For all Library inquiries:</h5>
 						<div class="contact__phone">
@@ -494,6 +439,35 @@
 					</div>
 					<div class="contacts__map">
 						<img src="./img/contacts/Rectangle 4.png" alt="map">
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="payments">
+			<div class="wrapper">
+				<h2 class="payments__title">Digital Library Cards</h2>
+				<hr class="line">
+				<div class="payments__columns two-columns">
+					<div class="payments-form">
+						<p class="payments-form__text">Find your Library card</p>
+						<form action="" method="post">
+							<div class="form">
+								<div class="form__backgraund">
+									<p class="form__title">Brooklyn Public Library</p>
+									<input type="text" id="form-name" name="name" placeholder="Reader's name" pattern="[a-zA-Z]+" required>
+									<input type="text" id="form-card" name="number" placeholder="Card number" pattern="^([0-9]+\-)[0-9]+$" required>
+								</div>
+								<button type="submit" class="form__button button button_colored">Check the card</button>
+							</div>
+						</form>
+					</div>
+					<div class="loggin">
+						<p class="loggin__title">Get a reader card</p>
+						<p class="loggin__text">You will be able to see a reader card after logging into account or you can register a new account</p>
+						<div class="loggin__buttons-conteiner">
+							<button class="loggin__button button button_colored">Sign Up</button>
+							<button class="loggin__button button button_colored">Log in</button>
+						</div>
 					</div>
 				</div>
 			</div>

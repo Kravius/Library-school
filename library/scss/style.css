@@ -428,6 +428,7 @@ h6 {
 
 a {
   cursor: pointer;
+  text-decoration: none;
 }
 
 .button {
@@ -603,19 +604,15 @@ a {
   letter-spacing: normal;
 }
 
-.favorites__radio input[type=radio]:checked + label {
-  font-size: 20px;
-  font-weight: 700;
-}
-
 .favorites__radio label {
   margin-left: 20px;
 }
 
-.favorites-season {
-  display: flex;
-  margin-top: 40px;
-  justify-content: space-between;
+.book__button > * {
+  min-width: 75px;
+}
+
+.favorites__columns {
   row-gap: 40px;
   flex-wrap: wrap;
   margin-right: 40px;
@@ -629,12 +626,6 @@ a {
 .shop-price__text {
   text-align: center;
   font-size: 2rem;
-  margin-top: 40px;
-}
-
-.shop-price__two-column {
-  display: flex;
-  justify-content: space-between;
   margin-top: 40px;
 }
 
@@ -709,12 +700,6 @@ a {
   padding-bottom: 40px;
 }
 
-.contacts__two-columns {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 40px;
-}
-
 .contacts__info {
   display: flex;
   flex-direction: column;
@@ -763,6 +748,119 @@ a {
   line-height: 4rem;
   letter-spacing: 0.2rem;
   text-transform: capitalize;
+}
+
+.payments {
+  padding-top: 20px;
+  padding-bottom: 41px;
+}
+
+.payments-form__text {
+  font-size: 3rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 0.6px;
+  text-align: center;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  margin-top: 30px;
+  padding: 20px 20px 30px;
+  border: 3px solid #BB945F;
+  background: #FFFFFF;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  min-width: 600px;
+}
+.form input {
+  display: flex;
+  border-radius: 10px;
+  border: none;
+  background: #FFFFFF;
+  min-width: 520px;
+  min-height: 66px;
+  flex-shrink: 0;
+  color: #8E8E8E;
+  font-family: Forum;
+  font-size: 3rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 5rem;
+  letter-spacing: 0.6px;
+  padding-left: 20px;
+}
+
+.form__backgraund {
+  display: flex;
+  flex-direction: column;
+  background: #BB945F;
+  padding: 20px 20px 25px;
+  margin-bottom: 20px;
+  gap: 20px;
+}
+
+.form__title {
+  font-family: Forum;
+  font-size: 3rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 5rem;
+  letter-spacing: 0.6px;
+  margin-bottom: 5px;
+}
+
+.form__button {
+  display: inline-flex;
+  padding: 10px 40px;
+  align-items: flex-end;
+  margin: 0 auto;
+  font-size: 2rem;
+}
+.form__button > * {
+  min-width: 242px;
+}
+
+.loggin {
+  display: flex;
+  flex-direction: column;
+  gap: 35px;
+  text-align: right;
+}
+.loggin__title {
+  font-family: Forum;
+  font-size: 3rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 0.6px;
+}
+.loggin__text {
+  max-width: 456px;
+  color: #000;
+  font-size: 2rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 4rem;
+  letter-spacing: 0.4px;
+  text-align: right;
+}
+.loggin__buttons-conteiner {
+  display: flex;
+  gap: 20px;
+  justify-content: end;
+}
+.loggin__button {
+  display: flex;
+  width: 75px;
+  height: 30px;
+  padding: 10px 0px;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  text-align: center;
+  font-size: 10px;
 }
 
 .header {
@@ -841,4 +939,10 @@ a {
 .book__button {
   align-self: start;
   margin-top: auto;
+}
+
+.two-columns {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 40px;
 }/*# sourceMappingURL=style.css.map */
