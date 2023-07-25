@@ -1,6 +1,6 @@
 .about {
 	padding-top: 20px;
-	padding-bottom: 40px;
+	padding-bottom: 20px;
 }
 
 .about__title {
@@ -29,10 +29,13 @@
 .about__slayder-buttons {
 	text-align: center;
 	margin-top: 40px;
+	font-size: 0;
 }
 
 //возможно нужно будет удалить тут и в html личшнию обертку
-.about__slayder-btn {}
+.about__slayder-btn {
+
+}
 
 
 //active base
@@ -46,8 +49,8 @@
 
 .about-btn {
 	border: 5px solid white;
-	width: 21px;
-	height: 21px;
+	width: 26px;
+	height: 26px;
 	border-radius: 50%;
 	cursor: pointer;
 	transition: all .3s;

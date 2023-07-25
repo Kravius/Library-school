@@ -22,6 +22,11 @@ h1 {
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+}
+
+p {
+  margin: 0;
 }
 
 html {
@@ -147,6 +152,7 @@ sup {
  */
 img {
   border-style: none;
+  vertical-align: bottom;
 }
 
 /* Forms
@@ -420,6 +426,10 @@ h6 {
   display: none;
 }
 
+a {
+  cursor: pointer;
+}
+
 .button {
   background-color: #FFFFFF;
   text-align: center;
@@ -458,7 +468,7 @@ h6 {
   background-image: url("../img/welcome/welcom-library.jpeg");
   background-size: cover;
   background-position: center;
-  padding: 255px 0 195px 0;
+  padding: 220px 0 160px 0;
   margin-top: -3px;
 }
 .welcom::after {
@@ -477,7 +487,7 @@ h6 {
 
 .welcom__text-back {
   background-color: #0C0C0E;
-  max-width: 520px;
+  max-width: 600px;
   padding: 35px 40px;
 }
 
@@ -495,7 +505,7 @@ h6 {
 
 .about {
   padding-top: 20px;
-  padding-bottom: 40px;
+  padding-bottom: 20px;
 }
 
 .about__title {
@@ -519,6 +529,7 @@ h6 {
 .about__slayder-buttons {
   text-align: center;
   margin-top: 40px;
+  font-size: 0;
 }
 
 .about__button {
@@ -531,8 +542,8 @@ h6 {
 
 .about-btn {
   border: 5px solid white;
-  width: 21px;
-  height: 21px;
+  width: 26px;
+  height: 26px;
   border-radius: 50%;
   cursor: pointer;
   transition: all 0.3s;
@@ -547,24 +558,25 @@ h6 {
 }
 
 .favorites__title-text {
-  margin-top: 40px;
+  margin-top: 30px;
   color: #0C0C0E;
-  font-size: 20px;
+  font-size: 2rem;
   font-weight: 700;
+  letter-spacing: normal;
 }
 
 .favorites__radio-conteiner {
   display: flex;
   gap: 90px;
-  margin-top: 40px;
+  margin-top: 30px;
   margin-left: -7px;
 }
 
 /* Размер радиокнопки */
 .favorites__radio input[type=radio] {
   cursor: pointer;
-  height: 30px;
-  width: 30px;
+  height: 21px;
+  width: 21px;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -584,6 +596,11 @@ h6 {
   display: flex;
   align-items: center;
   flex-direction: row;
+  font-size: 2rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: normal;
 }
 
 .favorites__radio input[type=radio]:checked + label {
@@ -598,9 +615,154 @@ h6 {
 .favorites-season {
   display: flex;
   margin-top: 40px;
-  column-gap: 260px;
+  justify-content: space-between;
   row-gap: 40px;
   flex-wrap: wrap;
+  margin-right: 40px;
+}
+
+.shop-price {
+  padding-top: 20px;
+  padding-bottom: 40px;
+}
+
+.shop-price__text {
+  text-align: center;
+  font-size: 2rem;
+  margin-top: 40px;
+}
+
+.shop-price__two-column {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 40px;
+}
+
+.shop-price__menu {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+.shop-price__menu-left {
+  min-width: 438px;
+}
+.shop-price__menu-right {
+  min-width: 482px;
+}
+
+.menu__title-left {
+  color: #BB945F;
+  text-align: left;
+}
+
+.menu__title-right {
+  color: #BB945F;
+  text-align: right;
+}
+
+.price-teg {
+  display: flex;
+  align-items: center;
+}
+
+.price-teg__text {
+  color: #000;
+  font-family: Inter;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 40px;
+  /* 200% */
+  letter-spacing: 2px;
+  text-transform: capitalize;
+  width: 210px;
+}
+
+.shop-price__menu-right .price-teg__text {
+  text-align: right;
+  width: 233px;
+}
+.shop-price__menu-right .price-teg__price {
+  text-align: right;
+  margin-left: 40px;
+  min-width: 51px;
+}
+
+.shop-price__menu-left .price-teg__text {
+  width: 210px;
+}
+.shop-price__menu-left .price-teg__price {
+  text-align: right;
+  margin-left: 31px;
+  min-width: 51px;
+}
+
+.price-teg__line {
+  width: 100px;
+  flex-shrink: 0;
+  border: 1px solid #BB945F;
+  margin-left: auto;
+}
+
+.contacts {
+  padding-top: 20px;
+  padding-bottom: 40px;
+}
+
+.contacts__two-columns {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 40px;
+}
+
+.contacts__info {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+.contacts__info-title {
+  font-family: Inter;
+  text-transform: capitalize;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 4rem;
+  letter-spacing: 0.2rem;
+}
+
+.contact__phone {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.contact__phone-num {
+  text-decoration: none;
+  color: #000000;
+  font-size: 2rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 4rem;
+  letter-spacing: 0.2rem;
+  text-transform: capitalize;
+}
+
+.contacts__staff {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.contacts__staff-name {
+  font-size: 2rem;
+}
+.contacts__staff-mail {
+  text-decoration: none;
+  color: #000000;
+  font-size: 2rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 4rem;
+  letter-spacing: 0.2rem;
+  text-transform: capitalize;
 }
 
 .header {
@@ -659,10 +821,12 @@ h6 {
 }
 
 .book-name {
+  margin-top: 20px;
   text-transform: uppercase;
 }
 
 .book-text {
+  margin-top: 20px;
   font-size: 1.5rem;
   text-transform: capitalize;
   max-width: 355px;

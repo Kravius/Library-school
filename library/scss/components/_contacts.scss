@@ -1,0 +1,54 @@
+.contacts {
+	padding-top: 20px;
+	padding-bottom: 40px;
+}
+
+.contacts__two-columns {
+	display: flex;
+	justify-content: space-between;
+	margin-top: 40px;
+}
+
+.contacts__info {
+	display: flex;
+	flex-direction: column;
+	gap: 40px;
+
+	&-title {
+		font-family: Inter;
+		text-transform: capitalize;
+		@include font ($size: 20px, $weight: 700, $height: 4rem);
+	}
+
+}
+
+.contact__phone {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+
+	&-num {
+		text-decoration: none;
+		color: $color-text;
+		@include font($size: 2rem, $height: 4rem);
+		text-transform: capitalize;
+	}
+}
+
+.contacts__staff {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+	&-name {
+		font-size: 2rem;
+	}
+
+	&-mail {
+		text-decoration: none;
+		color: $color-text;
+		@include font ($size: 2rem, $weight: 700, $height: 4rem);
+		text-transform: capitalize;
+	}
+}
+
+.contacts__map {}

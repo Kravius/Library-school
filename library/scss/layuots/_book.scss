@@ -15,10 +15,12 @@
 	border: 1px solid $color-element;
 }
 .book-name {
+	margin-top: 20px;
 	text-transform: uppercase;
 }
 
 .book-text {
+	margin-top: 20px;
 	font-size: 1.5rem;
 	text-transform: capitalize;
 	max-width: 355px;

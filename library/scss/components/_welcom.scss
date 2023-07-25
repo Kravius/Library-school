@@ -3,7 +3,7 @@
 	background-image: url("../img/welcome/welcom-library.jpeg");
 	background-size: cover;
 	background-position: center;
-	padding: 255px 0 195px 0;
+	padding: 220px 0 160px 0;
 	margin-top: -3px;
 
 	&::after {
@@ -25,7 +25,7 @@
 
 .welcom__text-back {
 	background-color: $color-main;
-	max-width: 520px;
+	max-width: 600px;
 	padding: 35px 40px;
 }
 
