@@ -68,7 +68,11 @@ h6 {
 	width: 50px;
 	flex-shrink: 0;
 	margin: 20px auto 0;
-	border: 1px solid $color-main;;
+	// border: 1px solid $color-main;
+	height: 1px;
+	background: $color-main;
+	border: 0;
+	font-family: Forum;
 }
 
 

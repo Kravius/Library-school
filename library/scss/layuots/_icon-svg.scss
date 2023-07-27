@@ -1,0 +1,18 @@
+
+
+.insta-path,
+.twit-path,
+.face-path {
+	@extend %transition;
+}
+
+.face-svg:hover,
+.twit-svg:hover,
+.insta-svg:hover {
+	.insta-path,
+	.twit-path,
+	.face-path{
+		fill: $color-element;
+		transform: scale(1.2)
+	}
+}

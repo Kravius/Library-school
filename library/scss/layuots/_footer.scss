@@ -1,0 +1,85 @@
+.footer {
+	padding-top: 20px;
+	padding-bottom: 44px;
+	background-color: $color-main;
+}
+
+.footer__wrapper {}
+
+.footer__columns {
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: 30px;
+}
+
+.two-columns {}
+
+.footer__contacts {}
+
+.footer__contacts-addres {
+	display: inline-flex;
+	flex-shrink: 0;
+	max-width: 229px;
+	color: #FFF;
+	@include font($size: 1.5rem, $height: 2rem, $spacing: normal);
+	margin-bottom: 10px;
+
+}
+
+.footer__contacts-icon {
+	display: flex;
+	gap: 15px;
+	align-items: center;
+}
+
+.footer__icon-object {
+	width: 24px;
+	height: 24px;
+	align-self: center;
+}
+
+.footer__time-work {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}
+
+.time-work {
+	color: #FFF;
+	@include font($size: 1.5rem, $height: 2rem, $spacing: normal);
+	text-align: right;
+}
+
+.footer__line {
+	border-color: $color-light;
+}
+
+.footer__end {
+	display: flex;
+	justify-content: space-between;
+	margin-top: 46px;
+	color:	$color-light;
+	@include font($size: 2rem);
+}
+
+.user-git {
+	color:	$color-light;
+	@include font($size: 2rem);
+}
+
+.icon {
+
+	align-self: center;
+}
+.icon-object--twit {
+	width: 24px;
+	height: 24px;
+}
+.icon-object--insta {
+	width: 11px;
+	height: 20px;
+}
+.icon-object--face {
+	width: 20px;
+	height: 20px;
+}
