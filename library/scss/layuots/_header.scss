@@ -11,25 +11,6 @@
 	margin-left: 454px;
 }
 
-.navigation {
-	display: flex;
-	gap: 30px;
-	list-style-type: none;
-	padding: 0;
-	color: $color-light;
-	@include font ($size: 2rem, $height: 5rem, $spacing: normal);
-}
-
-.navigation__link {
-	cursor: pointer;
-	@extend %transition;
-
-	&:hover {
-		color: $color-element;
-	}
-
-}
-
 .menu {
 	line-height: 0;
 	margin-left: 40px;

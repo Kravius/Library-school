@@ -1,13 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Forum&family=Inter:wght@400;700&display=swap');
 
 html {
+	scroll-behavior: smooth;
 	font-size: 10px;
 }
 
+//delete width and margin
 body {
 	@extend %font-prim;
 	@include font($size: 1.6rem, $height: 4rem);
-	// width: 1440px;
+	width: 1440px;
+	margin: 0 auto;
 }
 
 .wrapper {
@@ -75,8 +78,6 @@ h6 {
 	font-family: Forum;
 }
 
-
-
 .none {
 	display: none;
 }
@@ -84,4 +85,20 @@ h6 {
 a {
 	cursor: pointer;
 	text-decoration: none;
+	@extend %transition;
+
+	&:hover {
+		color: $color-element;
+	}
+
 }
+
+button {
+	margin: 0; /* Убирает внешние отступы */
+	padding: 0; /* Убирает внутренние отступы */
+	border: none; /* Убирает границы */
+	background: none; /* Убирает фон */
+	outline: none; /* Убирает обводку при фокусе (когда кнопка получает фокус)
+	 */
+	//  display: block;
+ }

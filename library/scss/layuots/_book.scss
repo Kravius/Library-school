@@ -33,6 +33,8 @@
 }
 
 .book__button {
-	align-self: start;
+	// align-self: start;
 	margin-top: auto;
+	// display: block;
+	display: flex;
 }

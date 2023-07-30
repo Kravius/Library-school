@@ -5,6 +5,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Library</title>
+	<link rel="icon" type="image/png" sizes="32x32" href="./img/header/favicon.ico">
 	<link rel="stylesheet" href="./scss/style.css">
 </head>
 
@@ -14,11 +15,11 @@
 			<h1>Brooklyn Public Library</h1>
 			<nav class="header__navigation">
 				<ul class="navigation">
-					<li class="navigation__link">About</li>
-					<li class="navigation__link">Favorites</li>
-					<li class="navigation__link">Coffee shop</li>
-					<li class="navigation__link">Contacts</li>
-					<li class="navigation__link">Library Card</li>
+					<li><a class="navigation__link" href="#section-about">About</a></li>
+					<li><a class="navigation__link" href="#section-favorites">Favorites</a></li>
+					<li><a class="navigation__link" href="#section-price">Coffee shop</a></li>
+					<li><a class="navigation__link" href="#section-contacts">Contacts</a></li>
+					<li><a class="navigation__link" href="#section-payments">Library Card</a></li>
 				</ul>
 			</nav>
 			<a href="#" class="menu">
@@ -27,7 +28,7 @@
 		</div>
 	</header>
 	<main>
-		<section class="welcom ">
+		<section id="section-welcom" class="welcom">
 			<div class="wrapper welcom__wrapper">
 				<div class="welcom__text-back">
 					<h2 class="welcom__text">welcome&nbsp;<br>
@@ -35,7 +36,7 @@
 				</div>
 			</div>
 		</section>
-		<section class="about ">
+		<section id="section-about" class="about">
 			<div class="wrapper">
 				<h2 class="about__title">About</h2>
 				<hr class="line">
@@ -65,7 +66,7 @@
 				</div>
 			</div>
 		</section>
-		<section class="favorites">
+		<section id="section-favorites" class="favorites">
 			<div class="wrapper">
 				<h2 class="favorites__title">Favorites</h2>
 				<hr class="line">
@@ -126,7 +127,7 @@
 							<h6 class="book-name">Dante: Poet of the Secular World</h6>
 							<h6>By Erich Auerbach</h6>
 							<div class="book-text">Auerbach's engaging book places the 'Comedy' within the tradition of epic,
-								tragedy, and philosophy in general, arguing for Dante's uniqueness as one who raised the
+								tragedy, and philosophy in general, arguing for Dante's uniqueness as&nbsp;one who raised the
 								individual and his drama of soul into something of divine significance—an inspired introduction
 								to Dante's main themes.
 							</div>
@@ -332,7 +333,7 @@
 				</div>
 			</div>
 		</section>
-		<section class="shop-price">
+		<section id="section-price" class="shop-price">
 			<div class="wrapper">
 				<h2 class="shop-price__title">Coffee shop</h2>
 				<hr class="line">
@@ -410,7 +411,7 @@
 				</div>
 			</div>
 		</section>
-		<section class="contacts">
+		<section id="section-contacts" class="contacts">
 			<div class="wrapper">
 				<h2 class="contacts__title">Our Contacts</h2>
 				<hr class="line">
@@ -444,7 +445,7 @@
 				</div>
 			</div>
 		</section>
-		<section class="payments">
+		<section id="section-payments" class="payments">
 			<div class="wrapper">
 				<h2 class="payments__title">Digital Library Cards</h2>
 				<hr class="line">
@@ -484,21 +485,23 @@
 					<a href="https://www.google.com/maps/place/Biblioteka+Raczyńskich+Filia+4/@52.393953,16.8978942,17z/data=!3m1!4b1!4m6!3m5!1s0x470444d52b0c9a03:0xf004159aea6a1a46!8m2!3d52.393953!4d16.9000829!16s%2Fg%2F1tfcggdb?entry=ttu"
 						class="footer__contacts-addres">286 Cadman Plaza, New York, NY 11238, United States</a>
 					<div class="footer__contacts-icon">
-						<a href="https://twitter.com/your_username" target="_blank">
-							<object type="image/svg+xml" data="./img/footer/u_twitter-alt.svg" class="icon icon-object--twit">
-								Your browser does not support SVG
-							</object>
-						</a>
-						<a href="https://www.instagram.com/your_username" target="_blank">
-							<object type="image/svg+xml" data="./img/footer/Vector.svg" class="icon icon-object--insta">
-								Your browser does not support SVG
-							</object>
-						</a>
-						<a href="https://www.facebook.com/" target="_blank">
-						<object type="image/svg+xml" data="./img/footer/Vector-1.svg" class="icon icon-object--face">
-							Your browser does not support SVG
-						</object>
-					</a>
+						<ul class="navigation__footer">
+							<li><a href="https://twitter.com/your_username" target="_blank">
+								<object type="image/svg+xml" data="./img/footer/u_twitter-alt.svg" class="icon icon-object--twit">
+									Your browser does not support SVG
+								</object>
+							</a></li>
+							<li><a href="https://www.instagram.com/your_username" target="_blank">
+								<object type="image/svg+xml" data="./img/footer/Vector.svg" class="icon icon-object--insta">
+									Your browser does not support SVG
+								</object>
+							</a></li>
+							<li><a href="https://www.facebook.com/" target="_blank">
+								<object type="image/svg+xml" data="./img/footer/Vector-1.svg" class="icon icon-object--face">
+									Your browser does not support SVG
+								</object>
+							</a></li>
+						</ul>
 					</div>
 				</div>
 				<div class="footer__time-work">
@@ -511,12 +514,11 @@
 			<hr class="footer__line">
 			<div class="footer__end">
 				<p>2023</p>
-				<p>The Rolling Scopes School</p>
-				<a href="https://github.com/Kravius" class="user-git">Glib</a>
+				<a href="https://rs.school/js-stage0/ "class="rss-link" >The Rolling Scopes School</a>
+				<a href="https://github.com/Kravius" class="user-git">Kravius</a>
 			</div>
 		</div>
 	</footer>
 	<script src="./index.js"></script>
 </body>
-
 </html>

@@ -10,7 +10,7 @@ h1 {
 
 .insta-path,
 .twit-path,
-.face-path, .navigation__link {
+.face-path, .navigation__link, a {
   transition: all 0.3s ease-in-out;
 }
 
@@ -335,6 +335,7 @@ template {
 }
 
 html {
+  scroll-behavior: smooth;
   font-size: 10px;
 }
 
@@ -344,6 +345,8 @@ body {
   font-weight: 400;
   line-height: 4rem;
   letter-spacing: 0.2rem;
+  width: 1440px;
+  margin: 0 auto;
 }
 
 .wrapper {
@@ -435,6 +438,18 @@ a {
   cursor: pointer;
   text-decoration: none;
 }
+a:hover {
+  color: #BB945F;
+}
+
+button {
+  margin: 0; /* Убирает внешние отступы */
+  padding: 0; /* Убирает внутренние отступы */
+  border: none; /* Убирает границы */
+  background: none; /* Убирает фон */
+  outline: none; /* Убирает обводку при фокусе (когда кнопка получает фокус)
+*/
+}
 
 .button {
   background-color: #FFFFFF;
@@ -474,7 +489,7 @@ a {
   background-image: url("../img/welcome/welcom-library.jpeg");
   background-size: cover;
   background-position: center;
-  padding: 220px 0 160px 0;
+  padding: 223px 0 160px 0;
   margin-top: -3px;
 }
 .welcom::after {
@@ -487,7 +502,6 @@ a {
 }
 
 .welcom__wrapper {
-  margin: 0;
   padding: 0;
 }
 
@@ -534,7 +548,7 @@ a {
 
 .about__slayder-buttons {
   text-align: center;
-  margin-top: 40px;
+  margin-top: 35px;
   font-size: 0;
 }
 
@@ -574,8 +588,7 @@ a {
 .favorites__radio-conteiner {
   display: flex;
   gap: 90px;
-  margin-top: 30px;
-  margin-left: -7px;
+  margin-top: 33px;
 }
 
 /* Размер радиокнопки */
@@ -813,7 +826,6 @@ a {
   font-weight: 400;
   line-height: 5rem;
   letter-spacing: 0.6px;
-  margin-bottom: 5px;
 }
 
 .form__button {
@@ -881,26 +893,6 @@ a {
   margin-left: 454px;
 }
 
-.navigation {
-  display: flex;
-  gap: 30px;
-  list-style-type: none;
-  padding: 0;
-  color: #FFFFFF;
-  font-size: 2rem;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 5rem;
-  letter-spacing: normal;
-}
-
-.navigation__link {
-  cursor: pointer;
-}
-.navigation__link:hover {
-  color: #BB945F;
-}
-
 .menu {
   line-height: 0;
   margin-left: 40px;
@@ -942,14 +934,36 @@ a {
 }
 
 .book__button {
-  align-self: start;
   margin-top: auto;
+  display: flex;
 }
 
 .two-columns {
   display: flex;
   justify-content: space-between;
   margin-top: 40px;
+}
+
+.navigation {
+  display: flex;
+  gap: 30px;
+  list-style-type: none;
+  padding: 0;
+  color: #FFFFFF;
+  font-size: 2rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 5rem;
+  letter-spacing: normal;
+}
+
+.navigation__link {
+  color: #FFFFFF;
+  cursor: pointer;
+  transform: translateY(-50%);
+}
+.navigation__link:hover {
+  color: #BB945F;
 }
 
 .footer {
@@ -962,6 +976,11 @@ a {
   display: flex;
   justify-content: space-between;
   margin-bottom: 30px;
+}
+
+.footer__contacts {
+  display: flex;
+  flex-direction: column;
 }
 
 .footer__contacts-addres {
@@ -977,7 +996,7 @@ a {
   margin-bottom: 10px;
 }
 
-.footer__contacts-icon {
+.navigation__footer {
   display: flex;
   gap: 15px;
   align-items: center;
@@ -1012,7 +1031,7 @@ a {
 .footer__end {
   display: flex;
   justify-content: space-between;
-  margin-top: 46px;
+  margin-top: 44px;
   color: #FFFFFF;
   font-size: 2rem;
   font-style: normal;
@@ -1021,13 +1040,28 @@ a {
   letter-spacing: 0.2rem;
 }
 
-.user-git {
+.rss-link {
   color: #FFFFFF;
   font-size: 2rem;
   font-style: normal;
   font-weight: 400;
   line-height: 2rem;
   letter-spacing: 0.2rem;
+  margin-left: 25px;
+}
+
+.user-git {
+  display: flex;
+  color: #FFFFFF;
+  font-size: 2rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 2rem;
+  letter-spacing: 0.2rem;
+}
+
+a:hover {
+  color: #BB945F;
 }
 
 .icon {
@@ -1040,7 +1074,7 @@ a {
 }
 
 .icon-object--insta {
-  width: 11px;
+  width: 20px;
   height: 20px;
 }
 
