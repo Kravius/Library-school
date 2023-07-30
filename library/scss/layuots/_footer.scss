@@ -10,6 +10,8 @@
 	display: flex;
 	justify-content: space-between;
 	margin-bottom: 30px;
+	border-bottom: 1px solid $color-light;
+	padding-bottom: 30px;
 }
 
 .two-columns {}
@@ -30,11 +32,21 @@
 
 }
 
-.navigation__footer {
-	display: flex;
+.footer__nav {
+	display: inline-flex;
 	gap: 15px;
 	align-items: center;
+	a {
+		// display: inline-flex;
+	}
 }
+
+// .footer__contacts-link:hover svg {
+// 	transform: scale(1.5);
+// }
+// .footer__contacts-link:hover path {
+// 	fill: red;
+// }
 
 .footer__icon-object {
 	width: 24px;
@@ -100,7 +112,7 @@ a {
 	height: 20px;
 }
 
-.icon-object--face {
+.icon--face-object {
 	width: 20px;
 	height: 20px;
 }

@@ -22,18 +22,7 @@
 
 	&_disabled {
 		color: #BB945F;
-		text-align: center;
-		font-size: 10px;
-		font-style: normal;
-		font-weight: 700;
-		line-height: normal;
-		letter-spacing: 1px;
 		border: 1px solid $color-element;
-		background-color: $color-light;
-	}
-
-	&__book {
-		padding: 9px 27px;
-		font-size: 1rem;
+		cursor: none;
 	}
 }

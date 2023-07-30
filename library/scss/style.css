@@ -8,9 +8,7 @@ h1 {
   font-family: "Forum", cursive;
 }
 
-.insta-path,
-.twit-path,
-.face-path, .navigation__link, a {
+a:hover .icon, .navigation__link, a {
   transition: all 0.3s ease-in-out;
 }
 
@@ -470,18 +468,8 @@ button {
 }
 .button_disabled {
   color: #BB945F;
-  text-align: center;
-  font-size: 10px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: normal;
-  letter-spacing: 1px;
   border: 1px solid #BB945F;
-  background-color: #FFFFFF;
-}
-.button__book {
-  padding: 9px 27px;
-  font-size: 1rem;
+  cursor: none;
 }
 
 .welcom {
@@ -505,13 +493,10 @@ button {
   padding: 0;
 }
 
-.welcom__text-back {
+.welcom__text {
   background-color: #0C0C0E;
   max-width: 600px;
   padding: 35px 40px;
-}
-
-.welcom__text {
   margin: 0;
   color: #FFFFFF;
   font-size: 4rem;
@@ -556,7 +541,7 @@ button {
   background-color: #0C0C0E;
 }
 
-.active__button {
+.about__button_active {
   background-color: #BB945F;
 }
 
@@ -626,10 +611,6 @@ button {
   margin-left: 20px;
 }
 
-.book__button > * {
-  min-width: 75px;
-}
-
 .favorites__columns {
   row-gap: 40px;
   flex-wrap: wrap;
@@ -659,13 +640,13 @@ button {
   min-width: 482px;
 }
 
-.menu__title-left {
+.shop-price__title {
   color: #BB945F;
+}
+.shop-price__title_left {
   text-align: left;
 }
-
-.menu__title-right {
-  color: #BB945F;
+.shop-price__title_rigth {
   text-align: right;
 }
 
@@ -733,13 +714,10 @@ button {
   letter-spacing: 0.2rem;
 }
 
-.contact__phone {
+.contacts__phone {
   display: flex;
   flex-direction: column;
   gap: 20px;
-}
-.contact__phone-num {
-  text-decoration: none;
   color: #000000;
   font-size: 2rem;
   font-style: normal;
@@ -747,6 +725,10 @@ button {
   line-height: 4rem;
   letter-spacing: 0.2rem;
   text-transform: capitalize;
+}
+.contacts__phone-num {
+  text-decoration: none;
+  color: #000000;
 }
 
 .contacts__staff {
@@ -910,17 +892,17 @@ button {
   padding: 15px 0 15px 20px;
 }
 
-.favorites__line {
+.book__line {
   width: 60px;
   border: 1px solid #BB945F;
 }
 
-.book-name {
+.book__name {
   margin-top: 20px;
   text-transform: uppercase;
 }
 
-.book-text {
+.book__text {
   margin-top: 20px;
   font-size: 1.5rem;
   text-transform: capitalize;
@@ -935,7 +917,11 @@ button {
 
 .book__button {
   margin-top: auto;
-  display: flex;
+}
+
+.book__button-size {
+  padding: 9px 27px;
+  font-size: 1rem;
 }
 
 .two-columns {
@@ -976,6 +962,8 @@ button {
   display: flex;
   justify-content: space-between;
   margin-bottom: 30px;
+  border-bottom: 1px solid #FFFFFF;
+  padding-bottom: 30px;
 }
 
 .footer__contacts {
@@ -996,12 +984,11 @@ button {
   margin-bottom: 10px;
 }
 
-.navigation__footer {
-  display: flex;
+.footer__nav {
+  display: inline-flex;
   gap: 15px;
   align-items: center;
 }
-
 .footer__icon-object {
   width: 24px;
   height: 24px;
@@ -1078,20 +1065,19 @@ a:hover {
   height: 20px;
 }
 
-.icon-object--face {
+.icon--face-object {
   width: 20px;
   height: 20px;
 }
 
-.face-svg:hover .insta-path,
-.face-svg:hover .twit-path,
-.face-svg:hover .face-path,
-.twit-svg:hover .insta-path,
-.twit-svg:hover .twit-path,
-.twit-svg:hover .face-path,
-.insta-svg:hover .insta-path,
-.insta-svg:hover .twit-path,
-.insta-svg:hover .face-path {
+.icon {
+  pointer-events: none;
+}
+
+a:hover .icon {
+  transform: scale(1.9);
+}
+
+.twit-svg:hover .twit-path {
   fill: #BB945F;
-  transform: scale(1.2);
 }/*# sourceMappingURL=style.css.map */

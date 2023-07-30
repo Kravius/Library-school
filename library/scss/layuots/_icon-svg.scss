@@ -1,18 +1,36 @@
+.icon {
+	pointer-events: none;
+}
 
-
-.insta-path,
-.twit-path,
-.face-path {
+a:hover .icon {
+	transform: scale(1.9);
 	@extend %transition;
 }
 
-.face-svg:hover,
-.twit-svg:hover,
-.insta-svg:hover {
-	.insta-path,
-	.twit-path,
-	.face-path{
+.twit-svg:hover {
+	.twit-path{
 		fill: $color-element;
-		transform: scale(1.2)
 	}
 }
+
+//работает увелечение и смена цвета но не увеличиваеться контейнер
+// .insta-path,
+// .twit-path,
+// .face-path {
+// 	@extend %transition;
+// }
+
+
+// .face-svg:hover,
+// .twit-svg:hover,
+// .insta-svg:hover {
+
+// 	.insta-path,
+// 	.twit-path,
+// 	.face-path {
+// 		fill: $color-element;
+// 		// transform: scale(1.9)
+// 	}
+// }
+
+

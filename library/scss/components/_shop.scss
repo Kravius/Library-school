@@ -11,8 +11,7 @@
 	margin-top: 40px;
 }
 
-.shop-price__column {
-}
+.shop-price__column {}
 
 .shop-price__menu {
 	display: flex;
@@ -28,15 +27,27 @@
 	}
 }
 
-.menu__title-left {
+.shop-price__title {
 	color: $color-element;
-	text-align: left;
+
+	&_left {
+		text-align: left;
+	}
+
+	&_rigth {
+		text-align: right;
+	}
 }
 
-.menu__title-right {
-	color: $color-element;
-	text-align: right;
-}
+// .shop-price__menu-title_left {
+// 	color: $color-element;
+// 	text-align: left;
+// }
+
+// .menu__title-right {
+// 	color: $color-element;
+// 	text-align: right;
+// }
 
 .price-teg {
 	display: flex;

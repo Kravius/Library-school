@@ -19,17 +19,19 @@
 }
 
 .welcom__wrapper {
-	// margin: 0;
 	padding: 0;
 }
 
-.welcom__text-back {
+// .welcom__text-back {
+// 	background-color: $color-main;
+// 	max-width: 600px;
+// 	padding: 35px 40px;
+// }
+
+.welcom__text {
 	background-color: $color-main;
 	max-width: 600px;
 	padding: 35px 40px;
-}
-
-.welcom__text {
 	margin: 0;
 	color: $color-light;
 	@include font($size: 4rem, $height: 5rem, $spacing: 0.3rem);
