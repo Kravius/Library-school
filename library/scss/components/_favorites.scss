@@ -19,8 +19,9 @@
 
 .favorites__radio-conteiner {
 	display: flex;
-	gap: 90px;
-	margin-top: 33px;
+	// gap: 93px;
+	gap: 81px;
+	margin-top: 29px;
 	// margin-left: -7px;
 }
 
@@ -42,9 +43,12 @@
 	background-image: url(../img/favorites/radio-btn/Ellipse-2.svg);
 	background-position: center;
 	background-repeat: no-repeat;
+	// border: 5px solid $color-light;
 
 	&:checked {
 		background-image: url(../img/favorites/radio-btn/Group.svg);
+		// border: 5px solid $color-light;
+
 
 		&+label {
 			font-size: 20px;
@@ -79,7 +83,8 @@
 // }
 
 .favorites__radio label {
-	margin-left: 20px;
+	margin-left: 15px;
+	border: 5px solid $color-light;
 }
 
 // .book__button {
@@ -89,6 +94,9 @@
 // }
 
 .favorites__columns {
+	display: flex;
+	justify-content: space-between;
+	margin-top: 34px;
 	row-gap: 40px;
 	flex-wrap: wrap;
 	margin-right: 40px;

@@ -449,6 +449,10 @@ button {
 */
 }
 
+label {
+  cursor: pointer;
+}
+
 .button {
   background-color: #FFFFFF;
   text-align: center;
@@ -572,8 +576,8 @@ button {
 
 .favorites__radio-conteiner {
   display: flex;
-  gap: 90px;
-  margin-top: 33px;
+  gap: 81px;
+  margin-top: 29px;
 }
 
 /* Размер радиокнопки */
@@ -608,10 +612,14 @@ button {
 }
 
 .favorites__radio label {
-  margin-left: 20px;
+  margin-left: 15px;
+  border: 5px solid #FFFFFF;
 }
 
 .favorites__columns {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 34px;
   row-gap: 40px;
   flex-wrap: wrap;
   margin-right: 40px;
