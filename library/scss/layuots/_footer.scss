@@ -35,9 +35,6 @@
 	display: inline-flex;
 	gap: 15px;
 	align-items: center;
-	a {
-		// display: inline-flex;
-	}
 }
 
 // .footer__contacts-link:hover svg {
@@ -81,6 +78,10 @@
 	color: $color-light;
 	@include font($size: 2rem);
 	margin-left: 25px;
+
+	@include media-tablet {
+		margin-left: -30px;
+	}
 }
 
 .user-git {
@@ -88,6 +89,7 @@
 	color: $color-light;
 	@include font($size: 2rem);
 }
+
 a {
 	@extend %transition;
 

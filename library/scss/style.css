@@ -583,7 +583,7 @@ label {
 }
 @media (max-width: 768px) {
   .about__slayder-buttons {
-    margin-top: 25px;
+    margin-top: 20px;
   }
 }
 @media (max-width: 768px) {
@@ -674,6 +674,11 @@ label {
   row-gap: 40px;
   flex-wrap: wrap;
   margin-right: 40px;
+}
+@media (max-width: 768px) {
+  .favorites__columns {
+    justify-content: center;
+  }
 }
 
 .shop-price {
@@ -835,7 +840,7 @@ label {
 
 @media (max-width: 1024px) {
   .contacts__map {
-    margin-top: 100px;
+    margin: 100px auto 0;
   }
 }
 
@@ -931,6 +936,7 @@ label {
 @media (max-width: 1024px) {
   .loggin {
     margin: 0 auto;
+    gap: 39px;
     max-width: 600px;
     text-align: center;
   }
@@ -1120,6 +1126,7 @@ label {
   gap: 15px;
   align-items: center;
 }
+
 .footer__icon-object {
   width: 24px;
   height: 24px;
@@ -1166,6 +1173,11 @@ label {
   line-height: 2rem;
   letter-spacing: 0.2rem;
   margin-left: 25px;
+}
+@media (max-width: 768px) {
+  .rss-link {
+    margin-left: -30px;
+  }
 }
 
 .user-git {
@@ -1228,7 +1240,7 @@ a:hover .icon {
   display: none;
   position: relative;
   width: 45px;
-  height: 20px;
+  height: 22px;
   cursor: pointer;
   z-index: 50;
 }
