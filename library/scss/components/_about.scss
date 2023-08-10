@@ -15,21 +15,66 @@
 	margin-top: 40px;
 }
 
+.about__conteiner {
+	position: relative;
+}
+
+.prew,
+.next {
+	display: none;
+	position: absolute;
+	cursor: pointer;
+	@include media-tablet {
+		display: block;
+	}
+}
+
+.prew {
+	top: 46%;
+	left: 57px;
+}
+.next {
+	bottom: 50%;
+	right: 57px;
+}
+
 .about__slayder {
 	display: flex;
 	gap: 25px;
 	margin-top: 20px;
+	.link {
+		@include media-tablet {
+			display: none;
+		}
+	}
+	.active {
+		margin: 0 auto;
+		text-align: center;
+	}
 }
 
 .about__link {}
 
 
-.about__img {}
+.about__img {
+	max-width: 100%;
+	height: auto;
+}
 
 .about__slayder-buttons {
 	text-align: center;
 	margin-top: 35px;
 	font-size: 0;
+
+	@include media-tablet {
+		margin-top: 25px;
+	}
+
+	.none {
+		@include media-tablet {
+			display: inline-block;
+		}
+	}
 }
 
 //возможно нужно будет удалить тут и в html личшнию обертку

@@ -8,13 +8,31 @@
 }
 
 .header__navigation {
-	// margin-left: 454px;
 	margin-left: auto;
+	@include media-laptop {
+		display: none;
+	}
+}
+
+.header__logo-line {
+	display: flex;
+	align-items: center;
+	line-height: 0;
+	margin-left: 40px;
+	@include media-laptop {
+		display: flex;
+		margin-left: auto;
+		gap: 40px;
+	}
 }
 
 .menu {
-	line-height: 0;
-	margin-left: 40px;
+	// display: flex;
+	// align-items: center;
+	// line-height: 0;
+	// margin-left: 40px;
 }
 
 .menu__img {}
+
+@include media-laptop {}

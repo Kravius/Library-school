@@ -9,16 +9,8 @@ html {
 body {
 	@extend %font-prim;
 	@include font($size: 1.6rem, $height: 4rem);
-	width: 1440px;
+	// max-width: 1440px;
 	margin: 0 auto;
-}
-
-.wrapper {
-	width: $content-width;
-	// width: 1400px;
-	margin: 0 auto;
-	padding-right: 20px;
-	padding-left: 20px;
 }
 
 h1 {

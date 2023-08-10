@@ -11,7 +11,11 @@
 	margin-top: 40px;
 }
 
-.shop-price__column {}
+.shop-price__column {
+	@include media-laptop {
+		flex-direction: column;
+	}
+}
 
 .shop-price__menu {
 	display: flex;
@@ -19,11 +23,18 @@
 	gap: 40px;
 
 	&-left {
-		min-width: 438px;
+		@include media-laptop {
+			margin-right: auto;
+		}
+		width: 438px;
 	}
 
 	&-right {
-		min-width: 482px;
+		@include media-laptop {
+			margin-left: auto;
+			margin-top: 40px;
+		}
+		width: 482px;
 	}
 }
 
@@ -69,7 +80,6 @@
 
 .shop-price__menu-right {
 	.price-teg__text {
-		// margin-left: auto;
 		text-align: right;
 		width: 233px;
 	}

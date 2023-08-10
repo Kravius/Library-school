@@ -3,7 +3,12 @@
 	padding-bottom: 40px;
 }
 
-.contacts__columns {}
+.contacts__columns {
+	@include media-laptop{
+		flex-wrap: wrap;
+		justify-content: start;
+	}
+}
 
 .contacts__phone-text {
 
@@ -53,4 +58,8 @@
 	}
 }
 
-.contacts__map {}
+.contacts__map {
+	@include media-laptop{
+		margin-top: 100px;
+	}
+}
