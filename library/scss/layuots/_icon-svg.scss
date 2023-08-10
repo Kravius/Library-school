@@ -8,23 +8,26 @@ a:hover .icon {
 }
 
 .twit-svg:hover {
-	.twit-path{
+	.twit-path {
 		fill: $color-element;
 	}
 }
 
 //работает увелечение и смена цвета но не увеличиваеться контейнер
+
+//icon-path,
 // .insta-path,
 // .twit-path,
 // .face-path {
 // 	@extend %transition;
 // }
 
-
+//.icon-svg:hover,
 // .face-svg:hover,
 // .twit-svg:hover,
 // .insta-svg:hover {
 
+// .icon-path,
 // 	.insta-path,
 // 	.twit-path,
 // 	.face-path {
@@ -32,5 +35,3 @@ a:hover .icon {
 // 		// transform: scale(1.9)
 // 	}
 // }
-
-

@@ -1,4 +1,4 @@
-@mixin font ($size, $height: $size, $weight: 400, $style: normal, $spacing:0.2rem) {
+@mixin font ($size, $height: $size, $weight: 400, $style: normal, $spacing: 0.2rem) {
 	font-size: $size;
 	font-style: $style;
 	font-weight: $weight;
@@ -14,4 +14,16 @@
 	>* {
 		flex-basis: $width;
 	}
+}
+
+//with after
+@mixin line($bottom: 0px, $left: 695px, $width: 50px, $color: #0C0C0E) {
+	content: "";
+	position: absolute;
+	bottom: $bottom;
+	left: $left;
+	width: $width;
+	height: 1px;
+	background-color: $color
+	
 }
