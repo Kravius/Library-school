@@ -15,7 +15,11 @@
 	width: 45px;
 	height: 22px;
 	cursor: pointer;
-	z-index: 50;
+	z-index: 3;
+
+	.hamburger__line:active {
+		transform: scale(0)
+	}
 
 
 	&::before {
@@ -25,8 +29,8 @@
 	}
 
 	&:active::before {
-		top:50%;
-		transform: rotate(50deg);
+		top: 50%;
+		transform: rotate(48deg);
 	}
 
 	&::after {
@@ -37,7 +41,7 @@
 
 	&:active::after {
 		bottom: 50%;
-		transform: rotate(-50deg);
+		transform: rotate(-48deg);
 	}
 
 
@@ -49,7 +53,27 @@
 .hamburger__line {
 	@extend %hamburger__line;
 	top: calc(50% - 1px);
-	// &:active {
-	// 	transform: scale(0);
-	// }
+
+	&:active {
+		transform: scale(0);
+	}
+}
+
+.header__navigation {
+	@include media-tablet {
+		position: absolute;
+		top: 0;
+		right: 0;
+		width: 332px;
+		height: 570px;
+		background-color: $color-burger;
+		z-index: 3;
+
+		.navigation {
+			display: flex;
+			flex-direction: column;
+			margin: 100px auto;
+			text-align: center;
+		}
+	}
 }

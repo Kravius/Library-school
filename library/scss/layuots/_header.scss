@@ -10,7 +10,7 @@
 .header__navigation {
 	margin-left: auto;
 	@include media-laptop {
-		display: none;
+		// display: none;
 	}
 }
 
@@ -27,10 +27,8 @@
 }
 
 .menu {
-	// display: flex;
-	// align-items: center;
-	// line-height: 0;
-	// margin-left: 40px;
+position: relative;
+z-index: 3;
 }
 
 .menu__img {}

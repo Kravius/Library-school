@@ -630,6 +630,12 @@ label {
   gap: 81px;
   margin-top: 29px;
 }
+@media (max-width: 740px) {
+  .favorites__radio-conteiner {
+    gap: 0;
+    justify-content: space-between;
+  }
+}
 
 /* Размер радиокнопки */
 .favorites__radio input[type=radio] {
@@ -842,6 +848,9 @@ label {
   .contacts__map {
     margin: 100px auto 0;
   }
+  .contacts__map img {
+    width: 100%;
+  }
 }
 
 .payments {
@@ -997,12 +1006,6 @@ label {
 .header__navigation {
   margin-left: auto;
 }
-@media (max-width: 1024px) {
-  .header__navigation {
-    display: none;
-  }
-}
-
 .header__logo-line {
   display: flex;
   align-items: center;
@@ -1015,6 +1018,11 @@ label {
     margin-left: auto;
     gap: 40px;
   }
+}
+
+.menu {
+  position: relative;
+  z-index: 3;
 }
 
 .favorites__book {
@@ -1242,7 +1250,10 @@ a:hover .icon {
   width: 45px;
   height: 22px;
   cursor: pointer;
-  z-index: 50;
+  z-index: 3;
+}
+.hamburger .hamburger__line:active {
+  transform: scale(0);
 }
 .hamburger::before {
   top: 0;
@@ -1250,7 +1261,7 @@ a:hover .icon {
 }
 .hamburger:active::before {
   top: 50%;
-  transform: rotate(50deg);
+  transform: rotate(48deg);
 }
 .hamburger::after {
   bottom: 0;
@@ -1258,7 +1269,7 @@ a:hover .icon {
 }
 .hamburger:active::after {
   bottom: 50%;
-  transform: rotate(-50deg);
+  transform: rotate(-48deg);
 }
 @media (max-width: 1024px) {
   .hamburger {
@@ -1268,4 +1279,25 @@ a:hover .icon {
 
 .hamburger__line {
   top: calc(50% - 1px);
+}
+.hamburger__line:active {
+  transform: scale(0);
+}
+
+@media (max-width: 768px) {
+  .header__navigation {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 332px;
+    height: 570px;
+    background-color: #000;
+    z-index: 3;
+  }
+  .header__navigation .navigation {
+    display: flex;
+    flex-direction: column;
+    margin: 100px auto;
+    text-align: center;
+  }
 }/*# sourceMappingURL=style.css.map */
