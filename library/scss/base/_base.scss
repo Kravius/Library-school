@@ -9,7 +9,6 @@ html {
 body {
 	@extend %font-prim;
 	@include font($size: 1.6rem, $height: 4rem);
-	// max-width: 1440px;
 	margin: 0 auto;
 }
 
@@ -90,9 +89,9 @@ button {
 	padding: 0; /* Убирает внутренние отступы */
 	border: none; /* Убирает границы */
 	background: none; /* Убирает фон */
-	outline: none; /* Убирает обводку при фокусе (когда кнопка получает фокус)
-	 */
-	//  display: block;
+	// outline: none; /* Убирает обводку при фокусе (когда кнопка получает фокус)
+	//  */
+	cursor: pointer;
  }
 
  label {

@@ -7,13 +7,12 @@
 	align-items: center;
 }
 
-
-
 .header__logo-line {
 	display: flex;
 	align-items: center;
 	line-height: 0;
 	margin-left: 40px;
+
 	@include media-laptop {
 		display: flex;
 		margin-left: auto;
@@ -22,10 +21,15 @@
 }
 
 .menu {
-position: relative;
-z-index: 3;
+	position: relative;
+	z-index: 3;
+	// cursor: pointer;
+	// text-decoration: none;
+	// @extend %transition;
+
+	// &:hover {
+	// 	color: $color-element;
+	// }
 }
 
 .menu__img {}
-
-@include media-laptop {}

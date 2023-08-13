@@ -56,22 +56,24 @@
 
 	@include media-laptop {
 		position: absolute;
-		overflow: auto;
 		top: -100%;
-		right: 0;
-		width: 332px;
-		height: 570px;
-		background-color: $color-burger;
+		left: 0;
+		width: 100%;
+		height: 100vh;
+		background-color: rgba (0, 0, 0, .8);
 		z-index: 3;
 		transition: all 0.3s ease;
-		// animation: burgeranimation 0.4s;
 
 		.navigation {
 			display: flex;
 			flex-direction: column;
-			margin: 100px auto;
+			justify-content: center;
+			width: 332px;
+			height: 570px;
+			background-color: $color-burger;
+			margin-left: auto;
 			text-align: center;
-			// font-size: 50px;
+			overflow: auto;
 		}
 
 		&.open {

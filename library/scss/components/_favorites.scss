@@ -103,7 +103,13 @@
 	row-gap: 40px;
 	flex-wrap: wrap;
 	margin-right: 40px;
+	@media (max-width: 1220px) {
+		flex-direction: column;
+
+	}
+
 	@include media-tablet {
 		justify-content: center;
+		align-items: center;
 	}
 }
