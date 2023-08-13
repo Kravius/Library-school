@@ -9,7 +9,7 @@
 .footer__columns {
 	display: flex;
 	justify-content: space-between;
-	margin-bottom: 30px;
+	margin-bottom: 44px;
 	border-bottom: 1px solid $color-light;
 	padding-bottom: 30px;
 }
@@ -29,16 +29,12 @@
 	color: #FFF;
 	@include font($size: 1.5rem, $height: 2rem, $spacing: normal);
 	margin-bottom: 10px;
-
 }
 
 .footer__nav {
 	display: inline-flex;
 	gap: 15px;
 	align-items: center;
-	a {
-		// display: inline-flex;
-	}
 }
 
 // .footer__contacts-link:hover svg {
@@ -82,6 +78,10 @@
 	color: $color-light;
 	@include font($size: 2rem);
 	margin-left: 25px;
+
+	@include media-tablet {
+		margin-left: -30px;
+	}
 }
 
 .user-git {
@@ -89,6 +89,7 @@
 	color: $color-light;
 	@include font($size: 2rem);
 }
+
 a {
 	@extend %transition;
 

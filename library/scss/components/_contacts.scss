@@ -3,11 +3,20 @@
 	padding-bottom: 40px;
 }
 
-.contacts__columns {}
+.contacts__columns {
+	flex-wrap: wrap;
+	@media(max-width:1240px) {
+		flex-direction: column;
+		// align-items: center;
+	}
 
-.contacts__phone-text {
-
+	// @include media-laptop {
+	// 	flex-wrap: wrap;
+	// 	justify-content: start;
+	// }
 }
+
+.contacts__phone-text {}
 
 .contacts__info {
 	display: flex;
@@ -53,4 +62,12 @@
 	}
 }
 
-.contacts__map {}
+.contacts__map {
+	@media(max-width:1240px) {
+		img {
+			width: 100%;
+		}
+
+		margin: 100px auto 0;
+	}
+}

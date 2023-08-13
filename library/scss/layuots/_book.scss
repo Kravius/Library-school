@@ -8,6 +8,10 @@
 	background: $color-light;
 	flex-shrink: 0;
 	padding: 15px 0 15px 20px;
+	@media (max-width: 760px) {
+		max-width: 500px;
+		max-width: 495px;
+	}
 }
 
 .book__line {
@@ -24,12 +28,18 @@
 	font-size: 1.5rem;
 	text-transform: capitalize;
 	max-width: 359px;
+	@media (max-width: 760px) {
+		font-size: 1.2rem;
+	}
 }
 
 .book__img {
 	position: absolute;
 	bottom: -2px;
 	right: -40px;
+	@media (max-width: 760px) {
+		width: 30%;
+	}
 }
 
 .book__button {

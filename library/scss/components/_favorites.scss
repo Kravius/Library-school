@@ -19,10 +19,13 @@
 
 .favorites__radio-conteiner {
 	display: flex;
-	// gap: 93px;
 	gap: 81px;
 	margin-top: 29px;
-	// margin-left: -7px;
+	@media (max-width: 740px) {
+
+		gap: 0;
+		justify-content: space-between;
+	}
 }
 
 .favorites__radio {}
@@ -100,4 +103,13 @@
 	row-gap: 40px;
 	flex-wrap: wrap;
 	margin-right: 40px;
+	@media (max-width: 1220px) {
+		flex-direction: column;
+
+	}
+
+	@include media-tablet {
+		justify-content: center;
+		align-items: center;
+	}
 }

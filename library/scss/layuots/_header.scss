@@ -7,13 +7,29 @@
 	align-items: center;
 }
 
-.header__navigation {
-	margin-left: 454px;
+.header__logo-line {
+	display: flex;
+	align-items: center;
+	line-height: 0;
+	margin-left: 40px;
+
+	@include media-laptop {
+		display: flex;
+		margin-left: auto;
+		gap: 40px;
+	}
 }
 
 .menu {
-	line-height: 0;
-	margin-left: 40px;
+	position: relative;
+	z-index: 3;
+	// cursor: pointer;
+	// text-decoration: none;
+	// @extend %transition;
+
+	// &:hover {
+	// 	color: $color-element;
+	// }
 }
 
 .menu__img {}
