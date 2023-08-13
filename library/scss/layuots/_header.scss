@@ -7,12 +7,7 @@
 	align-items: center;
 }
 
-.header__navigation {
-	margin-left: auto;
-	@include media-laptop {
-		// display: none;
-	}
-}
+
 
 .header__logo-line {
 	display: flex;

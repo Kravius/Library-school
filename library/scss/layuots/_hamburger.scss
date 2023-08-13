@@ -17,63 +17,79 @@
 	cursor: pointer;
 	z-index: 3;
 
-	.hamburger__line:active {
-		transform: scale(0)
-	}
-
-
 	&::before {
 		@extend %hamburger__line;
 		top: 0;
-		left: 0;
 	}
 
-	&:active::before {
+	&.active::before {
 		top: 50%;
-		transform: rotate(48deg);
+		transform: rotate(45deg);
 	}
 
 	&::after {
 		@extend %hamburger__line;
 		bottom: 0;
-		left: 0;
 	}
 
-	&:active::after {
+	&.active::after {
 		bottom: 50%;
-		transform: rotate(-48deg);
+		transform: rotate(-45deg);
 	}
 
+	.hamburger__line {
+		@extend %hamburger__line;
+		top: calc(50% - 1px);
+	}
+
+	&.active .hamburger__line {
+		transform: scale(0);
+	}
 
 	@include media-laptop {
 		display: inline-block;
 	}
 }
 
-.hamburger__line {
-	@extend %hamburger__line;
-	top: calc(50% - 1px);
-
-	&:active {
-		transform: scale(0);
-	}
-}
-
 .header__navigation {
-	@include media-tablet {
+	margin-left: auto;
+
+	@include media-laptop {
 		position: absolute;
-		top: 0;
+		overflow: auto;
+		top: -100%;
 		right: 0;
 		width: 332px;
 		height: 570px;
 		background-color: $color-burger;
 		z-index: 3;
+		transition: all 0.3s ease;
+		// animation: burgeranimation 0.4s;
 
 		.navigation {
 			display: flex;
 			flex-direction: column;
 			margin: 100px auto;
 			text-align: center;
+			// font-size: 50px;
+		}
+
+		&.open {
+			top: 0;
 		}
 	}
 }
+
+body {
+	@include media-laptop {
+		&.lock {
+			overflow: hidden;
+		}
+	}
+}
+
+//plus animations
+// @keyframes burgeranimation {
+// 	from {opacity: 0;}
+// 	to {opacity: 1;}
+// }
