@@ -50,34 +50,36 @@
 				<hr class="line">
 				<h4 class="about__text">The Brooklyn Library is a free workspace, a large number of books and a cozy coffee
 					shop inside</h4>
-					<div class="about__conteiner">
-						<button class="prew"> <img src="./img/about/prew.png" alt=" button"></button>
-						<div class="about__slayder">
-							<a href="#" class="about__link active">
+				<div class="about__conteiner">
+					<button id="btn-left" class="prew"> <img src="./img/about/prew.png" alt=" button"></button>
+					<div class="carousel-wrapper">
+						<div class="about__carousel ">
+							<div class="about__link active">
 								<img src="./img/about/image1.png" alt="" class="about__img">
-							</a>
-							<a href="#" class="about__link link">
+							</div>
+							<div class="about__link link">
 								<img src="./img/about/image2.png" alt="" class="about__img">
-							</a>
-							<a href="#" class="about__link link">
+							</div>
+							<div class="about__link link">
 								<img src="./img/about/image3-2.png" alt="" class="about__img">
-							</a>
-							<a href="#" class="about__link link none">
+							</div>
+							<div class="about__link link">
 								<img src="./img/about/image3-1.png" alt="" class="about__img">
-							</a>
-							<a href="#" class="about__link link none">
+							</div>
+							<div class="about__link link">
 								<img src="./img/about/image3.png" alt="" class="about__img">
-							</a>
+							</div>
 						</div>
-						<div class="about__slayder-buttons">
-							<button class="about__button_active about-btn"></button>
-							<button class="about__button about-btn"></button>
-							<button class="about__button about-btn"></button>
-							<button class="about__button about-btn none"></button>
-							<button class="about__button about-btn none"></button>
-						</div>
-						<button class="next"> <img src="./img/about/next.png" alt="next button"></button>
-			</div>
+					</div>
+					<div class="about__carousel-buttons">
+						<button class="about__button_active about-btn"></button>
+						<button class="about__button about-btn"></button>
+						<button class="about__button about-btn"></button>
+						<button class="about__button about-btn none"></button>
+						<button class="about__button about-btn none"></button>
+					</div>
+					<button id="btn-right" class="next"> <img src="./img/about/next.png" alt="next button"></button>
+				</div>
 			</div>
 		</section>
 		<section id="section-favorites" class="favorites">
@@ -536,8 +538,8 @@
 			</div>
 		</div>
 	</footer>
-	<script src="./index.js"></script>
-	<script src="./burger.js"></script>
+	<script type="module" src="./index.js"></script>
+	<!-- <script src="./burger.js"></script> -->
 </body>
 
 </html>

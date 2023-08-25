@@ -1,3 +1,5 @@
+export default (function(){
+
 const burger =  document.querySelector('.hamburger');
 const navigation = document.querySelector('.header__navigation');
 const body = document.querySelector('body');
@@ -23,3 +25,4 @@ navigation.addEventListener('click', () => {
 	navigation.classList.remove('open');
 	body.classList.remove('lock');
 })
+})();
