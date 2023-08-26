@@ -4,7 +4,8 @@ export default (function () {
 	const sliderLine = document.querySelector('.about__carousel');
 	const sliderImages = document.querySelectorAll('.about__carousel img');
 	const sliderDots = document.querySelectorAll('.about__carousel-buttons button');
-	let offset = 0;
+	const image = document.querySelector('.about__img');
+	let imagesWidth;
 	let sliderCount = 0;
 	let sliderWidth;
 
@@ -25,12 +26,14 @@ export default (function () {
 			default: numVisibleImages = 1;
 				break;
 		}
-		console.log(numVisibleImages)
+
 		sliderWidth = document.querySelector('.carousel-wrapper').offsetWidth;
+		// let imageWidth = (sliderWidth - gap) / numVisibleImages;
 		sliderLine.style.width = (sliderWidth * sliderImages.length / numVisibleImages) + 'px';
 
 		sliderImages.forEach(item => item.style.width = sliderWidth / numVisibleImages + 'px');
-
+		imagesWidth = image.offsetWidth;
+		console.log(imagesWidth)
 		rollSlider()
 	}
 
@@ -64,8 +67,7 @@ export default (function () {
 
 	//измеряем шерину для передвижения картинки
 	function rollSlider() {
-		sliderLine.style.transform = `translateX(${-sliderCount * (450 + 25)}px)`;
-		console.log(sliderLine.style.transform = `translateX(${-sliderCount * (450 + 25)}px)`);
+		sliderLine.style.transform = `translateX(${-sliderCount * (imagesWidth + 25)}px)`;
 	}
 
 	//активация нужной кнопки под слайдером
@@ -79,49 +81,22 @@ export default (function () {
 		dot.addEventListener('click', () => {
 			sliderCount = index;
 			rollSlider();
-			thisSlider(sliderCount)
+			thisSlider(sliderCount);
+			if(sliderDots[0].classList.contains('active')) {
+				BTN_LEFT.disabled = true;
+				BTN_RIGHT.disabled = false;
+			}
+			if(sliderDots[sliderDots.length-1].classList.contains('active')){
+				BTN_RIGHT.disabled = true;
+				BTN_LEFT.disabled = false;
+			}
+			if(!sliderDots[0].classList.contains('active')){
+				BTN_LEFT.disabled = false;
+			}
+			if(!sliderDots[sliderDots.length-1].classList.contains('active')){
+				BTN_RIGHT.disabled = false;
+			}
 		})
+
 	})
-
-	//my work
-	// const aboutCarouselButtons = document.querySelector('.about__carousel-buttons');
-
-	// aboutCarouselButtons.addEventListener('click', (ev) => {
-	// 	if (ev.target === aboutCarouselButtons.children[1]) {
-	// 		offset += 475;
-
-	// 		sliderLine.style.left = -offset + 'px';
-	// 		aboutCarouselButtons.children[1].classList.remove('about__button');
-	// 		aboutCarouselButtons.children[1].classList.add('active');
-	// 	}
-
-	// })
-
-
-	// BTN_LEFT.disabled = true;
-	// BTN_LEFT.addEventListener('click', moveLeft);
-
-	// function moveLeft() {
-	// 	if (offset === 0) {
-	// 		BTN_LEFT.disabled = true;
-	// 		return;
-	// 	}
-	// 	offset -= 475;
-	// 	BTN_RIGHT.disabled = false;
-	// 	sliderLine.style.left = -offset + 'px';
-	// }
-
-	// BTN_RIGHT.addEventListener('click', moveRight);
-
-	// function moveRight() {
-	// 	console.log('right')
-	// 	if (offset > 1450) {
-	// 		BTN_RIGHT.disabled = true;
-	// 		return;
-	// 	}
-	// 	offset += 475;
-	// 	sliderLine.style.left = -offset + 'px';
-	// 	BTN_LEFT.disabled = false;
-
-	// }
 })();

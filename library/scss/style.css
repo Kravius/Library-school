@@ -1285,11 +1285,6 @@ a:hover .icon {
   overflow: hidden;
   margin: 20px auto 0;
 }
-@media (max-width: 1024px) {
-  .carousel-wrapper {
-    max-width: 950px;
-  }
-}
 @media (max-width: 768px) {
   .carousel-wrapper {
     max-width: 450px;
