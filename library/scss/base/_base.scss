@@ -20,18 +20,25 @@ h1 {
 
 //section
 h2 {
+	position: relative;
 	text-transform: capitalize;
 	color: $color-main;
 	font-family: $font-add;
 	@include font($size: 4rem);
 	text-align: center;
+	padding-bottom: 20px;
+
+	&::after {
+		@include line();
+	}
 }
 
 //section cards
 h3 {
 	color: $color-text;
 	font-family: $font-add;
-	@include font($size: 3rem, $height: 5rem, $spacing: 0.6px);
+	@include font($size: 4rem);
+	// @include font($size: 3rem, $height: 5rem, $spacing: 0.6px);
 }
 
 //rss
@@ -58,16 +65,15 @@ h6 {
 	text-transform: capitalize;
 }
 
-.line {
-	width: 50px;
-	flex-shrink: 0;
-	margin: 20px auto 0;
-	// border: 1px solid $color-main;
-	height: 1px;
-	background: $color-main;
-	border: 0;
-	font-family: Forum;
-}
+// .line {
+// 	width: 50px;
+// 	flex-shrink: 0;
+// 	margin: 20px auto 0;
+// 	height: 1px;
+// 	background: $color-main;
+// 	border: 0;
+// 	font-family: Forum;
+// }
 
 .none {
 	display: none;
@@ -85,15 +91,19 @@ a {
 }
 
 button {
-	margin: 0; /* Убирает внешние отступы */
-	padding: 0; /* Убирает внутренние отступы */
-	border: none; /* Убирает границы */
-	background: none; /* Убирает фон */
+	margin: 0;
+	/* Убирает внешние отступы */
+	padding: 0;
+	/* Убирает внутренние отступы */
+	border: none;
+	/* Убирает границы */
+	background: none;
+	/* Убирает фон */
 	// outline: none; /* Убирает обводку при фокусе (когда кнопка получает фокус)
 	//  */
 	cursor: pointer;
- }
+}
 
- label {
+label {
 	cursor: pointer;
-	}
+}

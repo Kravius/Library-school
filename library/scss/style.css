@@ -363,6 +363,7 @@ h1 {
 }
 
 h2 {
+  position: relative;
   text-transform: capitalize;
   color: #0C0C0E;
   font-family: "Forum", cursive;
@@ -372,16 +373,29 @@ h2 {
   line-height: 4rem;
   letter-spacing: 0.2rem;
   text-align: center;
+  padding-bottom: 20px;
+}
+h2::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 59px;
+  left: 50%;
+  width: 50px;
+  height: 1px;
+  background-color: #0C0C0E;
+  flex-shrink: 0;
+  transform: translateX(-50%);
 }
 
 h3 {
   color: #000000;
   font-family: "Forum", cursive;
-  font-size: 3rem;
+  font-size: 4rem;
   font-style: normal;
   font-weight: 400;
-  line-height: 5rem;
-  letter-spacing: 0.6px;
+  line-height: 4rem;
+  letter-spacing: 0.2rem;
 }
 
 h4 {
@@ -417,16 +431,6 @@ h6 {
   text-transform: capitalize;
 }
 
-.line {
-  width: 50px;
-  flex-shrink: 0;
-  margin: 20px auto 0;
-  height: 1px;
-  background: #0C0C0E;
-  border: 0;
-  font-family: Forum;
-}
-
 .none {
   display: none;
 }
@@ -440,10 +444,14 @@ a:hover {
 }
 
 button {
-  margin: 0; /* Убирает внешние отступы */
-  padding: 0; /* Убирает внутренние отступы */
-  border: none; /* Убирает границы */
-  background: none; /* Убирает фон */
+  margin: 0;
+  /* Убирает внешние отступы */
+  padding: 0;
+  /* Убирает внутренние отступы */
+  border: none;
+  /* Убирает границы */
+  background: none;
+  /* Убирает фон */
   cursor: pointer;
 }
 
