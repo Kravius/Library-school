@@ -20,9 +20,10 @@
 		}
 	}
 
-	&_disabled {
-		color: #BB945F;
-		border: 1px solid $color-element;
-		cursor: none;
-	}
+	//не забыть добавить класс
+	// &_disabled {
+	// 	color: #BB945F;
+	// 	border: 1px solid $color-element;
+	// 	cursor: none;
+	// }
 }
