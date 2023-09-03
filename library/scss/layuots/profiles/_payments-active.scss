@@ -1,0 +1,16 @@
+.form__count-conteiner {
+	display: flex;
+	text-align: center;
+	gap: 35px;
+	justify-content: center;
+}
+.form__count {
+font-size: 1rem;
+line-height: 200%; /* 200% */
+letter-spacing: 0.2px;
+text-transform: capitalize;
+}
+
+.form-active {
+	padding: 20px 20px 16px;
+}

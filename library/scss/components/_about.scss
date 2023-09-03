@@ -47,3 +47,7 @@
 		background-color: $color-element;
 	}
 }
+
+.about__img {
+	width: calc(100% / 3 - 50px / 3);
+}

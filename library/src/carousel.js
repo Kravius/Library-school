@@ -33,7 +33,6 @@ export default (function () {
 
 		sliderImages.forEach(item => item.style.width = sliderWidth / numVisibleImages + 'px');
 		imagesWidth = image.offsetWidth;
-		console.log(imagesWidth)
 		rollSlider()
 	}
 

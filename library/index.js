@@ -1,3 +1,5 @@
+import './src/profiles/page-reloade.js'
+import './src/profiles/profile.js'
 import './src/burger.js'
 import './src/carousel.js'
 import './src/favorites-sliyder.js'
