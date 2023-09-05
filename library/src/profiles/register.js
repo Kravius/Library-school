@@ -1,4 +1,5 @@
 import ActiveProfile from "./active-profile.js";
+import LoginMenu from "./log-in.js";
 
 export default
 	class Register {
@@ -8,10 +9,9 @@ export default
 		this.container = document.createElement('div');
 		this.container.classList.add('conteiner-register');
 		this.container.addEventListener('click', (ev) => {
-			if(ev.target.classList.contains('conteiner-register'))
-			this.container.classList.remove('open');
-			this.body.classList.remove('lock');
-			this.closeAndCleanRegisterMenu();
+			if (ev.target.classList.contains('conteiner-register')) {
+				this.closeAndCleanRegisterMenu();
+			}
 		})
 
 		this.registerBlock = document.createElement('div');
@@ -20,8 +20,6 @@ export default
 		this.closeButton = document.createElement('button');
 		this.closeButton.classList.add('register__button-close');
 		this.closeButton.addEventListener('click', () => {
-			this.container.classList.remove('open');
-			this.body.classList.remove('lock');
 			this.closeAndCleanRegisterMenu()
 		})
 
@@ -55,6 +53,10 @@ export default
 		this.loginButton = document.createElement('button');
 		this.loginButton.classList.add('register__login-btn', 'button_colored');
 		this.loginButton.textContent = 'Login';
+		this.loginButton.addEventListener('click', (event) => {
+			this.openLoginMenuInRegisterMenu(event)
+			this.closeAndCleanRegisterMenu();
+		})
 
 		this.loginBlock.append(this.loginText, this.loginButton);
 		this.registerBlock.append(this.closeButton, this.title, this.inputsContainer, this.signUpButton, this.loginBlock);
@@ -87,9 +89,7 @@ export default
 			this.classList.add('empty');
 			this.setAttribute('placeholder', `fields can't be empty`)
 		} else {
-			this.classList.remove('empty')
-			this.removeAttribute('placeholder');
-			this.classList.add('correct-field');
+			this.changeAtributsClassInInput()
 		}
 	}
 
@@ -99,9 +99,7 @@ export default
 			this.setAttribute('placeholder', `your E-mail is incorect`);
 			this.value = '';
 		} else {
-			this.classList.remove('empty');
-			this.removeAttribute('placeholder');
-			this.classList.add('correct-field');
+			this.changeAtributsClassInInput()
 		};
 	}
 
@@ -111,10 +109,16 @@ export default
 			this.setAttribute('placeholder', `your password to small`);
 			this.value = '';
 		} else {
-			this.classList.remove('empty');
-			this.removeAttribute('placeholder');
-			this.classList.add('correct-field');
+
+			this.changeAtributsClassInInput()
 		};
+	}
+
+	//we use this funck  in inputs check
+	changeAtributsClassInInput() {
+		this.classList.remove('empty');
+		this.removeAttribute('placeholder');
+		this.classList.add('correct-field');
 	}
 
 	//обьеденяем всю регестрацию , для кнопки 'Sign UP' const = signUpButton;
@@ -142,7 +146,7 @@ export default
 			user.books = 0;
 
 			// usersArray.push(user);
-			localStorage.setItem('user', JSON.stringify(user));
+			localStorage.setItem(`${user.mail}`, JSON.stringify(user));
 
 
 			let activeProfile = new ActiveProfile();
@@ -165,12 +169,33 @@ export default
 		return cardNumber.toUpperCase();
 	}
 
+	openLoginMenuInRegisterMenu(event) {
+		//true or false
+		const isHeaderMenu = event.target.id === 'header__reagister-login-menu';
+		console.log(event.target.id)
+		// console.log(isHeaderMenu)
+		//write what selector we click now;
+		const menuSelector = isHeaderMenu ? '.header__wrapper' : '#none-active-profile';
+//create id for change click register-login in header=payments
+			const idMenuSelectorBTN = isHeaderMenu ? 'header__login-reagister-menu' : 'payments__login-reagister-menu'
+		if (!document.querySelector(`${menuSelector} .conteiner-login`)) {
+			let createLoginMenu = new LoginMenu();
+			createLoginMenu.registerButton.id = idMenuSelectorBTN;
+			document.querySelector(menuSelector).append(createLoginMenu.container);
+			document.querySelector(`${menuSelector} .conteiner-login`).classList.add('open');
+		}
 
+		document.querySelector(`${menuSelector} .conteiner-login`).classList.add('open');
+		this.container.classList.toggle('open');
+		// this.closeAndCleanRegisterMenu();
+		this.body.classList.add('lock');
+
+	}
 
 	closeAndCleanRegisterMenu() {
 		let inputs = [...document.querySelectorAll('.register__conteiner-inputs input')]
-		// this.container.classList.remove('open');
-		// this.body.classList.remove('lock');
+		this.container.classList.remove('open');
+		this.body.classList.remove('lock');
 		inputs.forEach(input => input.value = '');
 	}
 }

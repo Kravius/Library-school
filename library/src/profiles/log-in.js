@@ -1,3 +1,5 @@
+import Register from './register.js'
+
 export default class LoginMenu {
 	constructor() {
 		this.body = document.body;
@@ -5,8 +7,8 @@ export default class LoginMenu {
 		this.container = document.createElement('div');
 		this.container.classList.add('conteiner-login');
 		this.container.addEventListener('click', (ev) => {
-			if(ev.target.classList.contains('conteiner-login'))
-			this.closeAndCleanRegisterMenu();
+			if (ev.target.classList.contains('conteiner-login'))
+				this.closeAndCleanLoginMenu();
 		})
 
 		this.loginBlock = document.createElement('div');
@@ -15,7 +17,7 @@ export default class LoginMenu {
 		this.closeButton = document.createElement('button');
 		this.closeButton.classList.add('login__button-close');
 		this.closeButton.addEventListener('click', () => {
-			this.closeAndCleanRegisterMenu()
+			this.closeAndCleanLoginMenu();
 		})
 
 		this.title = document.createElement('p');
@@ -28,14 +30,14 @@ export default class LoginMenu {
 		this.createInputField('E-mail or readers card', 'login__input', 'login__input-mail');
 		this.createInputField('Password', 'login__input', 'login__input-password');
 
-		this.signUpButton = document.createElement('button');
-		this.signUpButton.classList.add('login__button-size', 'button', 'button_colored');
-		this.signUpButton.textContent = 'Log In';
-		this.signUpButton.addEventListener('click', () => {
-			this.createObjecOfUsersToLocalStorage();
-			// this.openPaymentsActiveWrapper();
-			// this.changeProfileIcon();
-		})
+		this.logInButton = document.createElement('button');
+		this.logInButton.classList.add('login__button-size', 'button', 'button_colored');
+		this.logInButton.textContent = 'Log In';
+		// this.logInButton.addEventListener('click', () => {
+		// 	this.createObjecOfUsersToLocalStorage();
+		// 	// this.openPaymentsActiveWrapper();
+		// 	// this.changeProfileIcon();
+		// })
 
 		this.registerBlock = document.createElement('div');
 		this.registerBlock.classList.add('login__login');
@@ -43,12 +45,15 @@ export default class LoginMenu {
 		this.loginText = document.createElement('p');
 		this.loginText.textContent = 'Don’t have an account??';
 
-		this.loginButton = document.createElement('button');
-		this.loginButton.classList.add('register__login-btn', 'button_colored');
-		this.loginButton.textContent = 'Register';
+		this.registerButton = document.createElement('button');
+		this.registerButton.classList.add('register__login-btn', 'button_colored');
+		this.registerButton.textContent = 'Register';
+		this.registerButton.addEventListener('click', (event) => {
+			this.openRegisterMenuInLoginMenu(event)
+		})
 
-		this.registerBlock.append(this.loginText, this.loginButton);
-		this.loginBlock.append(this.closeButton, this.title, this.inputsContainer, this.signUpButton, this.registerBlock);
+		this.registerBlock.append(this.loginText, this.registerButton);
+		this.loginBlock.append(this.closeButton, this.title, this.inputsContainer, this.logInButton, this.registerBlock);
 		this.container.append(this.loginBlock);
 	}
 
@@ -78,9 +83,7 @@ export default class LoginMenu {
 			this.classList.add('empty');
 			this.setAttribute('placeholder', `fields can't be empty`)
 		} else {
-			this.classList.remove('empty')
-			this.removeAttribute('placeholder');
-			this.classList.add('correct-field');
+			this.changeAtributsClassInInput();
 		}
 	}
 
@@ -90,9 +93,7 @@ export default class LoginMenu {
 			this.setAttribute('placeholder', `your E-mail is incorect`);
 			this.value = '';
 		} else {
-			this.classList.remove('empty');
-			this.removeAttribute('placeholder');
-			this.classList.add('correct-field');
+			this.changeAtributsClassInInput();
 		};
 	}
 
@@ -102,13 +103,41 @@ export default class LoginMenu {
 			this.setAttribute('placeholder', `your password to small`);
 			this.value = '';
 		} else {
-			this.classList.remove('empty');
-			this.removeAttribute('placeholder');
-			this.classList.add('correct-field');
+			this.changeAtributsClassInInput();
 		};
 	}
 
-	closeAndCleanRegisterMenu() {
+	//we use this funck  in inputs check
+	changeAtributsClassInInput() {
+		this.classList.remove('empty');
+		this.removeAttribute('placeholder');
+		this.classList.add('correct-field');
+	}
+
+	// open register menu when we click to register btn in login menu
+	openRegisterMenuInLoginMenu(event) {
+		//true or false
+		const isHeaderMenu = event.target.id === 'header__login-reagister-menu';
+		console.log(event.target.id)
+		//write what selector we click now;
+		const menuSelector = isHeaderMenu ? '.header__wrapper' : '#none-active-profile';
+		const idMenuSelectorBTN = isHeaderMenu ? 'header__reagister-login-menu' : 'payments__register-login-menu';
+
+		if (!document.querySelector(`${menuSelector} .conteiner-register`)) {
+			let createRegisterMenu = new Register();
+			createRegisterMenu.loginButton.id = idMenuSelectorBTN;
+			document.querySelector(menuSelector).append(createRegisterMenu.container);
+			document.querySelector(`${menuSelector} .conteiner-register`).classList.add('open');
+		}
+
+		document.querySelector(`${menuSelector} .conteiner-register`).classList.add('open');
+		console.log(123)
+		this.container.classList.toggle('open')
+		// this.closeAndCleanLoginMenu();
+		// this.body.classList.add('lock');
+	}
+
+	closeAndCleanLoginMenu() {
 		let inputs = [...document.querySelectorAll('.login__conteiner-inputs input')]
 		this.container.classList.remove('open');
 		this.body.classList.remove('lock');

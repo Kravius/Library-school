@@ -23,9 +23,10 @@ export default (function () {
 	logInButton.addEventListener('click',()=>{
 		if (!document.querySelector('.header__wrapper .conteiner-login')) {
 		let menuLogIn = new LoginMenu();
+		menuLogIn.registerButton.id = 'header__login-reagister-menu';
 		document.querySelector('.header__wrapper').append(menuLogIn.container);
 		}
-
+//we use this all time, we dont want cope two times the same code
 		document.querySelector('.header__wrapper .conteiner-login').classList.toggle('open');
 		conteinerProfile.classList.remove('open');
 	})
@@ -36,11 +37,12 @@ export default (function () {
 	registerButton.classList.add('menu_third-line');
 
 	//putt listener to make new register window
-	registerButton.addEventListener('click', (ev) => {
+	registerButton.addEventListener('click', () => {
 			if (!document.querySelector('.header__wrapper .conteiner-register')) {
 				//we use class register from difirent js to create conteiner and add to wrapper payments
-				let register = new Register();
-				document.querySelector('.header__wrapper').append(register.container);
+				let createRegisterMenu = new Register();
+				createRegisterMenu.loginButton.id = 'header__reagister-login-menu';
+				document.querySelector('.header__wrapper').append(createRegisterMenu.container);
 			}
 
 			document.querySelector('.header__wrapper .conteiner-register').classList.toggle('open');
@@ -136,8 +138,8 @@ export default (function () {
 	// profileRegisterBTN.addEventListener('click', (ev) => {
 	// 	if (!document.querySelector('.header__wrapper .conteiner-register')) {
 	// 		//we use class register from difirent js to create conteiner and add to wrapper payments
-	// 		let register = new Register();
-	// 		document.querySelector('.header__wrapper').append(register.container);
+	// 		let createRegisterMenu = new Register();
+	// 		document.querySelector('.header__wrapper').append(createRegisterMenu.container);
 	// 	}
 
 	// 	document.querySelector('.header__wrapper .conteiner-register').classList.toggle('open');
@@ -149,22 +151,23 @@ export default (function () {
 	paymentsRegisterBTN.addEventListener('click', () => {
 		if (!document.querySelector('#none-active-profile .conteiner-register')) {
 			//we use class register from difirent js to create conteiner and add to wrapper payments
-			let register = new Register();
-			paymentsWrapper.append(register.container);
+			let createRegisterMenu = new Register();
+			createRegisterMenu.loginButton.id = 'payments__register-login-menu';
+			paymentsWrapper.append(createRegisterMenu.container);
 		}
 
 		document.querySelector('#none-active-profile .conteiner-register').classList.toggle('open');
 	})
 
-	console.log('Before adding event listener');
 	paymentsLoginrBTN.addEventListener('click', () => {
 		if (!document.querySelector('#none-active-profile .conteiner-login')) {
 			//we use class login from difirent js to create conteiner and add to wrapper payments
 			let menuLogIn = new LoginMenu();
 			paymentsWrapper.append(menuLogIn.container);
+			//add id, we need some how to finde what the btn we click in header or payments;
+			menuLogIn.registerButton.id = 'payments__login-reagister-menu';
 		}
 
 		document.querySelector('#none-active-profile .conteiner-login').classList.toggle('open');
 	})
-	console.log('After adding event listener');
 })()
