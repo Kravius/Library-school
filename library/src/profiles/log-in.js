@@ -68,10 +68,14 @@ export default class LoginMenu {
 		input.classList.add(inputClass);
 		input.addEventListener('blur', this.notEmptyInput);
 		if (labelText === 'E-mail or readers card') {
-			input.addEventListener('blur', this.checkMailToCorect)
+			input.addEventListener('blur', () => {
+				this.checkMailToCorect();
+			})
 		}
 		if (labelText === 'Password') {
-			input.addEventListener('blur', this.checkPasswordToCorect)
+			input.addEventListener('blur', () => {
+				this.checkPasswordToCorect();
+			})
 		}
 
 		this.inputsContainer.append(label, input);
@@ -83,7 +87,9 @@ export default class LoginMenu {
 			this.classList.add('empty');
 			this.setAttribute('placeholder', `fields can't be empty`)
 		} else {
-			this.changeAtributsClassInInput();
+			this.classList.remove('empty');
+			this.removeAttribute('placeholder');
+			this.classList.add('correct-field');
 		}
 	}
 
