@@ -1,0 +1,12 @@
+.tooltip {
+	display: none;
+	position: absolute;
+	color: white;
+	padding: 5px;
+	border-radius: 3px;
+	z-index: 1000;
+ }
+
+ .open {
+	display: inline-block
+ }

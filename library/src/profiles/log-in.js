@@ -118,7 +118,6 @@ export default class LoginMenu {
 	openRegisterMenuInLoginMenu(event) {
 		//true or false
 		const isHeaderMenu = event.target.id === 'header__login-reagister-menu';
-		console.log(event.target.id)
 		//write what selector we click now;
 		const menuSelector = isHeaderMenu ? '.header__wrapper' : '#none-active-profile';
 		const idMenuSelectorBTN = isHeaderMenu ? 'header__reagister-login-menu' : 'payments__register-login-menu';
@@ -131,10 +130,7 @@ export default class LoginMenu {
 		}
 
 		document.querySelector(`${menuSelector} .conteiner-register`).classList.add('open');
-		console.log(123)
 		this.container.classList.toggle('open')
-		// this.closeAndCleanLoginMenu();
-		// this.body.classList.add('lock');
 	}
 
 	closeAndCleanLoginMenu() {

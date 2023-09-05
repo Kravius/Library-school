@@ -2,6 +2,7 @@ import ActiveProfile from './active-profile.js';
 
 export default (function () {
 	const activeUserFromStorage = JSON.parse(localStorage.getItem('user'));
+	console.log(activeUserFromStorage)
 	if (!activeUserFromStorage) {
 		return;
 	}

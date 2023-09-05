@@ -73,11 +73,17 @@ export default
 		const input = document.createElement('input');
 		input.classList.add(inputClass);
 		input.addEventListener('blur', this.notEmptyInput);
+
 		if (labelText === 'E-mail') {
-			input.addEventListener('blur', this.checkMailToCorect)
+			input.addEventListener('blur', () => {
+				this.checkMailToCorect();
+			})
 		}
+
 		if (labelText === 'Password') {
-			input.addEventListener('blur', this.checkPasswordToCorect)
+			input.addEventListener('blur', () => {
+				this.checkPasswordToCorect();
+			})
 		}
 
 		this.inputsContainer.append(label, input);
@@ -89,7 +95,9 @@ export default
 			this.classList.add('empty');
 			this.setAttribute('placeholder', `fields can't be empty`)
 		} else {
-			this.changeAtributsClassInInput()
+			this.classList.remove('empty');
+			this.removeAttribute('placeholder');
+			this.classList.add('correct-field');
 		}
 	}
 
@@ -146,7 +154,7 @@ export default
 			user.books = 0;
 
 			// usersArray.push(user);
-			localStorage.setItem(`${user.mail}`, JSON.stringify(user));
+			localStorage.setItem('user', JSON.stringify(user));
 
 
 			let activeProfile = new ActiveProfile();
@@ -172,12 +180,11 @@ export default
 	openLoginMenuInRegisterMenu(event) {
 		//true or false
 		const isHeaderMenu = event.target.id === 'header__reagister-login-menu';
-		console.log(event.target.id)
-		// console.log(isHeaderMenu)
+
 		//write what selector we click now;
 		const menuSelector = isHeaderMenu ? '.header__wrapper' : '#none-active-profile';
-//create id for change click register-login in header=payments
-			const idMenuSelectorBTN = isHeaderMenu ? 'header__login-reagister-menu' : 'payments__login-reagister-menu'
+		//create id for change click register-login in header=payments
+		const idMenuSelectorBTN = isHeaderMenu ? 'header__login-reagister-menu' : 'payments__login-reagister-menu'
 		if (!document.querySelector(`${menuSelector} .conteiner-login`)) {
 			let createLoginMenu = new LoginMenu();
 			createLoginMenu.registerButton.id = idMenuSelectorBTN;
