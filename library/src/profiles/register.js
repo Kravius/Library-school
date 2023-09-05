@@ -155,9 +155,6 @@ export default
 		}
 	}
 
-	//меняем имя иконки
-
-
 	//create 9 number of 16 system numbers
 	generateRandomCardNumber() {
 		let cardNumber = '';

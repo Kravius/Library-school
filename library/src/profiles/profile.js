@@ -1,5 +1,6 @@
 import Register from './register.js';
 import ActiveProfile from './active-profile.js';
+import LoginMenu from './log-in.js';
 
 export default (function () {
 	let profileConteiner = document.createElement('div');
@@ -15,13 +16,37 @@ export default (function () {
 
 	let logInButton = document.createElement('button');
 	logInButton.classList.add('menu_second-line');
-	logInButton.id= 'profile__log-in'
+	logInButton.id= 'profile__log-in';
 	logInButton.textContent = 'Log In';
+
+	//putt listener to make new login window
+	logInButton.addEventListener('click',()=>{
+		if (!document.querySelector('.header__wrapper .conteiner-login')) {
+		let menuLogIn = new LoginMenu();
+		document.querySelector('.header__wrapper').append(menuLogIn.container);
+		}
+
+		document.querySelector('.header__wrapper .conteiner-login').classList.toggle('open');
+		conteinerProfile.classList.remove('open');
+	})
 
 	let registerButton = document.createElement('button');
 	registerButton.textContent = 'Register';
 	registerButton.id = 'profile-register'
 	registerButton.classList.add('menu_third-line');
+
+	//putt listener to make new register window
+	registerButton.addEventListener('click', (ev) => {
+			if (!document.querySelector('.header__wrapper .conteiner-register')) {
+				//we use class register from difirent js to create conteiner and add to wrapper payments
+				let register = new Register();
+				document.querySelector('.header__wrapper').append(register.container);
+			}
+
+			document.querySelector('.header__wrapper .conteiner-register').classList.toggle('open');
+			conteinerProfile.classList.remove('open');
+			// conteinerRegister.classList.toggle('open');
+		})
 
 	profile.append(profilText, logInButton, registerButton);
 	// document.querySelector('.menu').append(profile);
@@ -104,20 +129,21 @@ export default (function () {
 
 	const profileRegisterBTN = document.querySelector('#profile-register');
 	const paymentsRegisterBTN = document.querySelector('#payments-register');
+	const paymentsLoginrBTN = document.querySelector('#payments-login');
 	const conteinerRegister = document.querySelector('.conteiner-register');
 	const paymentsWrapper = document.querySelector('#none-active-profile');
 
-	profileRegisterBTN.addEventListener('click', (ev) => {
-		if (!document.querySelector('.header__wrapper .conteiner-register')) {
-			//we use class register from difirent js to create conteiner and add to wrapper payments
-			let register = new Register();
-			document.querySelector('.header__wrapper').append(register.container);
-		}
+	// profileRegisterBTN.addEventListener('click', (ev) => {
+	// 	if (!document.querySelector('.header__wrapper .conteiner-register')) {
+	// 		//we use class register from difirent js to create conteiner and add to wrapper payments
+	// 		let register = new Register();
+	// 		document.querySelector('.header__wrapper').append(register.container);
+	// 	}
 
-		document.querySelector('.header__wrapper .conteiner-register').classList.toggle('open');
-		conteinerProfile.classList.remove('open');
-		// conteinerRegister.classList.toggle('open');
-	})
+	// 	document.querySelector('.header__wrapper .conteiner-register').classList.toggle('open');
+	// 	conteinerProfile.classList.remove('open');
+	// 	// conteinerRegister.classList.toggle('open');
+	// })
 
 
 	paymentsRegisterBTN.addEventListener('click', () => {
@@ -130,4 +156,15 @@ export default (function () {
 		document.querySelector('#none-active-profile .conteiner-register').classList.toggle('open');
 	})
 
+	console.log('Before adding event listener');
+	paymentsLoginrBTN.addEventListener('click', () => {
+		if (!document.querySelector('#none-active-profile .conteiner-login')) {
+			//we use class login from difirent js to create conteiner and add to wrapper payments
+			let menuLogIn = new LoginMenu();
+			paymentsWrapper.append(menuLogIn.container);
+		}
+
+		document.querySelector('#none-active-profile .conteiner-login').classList.toggle('open');
+	})
+	console.log('After adding event listener');
 })()
