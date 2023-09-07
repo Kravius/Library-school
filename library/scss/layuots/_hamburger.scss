@@ -84,11 +84,9 @@
 
 
 body {
-	@include media-laptop {
 		&.lock {
 			overflow: hidden;
 		}
-	}
 }
 
 //plus animations

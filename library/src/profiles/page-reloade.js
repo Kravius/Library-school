@@ -1,14 +1,19 @@
 import ActiveProfile from './active-profile.js';
 
 export default (function () {
-	const activeUserFromStorage = JSON.parse(localStorage.getItem('user'));
+	const activeUserFromStorage = JSON.parse(localStorage.getItem('users'));
+	const indexActiveUserFromStorage = JSON.parse(localStorage.getItem('activUserIndex'));
 	console.log(activeUserFromStorage)
-	if (!activeUserFromStorage) {
+	if (indexActiveUserFromStorage != 0 && !indexActiveUserFromStorage) {
 		return;
 	}
-	console.log(123)
-	let activeProfile = new ActiveProfile(activeUserFromStorage);
+	let activeuser = activeUserFromStorage[indexActiveUserFromStorage];
+	//передаем юзера в активный профиль
+	let activeProfile = new ActiveProfile(activeuser);
 	activeProfile.openPaymentsActiveWrapper();
-	activeProfile.changeProfileIcon(activeUserFromStorage.firstName, activeUserFromStorage.lastName)
+	console.log(activeuser.firstName)
+	activeProfile.changeProfileIcon(activeuser.firstName, activeuser.lastName);
+	activeProfile.openPaymentsActiveWrapper();
+	// activeProfile.changeCardNumberProfile();
 	document.querySelector('.header__wrapper').append(activeProfile.container);
 })()

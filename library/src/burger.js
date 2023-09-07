@@ -4,14 +4,16 @@ const burger =  document.querySelector('.hamburger');
 const navigation = document.querySelector('.header__navigation');
 const body = document.querySelector('body');
 const conteinerProfile = document.querySelector('#menu-profile-none-active');
+const conteinerProfileActive = document.querySelector('#menu-profile-active');
 
 burger.addEventListener('click', function() {
 	this.classList.toggle('open');
 	navigation.classList.toggle('open');
 	body.classList.toggle('lock');
 
-	if(conteinerProfile.classList.contains('open')){
+	if(conteinerProfile.classList.contains('open') || conteinerProfileActive.classList.contains('open')){
 		conteinerProfile.classList.remove('open');
+		conteinerProfileActive.classList.remove('open');
 		body.classList.toggle('lock');
 	}
 })

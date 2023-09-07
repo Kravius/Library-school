@@ -41,4 +41,8 @@
 	height: 28px;
 }
 
-.menu__img {}
+.menu__img {
+	&open {
+		display: none;
+	}
+}

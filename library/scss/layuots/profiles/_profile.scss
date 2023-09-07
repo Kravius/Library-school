@@ -45,15 +45,19 @@
 	&::after {
 		@include line($width: 40px, $color: $color-element, $top: 30%);
 	}
+
+	&.active-logo {
+		font-size: 1rem;
+	}
 }
 
-	.menu_second-line {
-		margin-top: 20px;
-		font-size: 1.5rem;
-		line-height: 133.333%;
-	}
+.menu_second-line {
+	margin-top: 20px;
+	font-size: 1.5rem;
+	line-height: 133.333%;
+}
 
-	.menu_third-line {
-		margin-top: 10px;
-		font-size: 1.5rem;
-	}
+.menu_third-line {
+	margin-top: 10px;
+	font-size: 1.5rem;
+}

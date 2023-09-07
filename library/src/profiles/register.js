@@ -71,19 +71,15 @@ export default
 		label.textContent = labelText;
 
 		const input = document.createElement('input');
-		input.classList.add(inputClass);
+		input.classList.add(...inputClass);
 		input.addEventListener('blur', this.notEmptyInput);
 
 		if (labelText === 'E-mail') {
-			input.addEventListener('blur', () => {
-				this.checkMailToCorect();
-			})
+			input.addEventListener('blur',this.checkMailToCorect)
 		}
 
 		if (labelText === 'Password') {
-			input.addEventListener('blur', () => {
-				this.checkPasswordToCorect();
-			})
+			input.addEventListener('blur', this.checkPasswordToCorect)
 		}
 
 		this.inputsContainer.append(label, input);
@@ -107,7 +103,10 @@ export default
 			this.setAttribute('placeholder', `your E-mail is incorect`);
 			this.value = '';
 		} else {
-			this.changeAtributsClassInInput()
+			this.classList.remove('empty');
+			this.removeAttribute('placeholder');
+			this.classList.add('correct-field');
+			// this.changeAtributsClassInInput()
 		};
 	}
 
@@ -117,23 +116,27 @@ export default
 			this.setAttribute('placeholder', `your password to small`);
 			this.value = '';
 		} else {
-
-			this.changeAtributsClassInInput()
+			this.classList.remove('empty');
+			this.removeAttribute('placeholder');
+			this.classList.add('correct-field');
+			// this.changeAtributsClassInInput()
 		};
 	}
 
 	//we use this funck  in inputs check
-	changeAtributsClassInInput() {
-		this.classList.remove('empty');
-		this.removeAttribute('placeholder');
-		this.classList.add('correct-field');
-	}
+	// changeAtributsClassInInput() {
+	// 	this.classList.remove('empty');
+	// 	this.removeAttribute('placeholder');
+	// 	this.classList.add('correct-field');
+	// }
 
 	//обьеденяем всю регестрацию , для кнопки 'Sign UP' const = signUpButton;
 
 	//проверяем массив инпутов регистра и заносим в локалсторыдж данные
 	createObjecOfUsersToLocalStorage() {
 		let user = {};
+		let usersArray = JSON.parse(localStorage.getItem('users') || '[]');
+		console.log(usersArray)
 		let inputs = [...document.querySelectorAll('.register__conteiner-inputs input')];
 		const fieldNames = ['firstName', 'lastName', 'mail', 'password'];
 
@@ -153,8 +156,10 @@ export default
 			user.bonuses = 0;
 			user.books = 0;
 
-			// usersArray.push(user);
-			localStorage.setItem('user', JSON.stringify(user));
+			usersArray.push(user);
+			localStorage.setItem('users', JSON.stringify(usersArray));
+			//добавили индекс для поиска и перезаписи юзера  в локал используя последний добавленный елемент в массив
+			this.makeLocalStorageIndexForUserObject(usersArray.length-1);
 
 
 			let activeProfile = new ActiveProfile();
@@ -175,6 +180,10 @@ export default
 			cardNumber += createRandomNumber.toString(16);
 		}
 		return cardNumber.toUpperCase();
+	}
+
+	makeLocalStorageIndexForUserObject(arrayLength){
+		JSON.stringify(localStorage.setItem('activUserIndex', arrayLength));
 	}
 
 	openLoginMenuInRegisterMenu(event) {

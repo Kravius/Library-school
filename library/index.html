@@ -38,6 +38,49 @@
 		</div>
 	</header>
 	<main>
+		<div class="my-profile">
+			<div class="my-profile__two-columns">
+				<div class="my-profile__left">
+					<p class="initials">s d</p>
+					<p class="my-profile__name">sdfsdf ssdsddfsfsdfssdfsfdfsfs111</p>
+				</div>
+				<div class="my-profile__right profile-info">
+					<p class="profile-info__title">My profile</p>
+					<img src="./img/header/close_btn_register-login.png" alt="close button" class="profile-info__close-btn">
+					<div class="my-profile__count-conteiner">
+						<div class="my-profile__count">
+							<p class="form__count__text">Visits</p>
+							<img src="./img/paymets/union.png" alt="person">
+							<p id="count-visits-profile" class="my-profile__count-number">1</p>
+						</div>
+						<div class="my-profile__count">
+							<p class="form__count__text">Bonuses</p>
+							<img src="./img/paymets/star 1.png" alt="star">
+							<p id="count-visits-bonuses" class="my-profile__count-number">0</p>
+						</div>
+						<div class="my-profile__count">
+							<p class="form__count__text">Books</p>
+							<img src="./img/paymets/book.png" alt="book">
+							<p id="count-visits-book" class="my-profile__count-number">0</p>
+						</div>
+					</div>
+					<p class="profile-info__rented">Rented books</p>
+					<ul class="profile-info__books">
+						<li>13</li>
+						<li>13</li>
+						<li>13</li>
+						<li>13</li>
+						<li>13</li>
+						<!-- write  function to take book from user -->
+					</ul>
+					<div class="card">
+						<p class="card__text">Card number</p>
+						<span class="card__number">F00234030</span>
+						<img src="./img/my-profile/icon-copy.png" alt="cope bufer" class="card__bufer">
+					</div>
+				</div>
+			</div>
+		</div>
 		<section id="section-welcom" class="welcom">
 			<div class="wrapper welcom__wrapper">
 				<div class="welcom__text-back">
@@ -462,19 +505,19 @@
 						<form action="#" method="post" class="form form-active">
 							<div class="form__backgraund">
 								<p class="form__title">Brooklyn Public Library</p>
-								<input type="text" id="form-name-active" name="name" placeholder="Reader's name" pattern="[a-zA-Z]+"
-									required>
+								<input type="text" id="form-name-active" name="name" placeholder="Reader's name"
+									pattern="[a-zA-Z]+" required>
 								<input type="text" id="form-card-active" name="number" placeholder="Card number"
 									pattern="^([0-9]+\-)[0-9]+$" required>
 							</div>
-							<div class="form__count-conteiner">
+							<div class="count-conteiner">
 								<div class="form__count">
 									<p>Visits</p>
 									<img src="./img/paymets/union.png" alt="person">
 									<p id="count-visits-profile">1</p>
 								</div>
 								<div class="form__count">
-									<p>bonuses</p>
+									<p>Bonuses</p>
 									<img src="./img/paymets/star 1.png" alt="star">
 									<p id="count-visits-bonuses">0</p>
 								</div>
@@ -569,6 +612,7 @@
 			</div>
 		</div>
 	</footer>
+
 	<script type="module" src="./index.js"></script>
 </body>
 

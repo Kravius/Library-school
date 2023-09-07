@@ -1,7 +1,10 @@
+import ActiveProfile from './active-profile.js';
 import Register from './register.js'
 
-export default class LoginMenu {
+
+export default class LoginMenu extends ActiveProfile {
 	constructor() {
+		super();
 		this.body = document.body;
 
 		this.container = document.createElement('div');
@@ -33,11 +36,24 @@ export default class LoginMenu {
 		this.logInButton = document.createElement('button');
 		this.logInButton.classList.add('login__button-size', 'button', 'button_colored');
 		this.logInButton.textContent = 'Log In';
-		// this.logInButton.addEventListener('click', () => {
-		// 	this.createObjecOfUsersToLocalStorage();
-		// 	// this.openPaymentsActiveWrapper();
-		// 	// this.changeProfileIcon();
-		// })
+		this.logInButton.addEventListener('click', () => {
+			const users = JSON.parse(localStorage.getItem('users'));
+			const login = document.querySelector('.login__input-mail');
+			const password = document.querySelector('.login__input-password');
+
+
+			if (login.value && password.value) {
+				users.forEach((user,index) => {
+					if (user.mail == login.value || user.cardNumber == login.value && user.password == password.value) {
+						JSON.stringify(localStorage.setItem('activUserIndex', index))
+						this.openPaymentsActiveWrapper();
+						super.changeProfileIcon(user.firstName, user.lastName);
+						super.addCountVisits();
+						this.closeAndCleanLoginMenu();
+					}
+				})
+			}
+		})
 
 		this.registerBlock = document.createElement('div');
 		this.registerBlock.classList.add('login__login');
@@ -65,16 +81,17 @@ export default class LoginMenu {
 		label.textContent = labelText;
 
 		const input = document.createElement('input');
-		input.classList.add(inputClass);
+		input.classList.add(...inputClass);
+console.log(input)
 		input.addEventListener('blur', this.notEmptyInput);
 		if (labelText === 'E-mail or readers card') {
 			input.addEventListener('blur', () => {
-				this.checkMailToCorect();
+				// this.checkMailToCorect();
 			})
 		}
 		if (labelText === 'Password') {
 			input.addEventListener('blur', () => {
-				this.checkPasswordToCorect();
+				// this.checkPasswordToCorect();
 			})
 		}
 
@@ -137,6 +154,12 @@ export default class LoginMenu {
 
 		document.querySelector(`${menuSelector} .conteiner-register`).classList.add('open');
 		this.container.classList.toggle('open')
+	}
+
+	openPaymentsActiveWrapper() {
+		document.querySelector('#none-active-profile').classList.add('none')
+		document.querySelector('#active-profile-card').classList.remove('none')
+		document.querySelector('.menu').classList.add('active-profile-btn')
 	}
 
 	closeAndCleanLoginMenu() {
