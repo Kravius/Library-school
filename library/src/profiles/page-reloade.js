@@ -3,7 +3,7 @@ import ActiveProfile from './active-profile.js';
 export default (function () {
 	const activeUserFromStorage = JSON.parse(localStorage.getItem('users'));
 	const indexActiveUserFromStorage = JSON.parse(localStorage.getItem('activUserIndex'));
-	console.log(activeUserFromStorage)
+	console.log(indexActiveUserFromStorage)
 	if (indexActiveUserFromStorage != 0 && !indexActiveUserFromStorage) {
 		return;
 	}

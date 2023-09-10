@@ -22,7 +22,7 @@ export default (function () {
 	//putt listener to make new login window
 	logInButton.addEventListener('click',()=>{
 		if (!document.querySelector('.header__wrapper .conteiner-login')) {
-		let menuLogIn = new LoginMenu();
+		let menuLogIn = new LoginMenu('');
 		menuLogIn.registerButton.id = 'header__login-reagister-menu';
 		document.querySelector('.header__wrapper').append(menuLogIn.container);
 		}
@@ -162,7 +162,7 @@ export default (function () {
 	paymentsLoginrBTN.addEventListener('click', () => {
 		if (!document.querySelector('#none-active-profile .conteiner-login')) {
 			//we use class login from difirent js to create conteiner and add to wrapper payments
-			let menuLogIn = new LoginMenu();
+			let menuLogIn = new LoginMenu('');
 			paymentsWrapper.append(menuLogIn.container);
 			//add id, we need some how to finde what the btn we click in header or payments;
 			menuLogIn.registerButton.id = 'payments__login-reagister-menu';

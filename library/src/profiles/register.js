@@ -89,6 +89,7 @@ export default
 		let inputValue = this.value;
 		if (inputValue.trim() === '') {
 			this.classList.add('empty');
+			this.classList.remove('correct-field');
 			this.setAttribute('placeholder', `fields can't be empty`)
 		} else {
 			this.classList.remove('empty');
@@ -100,6 +101,7 @@ export default
 	checkMailToCorect() {
 		if (!/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/.test(this.value.trim())) {
 			this.classList.add('empty');
+			this.classList.remove('correct-field');
 			this.setAttribute('placeholder', `your E-mail is incorect`);
 			this.value = '';
 		} else {
@@ -111,8 +113,9 @@ export default
 	}
 
 	checkPasswordToCorect() {
-		if (this.value.length <= 8) {
+		if (this.value.length <= 7) {
 			this.classList.add('empty');
+			this.classList.remove('correct-field');
 			this.setAttribute('placeholder', `your password to small`);
 			this.value = '';
 		} else {
@@ -136,40 +139,41 @@ export default
 	createObjecOfUsersToLocalStorage() {
 		let user = {};
 		let usersArray = JSON.parse(localStorage.getItem('users') || '[]');
-		console.log(usersArray)
+
 		let inputs = [...document.querySelectorAll('.register__conteiner-inputs input')];
 		const fieldNames = ['firstName', 'lastName', 'mail', 'password'];
 
 		if (inputs.every(input => input.classList.contains('correct-field'))) {
+console.log('123')
 			fieldNames.forEach((fieldName, index) => {
 				user[fieldName] = inputs[index].value;
 			})
+			if (Object.keys(user).length > 0) {
+
+				//we use function to create number and put to  the object "user" with new value "cardNumber"
+				//and other things that we keep in storage
+				let cardNum = this.generateRandomCardNumber();
+				user.cardNumber = cardNum;
+				user.visits = 1;
+				user.bonuses = 0;
+				user.books = 0;
+
+				usersArray.push(user);
+				localStorage.setItem('users', JSON.stringify(usersArray));
+				//добавили индекс для поиска и перезаписи юзера  в локал используя последний добавленный елемент в массив
+				this.makeLocalStorageIndexForUserObject(usersArray.length-1);
+
+
+				let activeProfile = new ActiveProfile('');
+				document.querySelector('.header__wrapper').append(activeProfile.container);
+
+				//вызываем внутри регистрации при ее окончании для смены иконки
+				activeProfile.changeProfileIcon(user.firstName, user.lastName);
+				activeProfile.openPaymentsActiveWrapper();
+				this.closeAndCleanRegisterMenu();
+			}
 		}
 
-		if (Object.keys(user).length > 0) {
-
-			//we use function to create number and put to  the object "user" with new value "cardNumber"
-			//and other things that we keep in storage
-			let cardNum = this.generateRandomCardNumber();
-			user.cardNumber = cardNum;
-			user.visits = 1;
-			user.bonuses = 0;
-			user.books = 0;
-
-			usersArray.push(user);
-			localStorage.setItem('users', JSON.stringify(usersArray));
-			//добавили индекс для поиска и перезаписи юзера  в локал используя последний добавленный елемент в массив
-			this.makeLocalStorageIndexForUserObject(usersArray.length-1);
-
-
-			let activeProfile = new ActiveProfile();
-			document.querySelector('.header__wrapper').append(activeProfile.container);
-
-			//вызываем внутри регистрации при ее окончании для смены иконки
-			activeProfile.changeProfileIcon(user.firstName, user.lastName);
-			activeProfile.openPaymentsActiveWrapper();
-			this.closeAndCleanRegisterMenu();
-		}
 	}
 
 	//create 9 number of 16 system numbers
@@ -195,7 +199,7 @@ export default
 		//create id for change click register-login in header=payments
 		const idMenuSelectorBTN = isHeaderMenu ? 'header__login-reagister-menu' : 'payments__login-reagister-menu'
 		if (!document.querySelector(`${menuSelector} .conteiner-login`)) {
-			let createLoginMenu = new LoginMenu();
+			let createLoginMenu = new LoginMenu('');
 			createLoginMenu.registerButton.id = idMenuSelectorBTN;
 			document.querySelector(menuSelector).append(createLoginMenu.container);
 			document.querySelector(`${menuSelector} .conteiner-login`).classList.add('open');

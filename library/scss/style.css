@@ -858,6 +858,7 @@ label {
 .payments {
   padding-top: 20px;
   padding-bottom: 41px;
+  position: relative;
 }
 
 .payments-wrapper {
@@ -1706,7 +1707,8 @@ body.lock {
   display: inline-flex;
 }
 
-.my-profile {
+.my-profile,
+.my-profile-payments {
   justify-content: center;
   position: absolute;
   display: none;
@@ -1719,7 +1721,8 @@ body.lock {
   z-index: 4;
   transition: all 0.3s ease;
 }
-.my-profile.open {
+.my-profile.open,
+.my-profile-payments.open {
   top: 0;
   display: flex;
 }

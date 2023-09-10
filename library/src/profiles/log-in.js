@@ -3,8 +3,8 @@ import Register from './register.js'
 
 
 export default class LoginMenu extends ActiveProfile {
-	constructor() {
-		super();
+	constructor(ActiveProfile) {
+		super(ActiveProfile);
 		this.body = document.body;
 
 		this.container = document.createElement('div');

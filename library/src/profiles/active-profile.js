@@ -1,3 +1,5 @@
+import MyProfile from "./my-profile.js";
+
 export default class ActiveProfile {
 	constructor(activeUser) {
 		this.activeUser = activeUser;
@@ -27,15 +29,19 @@ export default class ActiveProfile {
 		this.profilText = document.createElement('p');
 		this.profilText.classList.add('profile__logo', 'active-logo');
 		this.profilText.id = 'active-profile'
-		this.profilText.textContent = (this.activeUser.cardNumber || undefined);
+		this.profilText.textContent = this.activeUser.cardNumber || '';
 
 		this.myProfileButton = document.createElement('button');
 		this.myProfileButton.classList.add('menu_second-line');
 		this.myProfileButton.id = 'menu-my-profile';
 		this.myProfileButton.textContent = 'My-profile';
-		this.myProfileButton.addEventListener('click', ()=>{
+		this.myProfileButton.addEventListener('click', () => {
 			document.querySelector('.my-profile').classList.add('open');
 			this.container.classList.remove('open');
+			let myProfile = new MyProfile();
+			myProfile.changeInitialsAndName(activeUser.firstName,activeUser.lastName);
+			myProfile.changeCountProfile(activeUser.visits,activeUser.books);
+			myProfile.changeCardNumber(activeUser.cardNumber);
 		})
 
 		this.logOutButton = document.createElement('button');
@@ -47,37 +53,19 @@ export default class ActiveProfile {
 
 		this.profile.append(this.profilText, this.myProfileButton, this.logOutButton);
 		this.container.append(this.profile);
+
+		this.profilePayments = document.querySelector('#payments-profile-btn');
+		this.profilePayments.addEventListener('click', () => {
+			document.querySelector('.my-profile').classList.toggle('open');
+			this.container.classList.remove('open');
+			let myProfile = new MyProfile();
+			myProfile.changeInitialsAndName(activeUser.firstName,activeUser.lastName);
+			myProfile.changeCountProfile(activeUser.visits,activeUser.books);
+			myProfile.changeCardNumber(activeUser.cardNumber);
+			document.querySelector('.my-profile').scrollIntoView({behavior: 'smooth'})
+			document.body.classList.add('lock');
+		})
 	}
-
-	// addEventListeners() {
-	// 	 const menuBTN = document.querySelector('.menu');
-	// 	 const navigation = document.querySelector('.header__navigation');
-	// 	 const body = document.querySelector('body');
-	// 	 const burger = document.querySelector('.hamburger');
-	// 	 const conteinerProfile = this.container;
-
-	// 	 menuBTN.addEventListener('click', (ev) => {
-	// 		  if (ev.target === menuBTN) {
-	// 				conteinerProfile.classList.toggle('open');
-
-	// 				// закрываем навигацию меню
-	// 				burger.classList.remove('active');
-	// 				navigation.classList.remove('open');
-	// 				body.classList.toggle('lock');
-	// 		  }
-	// 	 });
-
-	// 	 conteinerProfile.addEventListener('click', (ev) => {
-	// 		  if (ev.target === conteinerProfile) {
-	// 				conteinerProfile.classList.remove('open');
-	// 				body.classList.remove('lock');
-	// 		  }
-	// 	 });
-	// }
-
-	// appendTo(parentElement) {
-	// 	 parentElement.append(this.container);
-	// }
 
 	// //we write and take element what we need from localStorage user who active now;
 	// takeSomeConstatFromActiveUser(constant){
@@ -89,7 +77,7 @@ export default class ActiveProfile {
 
 
 	addCountVisits() {
-		this.activeUser.visits++;
+		this.activeUser.visits= parseInt(this.activeUser.visits) + 1;
 	}
 
 	changeProfileIcon(firstName, lastName) {
@@ -102,27 +90,27 @@ export default class ActiveProfile {
 		// menuBTN.classList.add('tooltip');
 		// let spanTooltip = document.createElement('div');
 		// spanTooltip.classList.add('tooltip');
-		toolTipDiv.textContent = `${firstName} ${lastName}`;
-		// menuBTN.appendChild(spanTooltip);
+			toolTipDiv.textContent = `${firstName} ${lastName}`;
+			// menuBTN.appendChild(spanTooltip);
 
-		menuBTN.addEventListener('mouseover', () => {
-			const rect = menuBTN.getBoundingClientRect();
-			// const left = rect.left + window.scrollX + menuBTN.offsetWidth + 30; // Отступ справа от кнопки
-			const top = rect.top + window.scrollY - 20; // Отступ сверху от кнопки
-			// toolTipDiv.style.left = left + 'px';
-			toolTipDiv.style.top = top + 'px';
-			toolTipDiv.classList.add('open');
-		})
-		menuBTN.addEventListener('mouseout', () => {
-			toolTipDiv.classList.remove('open');
-		});
+			menuBTN.addEventListener('mouseover', () => {
+				const rect = menuBTN.getBoundingClientRect();
+				// const left = rect.left + window.scrollX + menuBTN.offsetWidth + 30; // Отступ справа от кнопки
+				const top = rect.top + window.scrollY - 20; // Отступ сверху от кнопки
+				// toolTipDiv.style.left = left + 'px';
+				toolTipDiv.style.top = top + 'px';
+				toolTipDiv.classList.add('open');
+			})
+			menuBTN.addEventListener('mouseout', () => {
+				toolTipDiv.classList.remove('open');
+			});
 
-		//убираем полностью нашу картинку иконки и записываем текст с добавлением стиля
-		menuBTN.classList.add('active-profile-btn');
-		menuBTN.textContent = firstName.charAt(0).toUpperCase() + lastName.charAt(0).toUpperCase();
+			//убираем полностью нашу картинку иконки и записываем текст с добавлением стиля
+			menuBTN.classList.add('active-profile-btn');
+			menuBTN.textContent = firstName.charAt(0).toUpperCase() + lastName.charAt(0).toUpperCase();
 
-		//change object img display none
-		profileIcon.classList.add('none');
+			//change object img display none
+			profileIcon.classList.add('none');
 	}
 
 	// changeCardNumberProfile(){
@@ -130,6 +118,13 @@ export default class ActiveProfile {
 	// }
 
 	openPaymentsActiveWrapper() {
+		let name = document.querySelector('#form-name-active');
+		let card = document.querySelector('#form-card-active');
+		name.value =`${this.activeUser.firstName} ${this.activeUser.lastName}`
+		card.value = this.activeUser.cardNumber;
+		name.style.color = '#BB945F';
+		card.style.color = '#BB945F';
+
 		document.querySelector('#none-active-profile').classList.add('none')
 		document.querySelector('#active-profile-card').classList.remove('none')
 		document.querySelector('.menu').classList.add('active-profile-btn')
@@ -161,33 +156,8 @@ export default class ActiveProfile {
 		this.removeClassListToActiveProfile();
 		this.seveUserToLocalStorage();
 		this.closePaymentsActiveWrapper();
+		this.container.classList.remove('open')
 		document.body.classList.remove('lock');
-
-		this.addEventListeners()
 	}
 
-	addEventListeners() {
-		const menuBTN = document.querySelector('.menu');
-		const navigation = document.querySelector('.header__navigation');
-		const body = document.querySelector('body');
-		const burger = document.querySelector('.hamburger');
-		console.log(this.container)
-		const conteinerProfile = this.container;
-
-		menuBTN.addEventListener('click', (ev) => {
-			if (ev.target === menuBTN) {
-				conteinerProfile.classList.toggle('open');
-				burger.classList.remove('active');
-				navigation.classList.remove('open');
-				body.classList.toggle('lock');
-			}
-		});
-
-		// conteinerProfile.addEventListener('click', (ev) => {
-		// 	if (ev.target === conteinerProfile) {
-		// 		conteinerProfile.classList.remove('open');
-		// 		body.classList.remove('lock');
-		// 	}
-		// });
-	}
 }
