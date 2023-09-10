@@ -39,31 +39,38 @@
 	</header>
 	<main>
 		<div class="library-card">
-			<p class="library-card__title">Buy a library card</p>
-			<img src="./img/header/close_btn-light.jpeg" alt="close btn" class="library-card__btn-close">
-			<div class="two-columns">
-				<div class="informatios">
-					<p class="informatios__text">Bank card number</p>
-					<input type="text" class="informatios__card"  pattern="(?:\d{4}[-\s]?){4}" maxlength="16">
-					<p class="informatios__text">Expiration code</p>
-					<input type="text" class="informatios__code" pattern="[0-9]*" maxlength="2">
-					<p class="informatios__text">CVC</p>
-					<input type="text" class="informatios__cvc" pattern="[0-9]*" maxlength="3">
-					<p class="informatios__text">Cardholder name</p>
-					<input type="text" class="informatios__name">
-					<p class="informatios__text">Postal code</p>
-					<input type="text" class="informatios__code">
-					<p class="informatios__text">City / Town</p>
-					<input type="text" class="informatios__city">
-					<div class="informatios__buy">
-						<button class="informatios_button-bay">Buy</button>
-						<p class="cost">$ 25.00</p>
-					</div>
+			<div class="library-card__conteiner">
+				<div class="library-card__header">
+					<p class="library-card__title">Buy a library card</p>
+					<img src="./img/header/close_btn-light.jpeg" alt="close btn" class="library-card__btn-close">
 				</div>
-				<p class="library-card__text">If you are live, work, attend school, or pay property taxes in New York State, you can get a $25 digital library card right now using this online form. Visitors to New York State can also use this form to apply for a temporary card.
-				</p>
+				<div class="library-card__two-columns">
+					<div class="informatios">
+						<p class="informatios__text">Bank card number</p>
+						<input type="text" class="informatios__card informatios__input"  pattern="(?:\d{4}[-\s]?){4}" maxlength="16">
+						<p class="informatios__text">Expiration code</p>
+						<div class="expiration">
+							<input type="text" class="expiration__code informatios__input" pattern="[0-9]*" maxlength="2">
+							<input type="text" class="expiration__code informatios__input" pattern="[0-9]*" maxlength="2">
+						</div>
+						<p class="informatios__text">CVC</p>
+						<input type="text" class="informatios__cvc informatios__input" pattern="[0-9]*" maxlength="3">
+						<p class="informatios__text">Cardholder name</p>
+						<input type="text" class="informatios__name informatios__input">
+						<p class="informatios__text">Postal code</p>
+						<input type="text" class="informatios__code informatios__input">
+						<p class="informatios__text">City / Town</p>
+						<input type="text" class="informatios__city informatios__input">
+						<div class="informatios__buy">
+							<button id="informatios_button-bay" class="button-normal-size button button_colored">Buy</button>
+							<p class="cost">$ 25.00</p>
+						</div>
+					</div>
+					<p class="library-card__text">If you are live, work, attend school, or pay property taxes in New York State, you can get a $25 digital library card right now using this online form. Visitors to New York State can also use this form to apply for a temporary card.
+					</p>
+				</div>
 			</div>
-		</div>
+			</div>
 		<div id="my-profile" class="my-profile">
 			<div class="my-profile__two-columns">
 				<div class="my-profile__left">
