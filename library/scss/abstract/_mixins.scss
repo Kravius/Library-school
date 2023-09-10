@@ -17,14 +17,17 @@
 }
 
 //with after
-@mixin line($bottom: 0px, $left: 695px, $width: 50px, $color: #0C0C0E) {
+@mixin line($top: 59px, $left: 50%, $width: 50px, $color: #0C0C0E, $transform: translateX(-50%)) {
 	content: "";
+	display: block;
 	position: absolute;
-	bottom: $bottom;
+	top: $top;
 	left: $left;
 	width: $width;
 	height: 1px;
-	background-color: $color
+	background-color: $color;
+	flex-shrink: 0;
+	transform: $transform;
 }
 
 @mixin media-laptop {

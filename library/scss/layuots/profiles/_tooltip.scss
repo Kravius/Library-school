@@ -1,0 +1,13 @@
+.tooltip {
+	display: none;
+	position: absolute;
+	color: white;
+	word-wrap: break-word;
+	padding: 5px;
+	border-radius: 3px;
+	z-index: 1000;
+ }
+
+ .open {
+	display: inline-flex;
+ }

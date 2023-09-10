@@ -23,9 +23,11 @@
 				</ul>
 			</nav>
 			<div class="header__logo-line">
+				<span class="tooltip"></span>
 				<button class="menu">
 					<object type="image/svg+xml" data="./img/header/icon_profile.svg" class="menu__img icon">
 						Your browser does not support SVG
+						<div class="tooltip">qwe</div>
 					</object>
 				</button>
 				<span class="hamburger"><span class="hamburger__line"></span></span>
@@ -36,6 +38,75 @@
 		</div>
 	</header>
 	<main>
+		<div class="library-card">
+			<p class="library-card__title">Buy a library card</p>
+			<img src="./img/header/close_btn-light.jpeg" alt="close btn" class="library-card__btn-close">
+			<div class="two-columns">
+				<div class="informatios">
+					<p class="informatios__text">Bank card number</p>
+					<input type="text" class="informatios__card"  pattern="(?:\d{4}[-\s]?){4}" maxlength="16">
+					<p class="informatios__text">Expiration code</p>
+					<input type="text" class="informatios__code" pattern="[0-9]*" maxlength="2">
+					<p class="informatios__text">CVC</p>
+					<input type="text" class="informatios__cvc" pattern="[0-9]*" maxlength="3">
+					<p class="informatios__text">Cardholder name</p>
+					<input type="text" class="informatios__name">
+					<p class="informatios__text">Postal code</p>
+					<input type="text" class="informatios__code">
+					<p class="informatios__text">City / Town</p>
+					<input type="text" class="informatios__city">
+					<div class="informatios__buy">
+						<button class="informatios_button-bay">Buy</button>
+						<p class="cost">$ 25.00</p>
+					</div>
+				</div>
+				<p class="library-card__text">If you are live, work, attend school, or pay property taxes in New York State, you can get a $25 digital library card right now using this online form. Visitors to New York State can also use this form to apply for a temporary card.
+				</p>
+			</div>
+		</div>
+		<div id="my-profile" class="my-profile">
+			<div class="my-profile__two-columns">
+				<div class="my-profile__left">
+					<p class="initials">s d</p>
+					<p class="my-profile__name">sdfsdf ssdsddfsfsdfssdfsfdfsfs111</p>
+				</div>
+				<div class="my-profile__right profile-info">
+					<p class="profile-info__title">My profile</p>
+					<img src="./img/header/close_btn_register-login.png" alt="close button" class="profile-info__close-btn">
+					<div class="my-profile__count-conteiner">
+						<div class="my-profile__count">
+							<p class="form__count__text">Visits</p>
+							<img src="./img/paymets/union.png" alt="person">
+							<p id="count-visits-profile" class="my-profile__count-number">1</p>
+						</div>
+						<div class="my-profile__count">
+							<p class="form__count__text">Bonuses</p>
+							<img src="./img/paymets/star 1.png" alt="star">
+							<p id="count-visits-bonuses" class="my-profile__count-number">0</p>
+						</div>
+						<div class="my-profile__count">
+							<p class="form__count__text">Books</p>
+							<img src="./img/paymets/book.png" alt="book">
+							<p id="count-visits-book" class="my-profile__count-number">0</p>
+						</div>
+					</div>
+					<p class="profile-info__rented">Rented books</p>
+					<ul class="profile-info__books">
+						<li>13</li>
+						<li>13</li>
+						<li>13</li>
+						<li>13</li>
+						<li>13</li>
+						<!-- write  function to take book from user -->
+					</ul>
+					<div class="card">
+						<p class="card__text">Card number</p>
+						<span class="card__number">F00234030</span>
+						<img src="./img/my-profile/icon-copy.png" alt="cope bufer" class="card__bufer">
+					</div>
+				</div>
+			</div>
+		</div>
 		<section id="section-welcom" class="welcom">
 			<div class="wrapper welcom__wrapper">
 				<div class="welcom__text-back">
@@ -47,43 +118,33 @@
 		<section id="section-about" class="about">
 			<div class="wrapper">
 				<h2 class="about__title">About</h2>
-				<hr class="line">
 				<h4 class="about__text">The Brooklyn Library is a free workspace, a large number of books and a cozy coffee
 					shop inside</h4>
-					<div class="about__conteiner">
-						<button class="prew"> <img src="./img/about/prew.png" alt=" button"></button>
-						<div class="about__slayder">
-							<a href="#" class="about__link active">
-								<img src="./img/about/image1.png" alt="" class="about__img">
-							</a>
-							<a href="#" class="about__link link">
-								<img src="./img/about/image2.png" alt="" class="about__img">
-							</a>
-							<a href="#" class="about__link link">
-								<img src="./img/about/image3-2.png" alt="" class="about__img">
-							</a>
-							<a href="#" class="about__link link none">
-								<img src="./img/about/image3-1.png" alt="" class="about__img">
-							</a>
-							<a href="#" class="about__link link none">
-								<img src="./img/about/image3.png" alt="" class="about__img">
-							</a>
+				<div class="about__conteiner">
+					<button id="btn-left" class="prew"> <img src="./img/about/prew.png" alt=" button"></button>
+					<div class="carousel-wrapper">
+						<div class="about__carousel ">
+							<img src="./img/about/image1.png" alt="" class="about__img">
+							<img src="./img/about/image2.png" alt="" class="about__img">
+							<img src="./img/about/image3-2.png" alt="" class="about__img">
+							<img src="./img/about/image3-1.png" alt="" class="about__img">
+							<img src="./img/about/image3.png" alt="" class="about__img">
 						</div>
-						<div class="about__slayder-buttons">
-							<button class="about__button_active about-btn"></button>
-							<button class="about__button about-btn"></button>
-							<button class="about__button about-btn"></button>
-							<button class="about__button about-btn none"></button>
-							<button class="about__button about-btn none"></button>
-						</div>
-						<button class="next"> <img src="./img/about/next.png" alt="next button"></button>
-			</div>
+					</div>
+					<div class="about__carousel-buttons">
+						<button class=" about__button about-btn active"></button>
+						<button class="about__button about-btn"></button>
+						<button class="about__button about-btn"></button>
+						<button class="about__button about-btn none"></button>
+						<button class="about__button about-btn none"></button>
+					</div>
+					<button id="btn-right" class="next"> <img src="./img/about/next.png" alt="next button"></button>
+				</div>
 			</div>
 		</section>
 		<section id="section-favorites" class="favorites">
 			<div class="wrapper">
 				<h2 class="favorites__title">Favorites</h2>
-				<hr class="line">
 				<p class="favorites__title-text">Pick favorites of season</p>
 				<div class="favorites__radio-conteiner">
 					<div class="favorites__radio">
@@ -103,7 +164,7 @@
 						<label for="favorites__radio-autumn">Autumn</label>
 					</div>
 				</div>
-				<div id="favorites__winter" class="">
+				<div id="favorites__winter" class="visible books">
 					<div class="favorites__columns">
 						<div class="favorites__book book">
 							<h5>Staff Picks</h5>
@@ -118,7 +179,7 @@
 							</div>
 							<img src="./img/favorites/book/winter/Ellipse-2.png" alt="The Book Eaters" class="book__img">
 							<div class="book__button">
-								<button type="submit" class="book__button-size button button_colored">Buy</button>
+								<button type="submit" class="button-normal-size button button_colored">Buy</button>
 							</div>
 						</div>
 						<div class="favorites__book book">
@@ -132,7 +193,7 @@
 							</div>
 							<img src="./img/favorites/book/winter/book-2.png" alt="The Book Eaters" class="book__img">
 							<div class="book__button">
-								<button type="submit" class="book__button-size button button_colored">Buy</button>
+								<button type="submit" class="button-normal-size button button_colored">Buy</button>
 							</div>
 						</div>
 						<div class="favorites__book book">
@@ -147,7 +208,7 @@
 							</div>
 							<img src="./img/favorites/book/winter/book-1.png" alt="Dante" class="book__img">
 							<div class="book__button">
-								<button type="submit" class="book__button-size button button_colored">Buy</button>
+								<button type="submit" class="button-normal-size button button_colored">Buy</button>
 							</div>
 						</div>
 						<div class="favorites__book book">
@@ -160,12 +221,13 @@
 							</div>
 							<img src="./img/favorites/book/winter/book.png" alt="The Last Queen" class="book__img">
 							<div class="book__button">
-								<button disabled type="submit" class="book__button-size button button_disabled">Own</button>
+								<button type="submit"
+									class="button-normal-size button button_colored button_disabled">buy</button>
 							</div>
 						</div>
 					</div>
 				</div>
-				<div id="favorites__spring" class="none">
+				<div id="favorites__spring" class="none books">
 					<div class="favorites__columns two-columns">
 						<div class="favorites__book book">
 							<h5>Staff Picks</h5>
@@ -177,7 +239,7 @@
 							</div>
 							<img src="./img/favorites/book/spring/king.png" alt="The Body" class="book__img">
 							<div class="book__button">
-								<button type="submit" class="book__button-size button button_colored">Buy</button>
+								<button type="submit" class="button-normal-size button button_colored">Buy</button>
 							</div>
 						</div>
 						<div class="favorites__book book">
@@ -191,7 +253,7 @@
 							<img src="./img/favorites/book/spring/carry.png" alt="A Memoir of Survival on Stolen Land"
 								class="book__img">
 							<div class="book__button">
-								<button type="submit" class="book__button-size button button_colored">Buy</button>
+								<button type="submit" class="button-normal-size button button_colored">Buy</button>
 							</div>
 						</div>
 						<div class="favorites__book book">
@@ -204,7 +266,7 @@
 							</div>
 							<img src="./img/favorites/book/spring/days.png" alt="Days of Distraction" class="book__img">
 							<div class="book__button">
-								<button type="submit" class="book__button-size button button_colored">Buy</button>
+								<button type="submit" class="button-normal-size button button_colored">Buy</button>
 							</div>
 						</div>
 						<div class="favorites__book book">
@@ -218,12 +280,12 @@
 							</div>
 							<img src="./img/favorites/book/spring/gruz.png" alt="Dominicana" class="book__img">
 							<div class="book__button">
-								<button disabled type="submit" class="book__button-size button button_disabled">Own</button>
+								<button type="submit" class="button-normal-size button button_colored">Own</button>
 							</div>
 						</div>
 					</div>
 				</div>
-				<div id="favorites__summer" class="none">
+				<div id="favorites__summer" class="none books">
 					<div class="favorites__columns two-columns">
 						<div class="favorites__book book">
 							<h5>Staff Picks</h5>
@@ -237,7 +299,7 @@
 							</div>
 							<img src="./img/favorites/book/summer/crude.png" alt="Crude: A Memoir" class="book__img">
 							<div class="book__button">
-								<button type="submit" class="book__button-size button button_colored">Buy</button>
+								<button type="submit" class="button-normal-size button button_colored">Buy</button>
 							</div>
 						</div>
 						<div class="favorites__book book">
@@ -253,7 +315,7 @@
 							</div>
 							<img src="./img/favorites/book/summer/people.png" alt="Let My People Go Surfing" class="book__img">
 							<div class="book__button">
-								<button type="submit" class="book__button-size button button_colored">Buy</button>
+								<button type="submit" class="button-normal-size button button_colored">Buy</button>
 							</div>
 						</div>
 						<div class="favorites__book book">
@@ -267,7 +329,7 @@
 							<img src="./img/favorites/book/summer/octopus.png" alt="The Octopus Museum: Poems"
 								class="book__img">
 							<div class="book__button">
-								<button type="submit" class="book__button-size button button_colored">Buy</button>
+								<button type="submit" class="button-normal-size button button_colored">Buy</button>
 							</div>
 						</div>
 						<div class="favorites__book book">
@@ -281,12 +343,13 @@
 							</div>
 							<img src="./img/favorites/book/summer/shark.png" alt="Shark Dialogues: A Novel" class="book__img">
 							<div class="book__button">
-								<button disabled type="submit" class="book__button-size button button_disabled">Own</button>
+								<button type="submit"
+									class="button-normal-size button button_colored button_colored">Own</button>
 							</div>
 						</div>
 					</div>
 				</div>
-				<div id="favorites__autumn" class="none">
+				<div id="favorites__autumn" class="none books">
 					<div class="favorites__columns two-columns">
 						<div class="favorites__book book">
 							<h5>Staff Picks</h5>
@@ -299,7 +362,7 @@
 							</div>
 							<img src="./img/favorites/book/autemn/casual.png" alt="Casual Conversation" class="book__img">
 							<div class="book__button">
-								<button type="submit" class="book__button-size button button_colored">Buy</button>
+								<button type="submit" class="button-normal-size button button_colored">Buy</button>
 							</div>
 						</div>
 						<div class="favorites__book book">
@@ -313,7 +376,7 @@
 							</div>
 							<img src="./img/favorites/book/autemn/great.png" alt="The Great Fire" class="book__img">
 							<div class="book__button">
-								<button type="submit" class="book__button-size button button_colored">Buy</button>
+								<button type="submit" class="button-normal-size button button_colored">Buy</button>
 							</div>
 						</div>
 						<div class="favorites__book book">
@@ -328,7 +391,7 @@
 							<img src="./img/favorites/book/autemn/riskey.png" alt="Rickey: The Life and Legend"
 								class="book__img">
 							<div class="book__button">
-								<button type="submit" class="book__button-size button button_colored">Buy</button>
+								<button type="submit" class="button-normal-size button button_colored">Buy</button>
 							</div>
 						</div>
 						<div class="favorites__book book">
@@ -342,7 +405,7 @@
 							</div>
 							<img src="./img/favorites/book/autemn/slug.png" alt="Slug: And Other Stories" class="book__img">
 							<div class="book__button">
-								<button disabled type="submit" class="book__button-size button button_disabled">Own</button>
+								<button type="submit" class="button-normal-size button button_colored">Own</button>
 							</div>
 						</div>
 					</div>
@@ -351,15 +414,14 @@
 		</section>
 		<section id="section-price" class="shop-price">
 			<div class="wrapper">
-				<h2 class="shop-price__title">Coffee shop</h2>
-				<hr class="line">
+				<h2>Coffee shop</h2>
 				<p class="shop-price__text">In our library, we have of cozy coffee shop, welcoming in customers with frothy
 					cappuccinos and friendly conversation. you can get a favorite book and read in coffee shop. Our barista
 					to cook you best coffee, and also you
 					can try desserts from bakery.</p>
 				<div class="two-columns shop-price__column">
 					<div class="shop-price__menu shop-price__menu-left">
-						<h2 class="shop-price__title shop-price__title_left">Coffee & Tea</h2>
+						<h3 class="shop-price__title shop-price__title_left">Coffee & Tea</h3>
 						<div class="price-teg">
 							<p class="price-teg__text">Cold Brew Coffee</p>
 							<hr class="price-teg__line">
@@ -392,7 +454,7 @@
 						</div>
 					</div>
 					<div class="shop-price__menu shop-price__menu-right">
-						<h2 class="shop-price__title shop-price__title_rigth">Desserts & Cakes </h2>
+						<h3 class="shop-price__title shop-price__title_rigth">Desserts & Cakes </h3>
 						<div class="price-teg">
 							<p class="price-teg__text">Forest Gateau</p>
 							<hr class="price-teg__line">
@@ -430,7 +492,6 @@
 		<section id="section-contacts" class="contacts">
 			<div class="wrapper">
 				<h2 class="contacts__title">Our Contacts</h2>
-				<hr class="line">
 				<div class="contacts__columns two-columns">
 					<div class="contacts__info">
 						<h5 class="contacts__info-title">For all Library inquiries:</h5>
@@ -462,9 +523,92 @@
 			</div>
 		</section>
 		<section id="section-payments" class="payments">
-			<div class="wrapper">
+			<!-- <div class="my-profile-payments">
+				<div class="my-profile__two-columns">
+					<div class="my-profile__left">
+						<p class="initials">s d</p>
+						<p class="my-profile__name">sdfsdf ssdsddfsfsdfssdfsfdfsfs111</p>
+					</div>
+					<div class="my-profile__right profile-info">
+						<p class="profile-info__title">My profile</p>
+						<img src="./img/header/close_btn_register-login.png" alt="close button" class="profile-info__close-btn">
+						<div class="my-profile__count-conteiner">
+							<div class="my-profile__count">
+								<p class="form__count__text">Visits</p>
+								<img src="./img/paymets/union.png" alt="person">
+								<p id="count-visits-profile" class="my-profile__count-number">1</p>
+							</div>
+							<div class="my-profile__count">
+								<p class="form__count__text">Bonuses</p>
+								<img src="./img/paymets/star 1.png" alt="star">
+								<p id="count-visits-bonuses" class="my-profile__count-number">0</p>
+							</div>
+							<div class="my-profile__count">
+								<p class="form__count__text">Books</p>
+								<img src="./img/paymets/book.png" alt="book">
+								<p id="count-visits-book" class="my-profile__count-number">0</p>
+							</div>
+						</div>
+						<p class="profile-info__rented">Rented books</p>
+						<ul class="profile-info__books">
+							<li>13</li>
+							<li>13</li>
+							<li>13</li>
+							<li>13</li>
+							<li>13</li>
+						</ul>
+						<div class="card">
+							<p class="card__text">Card number</p>
+							<span class="card__number">F00234030</span>
+							<img src="./img/my-profile/icon-copy.png" alt="cope bufer" class="card__bufer">
+						</div>
+					</div>
+				</div>
+			</div> -->
+			<div id="active-profile-card" class="wrapper payments-wrapper none">
 				<h2 class="payments__title">Digital Library Cards</h2>
-				<hr class="line">
+				<div class="payments__columns two-columns">
+					<div class="payments-form">
+						<p class="payments-form__text">Your Library card</p>
+						<form action="#" method="post" class="form form-active">
+							<div class="form__backgraund">
+								<p class="form__title">Brooklyn Public Library</p>
+								<input type="text" id="form-name-active" name="name" placeholder="Reader's name"
+									pattern="[a-zA-Z]+" required>
+								<input type="text" id="form-card-active" name="number" placeholder="Card number"
+									pattern="^([0-9]+\-)[0-9]+$" required>
+							</div>
+							<div class="count-conteiner">
+								<div class="form__count">
+									<p>Visits</p>
+									<img src="./img/paymets/union.png" alt="person">
+									<p id="count-visits-profile">1</p>
+								</div>
+								<div class="form__count">
+									<p>Bonuses</p>
+									<img src="./img/paymets/star 1.png" alt="star">
+									<p id="count-visits-bonuses">0</p>
+								</div>
+								<div class="form__count">
+									<p>Books</p>
+									<img src="./img/paymets/book.png" alt="book">
+									<p id="count-visits-book">0</p>
+								</div>
+							</div>
+						</form>
+					</div>
+					<div class="loggin">
+						<p class="loggin__title">Visit your profile</p>
+						<p class="loggin__text">With a digital library card you get free access to the Library’s wide array of
+							digital resources including e-books, databases, educational resources, and more.</p>
+						<div class="loggin__buttons-conteiner">
+							<button id="payments-profile-btn" data-target="my-profile" class="button-normal-size button button_colored">Profile</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div id="none-active-profile" class="wrapper payments-wrapper">
+				<h2 class="payments__title">Digital Library Cards</h2>
 				<div class="payments__columns two-columns">
 					<div class="payments-form">
 						<p class="payments-form__text">Find your Library card</p>
@@ -486,8 +630,8 @@
 						<p class="loggin__text">You will be able to see a reader card after logging into account or you can
 							register a new account</p>
 						<div class="loggin__buttons-conteiner">
-							<button class="loggin__button button button_colored">Sign Up</button>
-							<button class="loggin__button button button_colored">Log in</button>
+							<button id="payments-register" class="loggin__button button button_colored">Sign Up</button>
+							<button id="payments-login" class="loggin__button button button_colored">Log in</button>
 						</div>
 					</div>
 				</div>
@@ -536,8 +680,8 @@
 			</div>
 		</div>
 	</footer>
-	<script src="./index.js"></script>
-	<script src="./burger.js"></script>
+
+	<script type="module" src="./index.js"></script>
 </body>
 
 </html>
