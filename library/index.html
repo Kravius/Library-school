@@ -23,11 +23,10 @@
 				</ul>
 			</nav>
 			<div class="header__logo-line">
-				<span class="tooltip"></span>
 				<button class="menu">
 					<object type="image/svg+xml" data="./img/header/icon_profile.svg" class="menu__img icon">
 						Your browser does not support SVG
-						<div class="tooltip">qwe</div>
+						<!-- <div class="tooltip">qwe</div> -->
 					</object>
 				</button>
 				<span class="hamburger"><span class="hamburger__line"></span></span>
@@ -47,7 +46,7 @@
 				<div class="library-card__two-columns">
 					<div class="informatios">
 						<p class="informatios__text">Bank card number</p>
-						<input type="text" class="informatios__card informatios__input"  pattern="(?:\d{4}[-\s]?){4}" maxlength="16">
+						<input id="num-card-bank" type="text" class="informatios__card informatios__input"  pattern="(?:\d{4}[-\s]?){4}" maxlength="16" placeholder="number">
 						<p class="informatios__text">Expiration code</p>
 						<div class="expiration">
 							<input type="text" class="expiration__code informatios__input" pattern="[0-9]*" maxlength="2">
@@ -74,8 +73,8 @@
 		<div id="my-profile" class="my-profile">
 			<div class="my-profile__two-columns">
 				<div class="my-profile__left">
-					<p class="initials">s d</p>
-					<p class="my-profile__name">sdfsdf ssdsddfsfsdfssdfsfdfsfs111</p>
+					<p class="initials"></p>
+					<p class="my-profile__name"></p>
 				</div>
 				<div class="my-profile__right profile-info">
 					<p class="profile-info__title">My profile</p>
@@ -88,7 +87,7 @@
 						</div>
 						<div class="my-profile__count">
 							<p class="form__count__text">Bonuses</p>
-							<img src="./img/paymets/star 1.png" alt="star">
+							<img src="./img/paymets/star.png" alt="star">
 							<p id="count-visits-bonuses" class="my-profile__count-number">0</p>
 						</div>
 						<div class="my-profile__count">
@@ -287,7 +286,7 @@
 							</div>
 							<img src="./img/favorites/book/spring/gruz.png" alt="Dominicana" class="book__img">
 							<div class="book__button">
-								<button type="submit" class="button-normal-size button button_colored">Own</button>
+								<button type="submit" class="button-normal-size button button_colored">Buy</button>
 							</div>
 						</div>
 					</div>
@@ -351,7 +350,7 @@
 							<img src="./img/favorites/book/summer/shark.png" alt="Shark Dialogues: A Novel" class="book__img">
 							<div class="book__button">
 								<button type="submit"
-									class="button-normal-size button button_colored button_colored">Own</button>
+									class="button-normal-size button button_colored button_colored">Buy</button>
 							</div>
 						</div>
 					</div>
@@ -412,7 +411,7 @@
 							</div>
 							<img src="./img/favorites/book/autemn/slug.png" alt="Slug: And Other Stories" class="book__img">
 							<div class="book__button">
-								<button type="submit" class="button-normal-size button button_colored">Own</button>
+								<button type="submit" class="button-normal-size button button_colored">Buy</button>
 							</div>
 						</div>
 					</div>
@@ -593,7 +592,7 @@
 								</div>
 								<div class="form__count">
 									<p>Bonuses</p>
-									<img src="./img/paymets/star 1.png" alt="star">
+									<img src="./img/paymets/star.png" alt="star">
 									<p id="count-visits-bonuses">0</p>
 								</div>
 								<div class="form__count">
