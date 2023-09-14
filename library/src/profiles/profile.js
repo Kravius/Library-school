@@ -75,6 +75,7 @@ export default (function () {
 	// const profileRegister = document.querySelector('.menu_third-line');
 	const profileLogIn = document.querySelector('#profile__log-in');
 
+
 	// menuBTN.addEventListener('click', (ev) => {
 	// 	const activeConteinerProfile = document.querySelector('#profile-active')
 	// 	if (ev.target === menuBTN) {
@@ -93,12 +94,16 @@ export default (function () {
 	// });
 
 	menuBTN.addEventListener('click', (ev) => {
-		const activeConteinerProfile = document.querySelector('#menu-profile-active')
+		const activeUserFromStorage = JSON.parse(localStorage.getItem('users'));
+		const indexActiveUserFromStorage = JSON.parse(localStorage.getItem('activUserIndex'));
+		const activeConteinerProfile = document.querySelector('#menu-profile-active');
+
 		if (ev.target === menuBTN) {
 			//we have check active Profile or not
 			if (document.querySelector('.active-profile-btn')) {
 				activeConteinerProfile.classList.toggle('open');
 				addClassToVisiblSkrin()
+				// menuBTN.setAttribute('title', `${activeUserFromStorage[indexActiveUserFromStorage].firstName} ${activeUserFromStorage[indexActiveUserFromStorage].lastName}`);
 
 			} else {
 				conteinerProfile.classList.toggle('open');

@@ -43,13 +43,18 @@ export default class LoginMenu extends ActiveProfile {
 
 
 			if (login.value && password.value) {
-				users.forEach((user,index) => {
+
+				users.forEach((user, index) => {
 					if (user.mail == login.value || user.cardNumber == login.value && user.password == password.value) {
 						JSON.stringify(localStorage.setItem('activUserIndex', index))
+						const activeUser = JSON.parse(localStorage.getItem('users'));
+						const indexUser = JSON.parse(localStorage.getItem('activUserIndex'));
 						this.openPaymentsActiveWrapper();
 						super.changeProfileIcon(user.firstName, user.lastName);
-						super.addCountVisits();
 						this.closeAndCleanLoginMenu();
+						activeUser[indexUser].visits++;
+						localStorage.setItem('users', JSON.stringify(activeUser));
+						location.reload();
 					}
 				})
 			}
@@ -82,7 +87,7 @@ export default class LoginMenu extends ActiveProfile {
 
 		const input = document.createElement('input');
 		input.classList.add(...inputClass);
-console.log(input)
+		console.log(input)
 		input.addEventListener('blur', this.notEmptyInput);
 		if (labelText === 'E-mail or readers card') {
 			input.addEventListener('blur', () => {

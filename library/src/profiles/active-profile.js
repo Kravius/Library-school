@@ -6,7 +6,7 @@ export default class ActiveProfile {
 
 		this.profileIcon = document.querySelector('.menu__img');
 		this.menuBTN = document.querySelector('.menu');
-		this.toolTipDiv = document.querySelector('.tooltip');
+		// this.toolTipDiv = document.querySelector('.tooltip');
 
 		this.usersFromStorage = JSON.parse(localStorage.getItem('users') || '[]');
 		this.indexActiveUserFromStorage = JSON.parse(localStorage.getItem('activUserIndex'));
@@ -28,7 +28,7 @@ export default class ActiveProfile {
 
 		this.profilText = document.createElement('p');
 		this.profilText.classList.add('profile__logo', 'active-logo');
-		this.profilText.id = 'active-profile'
+		this.profilText.id = 'active-profile';
 		this.profilText.textContent = this.activeUser.cardNumber || '';
 
 		this.myProfileButton = document.createElement('button');
@@ -76,34 +76,34 @@ export default class ActiveProfile {
 
 
 
-	addCountVisits() {
-		this.activeUser.visits= parseInt(this.activeUser.visits) + 1;
-	}
+	// addCountVisits() {
+	// 	this.activeUser.visits= parseInt(this.activeUser.visits) + 1;
+	// }
 
 	changeProfileIcon(firstName, lastName) {
 		const profileIcon = document.querySelector('.menu__img');
 		const menuBTN = document.querySelector('.menu');
-		const toolTipDiv = document.querySelector('.tooltip');
+		// const toolTipDiv = document.querySelector('.tooltip');
 
 		//не могу понять почему не могу добавить в кнопку спан или див, что там разместить подсказку
 		// пришлось вручную прописать в html див
 		// menuBTN.classList.add('tooltip');
 		// let spanTooltip = document.createElement('div');
 		// spanTooltip.classList.add('tooltip');
-			toolTipDiv.textContent = `${firstName} ${lastName}`;
+			// toolTipDiv.textContent = `${firstName} ${lastName}`;
 			// menuBTN.appendChild(spanTooltip);
 
-			menuBTN.addEventListener('mouseover', () => {
-				const rect = menuBTN.getBoundingClientRect();
-				// const left = rect.left + window.scrollX + menuBTN.offsetWidth + 30; // Отступ справа от кнопки
-				const top = rect.top + window.scrollY - 20; // Отступ сверху от кнопки
-				// toolTipDiv.style.left = left + 'px';
-				toolTipDiv.style.top = top + 'px';
-				toolTipDiv.classList.add('open');
-			})
-			menuBTN.addEventListener('mouseout', () => {
-				toolTipDiv.classList.remove('open');
-			});
+			// menuBTN.addEventListener('mouseover', () => {
+			// 	const rect = menuBTN.getBoundingClientRect();
+			// 	// const left = rect.left + window.scrollX + menuBTN.offsetWidth + 30; // Отступ справа от кнопки
+			// 	const top = rect.top + window.scrollY - 20; // Отступ сверху от кнопки
+			// 	// toolTipDiv.style.left = left + 'px';
+			// 	toolTipDiv.style.top = top + 'px';
+			// 	toolTipDiv.classList.add('open');
+			// })
+			// menuBTN.addEventListener('mouseout', () => {
+			// 	toolTipDiv.classList.remove('open');
+			// });
 
 			//убираем полностью нашу картинку иконки и записываем текст с добавлением стиля
 			menuBTN.classList.add('active-profile-btn');
@@ -149,7 +149,7 @@ export default class ActiveProfile {
 		this.menuBTN.classList.remove('active-profile-btn')
 		this.menuBTN.appendChild(this.profileIcon);
 		this.profileIcon.classList.remove('none');
-		this.toolTipDiv.textContent = '';
+		// this.toolTipDiv.textContent = '';
 	}
 
 	logOutProfile() {

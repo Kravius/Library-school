@@ -144,7 +144,6 @@ export default
 		const fieldNames = ['firstName', 'lastName', 'mail', 'password'];
 
 		if (inputs.every(input => input.classList.contains('correct-field'))) {
-console.log('123')
 			fieldNames.forEach((fieldName, index) => {
 				user[fieldName] = inputs[index].value;
 			})
@@ -157,6 +156,7 @@ console.log('123')
 				user.visits = 1;
 				user.bonuses = 0;
 				user.books = 0;
+				user.buyCard = false;
 
 				usersArray.push(user);
 				localStorage.setItem('users', JSON.stringify(usersArray));
@@ -217,5 +217,7 @@ console.log('123')
 		this.container.classList.remove('open');
 		this.body.classList.remove('lock');
 		inputs.forEach(input => input.value = '');
+
+		location.reload();
 	}
 }
