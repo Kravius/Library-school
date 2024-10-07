@@ -1,0 +1,53 @@
+.about {
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+
+.about__title {
+	text-align: center;
+}
+
+.about__text {
+	color: $color-text;
+	line-height: 40px;
+	letter-spacing: normal;
+	text-align: center;
+	margin-top: 40px;
+}
+
+.about__conteiner {
+	position: relative;
+}
+
+
+
+//возможно нужно будет удалить тут и в html личшнию обертку
+.about__carousel-btn {}
+
+
+//active base
+.about__button {
+	background-color: $color-main;
+}
+
+.active {
+	background-color: $color-element;
+}
+
+.about-btn {
+	border: 5px solid white;
+	width: 26px;
+	height: 26px;
+	border-radius: 50%;
+	cursor: pointer;
+	transition: all .3s;
+
+	&:active,
+	&:hover {
+		background-color: $color-element;
+	}
+}
+
+.about__img {
+	width: calc(100% / 3 - 50px / 3);
+}

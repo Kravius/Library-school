@@ -1,0 +1,133 @@
+.payments {
+	padding-top: 20px;
+	padding-bottom: 41px;
+	position: relative;
+}
+
+.payments-wrapper{
+	position: relative;
+}
+
+.payments__title {}
+
+.payments__columns {
+	@include media-laptop {
+		// justify-content: center;
+		flex-direction: column;
+	}
+}
+
+.payments-form {}
+
+.payments-form__text {
+	@include font($size: 3rem, $height: normal, $spacing: 0.6px);
+	text-align: center;
+}
+
+.form {
+	display: flex;
+	flex-direction: column;
+	margin-top: 30px;
+	padding: 20px 20px 30px;
+	border: 3px solid $color-element;
+	background: $color-light;
+	box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+	max-width: 600px;
+
+	@include media-laptop {
+		margin: 30px auto 21px;
+	}
+
+	input {
+		display: flex;
+		border-radius: 10px;
+		border: none;
+		background: $color-light;
+		min-width: 520px;
+		min-height: 66px;
+		flex-shrink: 0;
+
+		color: $color-placeholder;
+		font-family: Forum;
+		@include font($size: 3rem, $height: 5rem, $spacing: 0.6px);
+		padding-left: 20px;
+	}
+}
+
+.form__backgraund {
+	display: flex;
+	flex-direction: column;
+	background: $color-element;
+	padding: 20px 20px 25px;
+	margin-bottom: 20px;
+	gap: 20px;
+}
+
+.form__title {
+	font-family: Forum;
+	@include font($size: 3rem, $height: 5rem, $spacing: 0.6px);
+}
+
+.form__button {
+	display: inline-flex;
+	padding: 10px 40px;
+	align-items: flex-end;
+	margin: 0 auto;
+	font-size: 2rem;
+
+	>* {
+		min-width: 242px;
+	}
+}
+
+.loggin {
+	display: flex;
+	flex-direction: column;
+	gap: 35px;
+	max-width: 456px;
+	text-align: right;
+
+	@include media-laptop {
+		margin: 0 auto;
+		gap: 39px;
+		max-width: 600px;
+		text-align: center;
+	}
+
+	&__title {
+		font-family: Forum;
+		@include font($size: 3rem, $height: normal, $spacing: 0.6px);
+	}
+
+	&__text {
+		color: #000;
+		@include font($size: 2rem, $height: 4rem, $spacing: 0.4px);
+		text-align: right;
+
+		@include media-laptop {
+			text-align: center;
+		}
+	}
+
+	&__buttons-conteiner {
+		display: flex;
+		gap: 20px;
+		justify-content: end;
+		@include media-laptop {
+			justify-content: center;
+		}
+	}
+
+	&__button {
+		display: flex;
+		width: 75px;
+		height: 30px;
+		padding: 10px 0px;
+		justify-content: center;
+		align-items: center;
+		flex-shrink: 0;
+		text-align: center;
+		font-size: 10px;
+	}
+}
+

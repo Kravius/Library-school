@@ -1,0 +1,37 @@
+//abstract
+@import "./abstract/constants";
+@import "./abstract/mixins";
+@import "./abstract/placeholder";
+
+//base
+@import "./base/normalize";
+@import "./base/wrapper";
+@import "./base/base";
+@import "./base/buttons";
+
+//components
+@import "./components/welcom";
+@import "./components/about";
+@import "./components/favorites";
+@import "./components/shop";
+@import "./components/contacts";
+@import "./components/payments";
+
+//layouts
+@import "./layuots/header";
+@import "./layuots/book";
+@import "./layuots/columns";
+@import "./layuots/navigation";
+@import "./layuots/footer";
+@import "./layuots/icon-svg";
+@import "./layuots/hamburger";
+@import "./layuots/carousel";
+
+//loyouts profile
+@import "./layuots/profiles/profile";
+@import "./layuots/profiles/register";
+@import "./layuots/profiles/log-in";
+@import "./layuots/profiles/payments-active";
+@import "./layuots/profiles/tooltip";
+@import "./layuots/profiles/my-profile";
+@import "./layuots/profiles/buy-card";

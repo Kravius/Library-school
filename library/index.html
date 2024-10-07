@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Library</title>
+	<link rel="icon" type="image/png" sizes="32x32" href="./img/header/favicon.ico">
+	<link rel="stylesheet" href="./scss/style.css">
+</head>
+
+<body>
+	<header class="header">
+		<div class="wrapper header__wrapper">
+			<h1>Brooklyn Public Library</h1>
+			<nav class="header__navigation">
+				<ul class="navigation">
+					<li><a class="navigation__link" href="#section-about">About</a></li>
+					<li><a class="navigation__link" href="#section-favorites">Favorites</a></li>
+					<li><a class="navigation__link" href="#section-price">Coffee shop</a></li>
+					<li><a class="navigation__link" href="#section-contacts">Contacts</a></li>
+					<li><a class="navigation__link" href="#section-payments">Library Card</a></li>
+				</ul>
+			</nav>
+			<div class="header__logo-line">
+				<button class="menu">
+					<object type="image/svg+xml" data="./img/header/icon_profile.svg" class="menu__img icon">
+						Your browser does not support SVG
+						<!-- <div class="tooltip">qwe</div> -->
+					</object>
+				</button>
+				<span class="hamburger"><span class="hamburger__line"></span></span>
+			</div>
+			<!-- <a href="#" class="menu">
+				<img src="./img/header/icon_profile.svg" alt="menu" class="menu__img">
+			</a> -->
+		</div>
+	</header>
+	<main>
+		<div class="library-card">
+			<div class="library-card__conteiner">
+				<div class="library-card__header">
+					<p class="library-card__title">Buy a library card</p>
+					<img src="./img/header/close_btn-light.jpeg" alt="close btn" class="library-card__btn-close">
+				</div>
+				<div class="library-card__two-columns">
+					<div class="informatios">
+						<p class="informatios__text">Bank card number</p>
+						<input id="num-card-bank" type="text" class="informatios__card informatios__input"  pattern="(?:\d{4}[-\s]?){4}" maxlength="16" placeholder="number">
+						<p class="informatios__text">Expiration code</p>
+						<div class="expiration">
+							<input type="text" class="expiration__code informatios__input" pattern="[0-9]*" maxlength="2">
+							<input type="text" class="expiration__code informatios__input" pattern="[0-9]*" maxlength="2">
+						</div>
+						<p class="informatios__text">CVC</p>
+						<input type="text" class="informatios__cvc informatios__input" pattern="[0-9]*" maxlength="3">
+						<p class="informatios__text">Cardholder name</p>
+						<input type="text" class="informatios__name informatios__input">
+						<p class="informatios__text">Postal code</p>
+						<input type="text" class="informatios__code informatios__input">
+						<p class="informatios__text">City / Town</p>
+						<input type="text" class="informatios__city informatios__input">
+						<div class="informatios__buy">
+							<button id="informatios_button-bay" class="button-normal-size button button_colored">Buy</button>
+							<p class="cost">$ 25.00</p>
+						</div>
+					</div>
+					<p class="library-card__text">If you are live, work, attend school, or pay property taxes in New York State, you can get a $25 digital library card right now using this online form. Visitors to New York State can also use this form to apply for a temporary card.
+					</p>
+				</div>
+			</div>
+			</div>
+		<div id="my-profile" class="my-profile">
+			<div class="my-profile__two-columns">
+				<div class="my-profile__left">
+					<p class="initials"></p>
+					<p class="my-profile__name"></p>
+				</div>
+				<div class="my-profile__right profile-info">
+					<p class="profile-info__title">My profile</p>
+					<img src="./img/header/close_btn_register-login.png" alt="close button" class="profile-info__close-btn">
+					<div class="my-profile__count-conteiner">
+						<div class="my-profile__count">
+							<p class="form__count__text">Visits</p>
+							<img src="./img/paymets/union1.png" alt="person">
+							<p id="count-visits-profile" class="my-profile__count-number">1</p>
+						</div>
+						<div class="my-profile__count">
+							<p class="form__count__text">Bonuses</p>
+							<img src="./img/paymets/star1.png" alt="star">
+							<p id="count-visits-bonuses" class="my-profile__count-number">0</p>
+						</div>
+						<div class="my-profile__count">
+							<p class="form__count__text">Books</p>
+							<img src="./img/paymets/book.png" alt="book">
+							<p id="count-visits-book" class="my-profile__count-number">0</p>
+						</div>
+					</div>
+					<p class="profile-info__rented">Rented books</p>
+					<ul class="profile-info__books">
+						<li>13</li>
+						<li>13</li>
+						<li>13</li>
+						<li>13</li>
+						<li>13</li>
+						<!-- write  function to take book from user -->
+					</ul>
+					<div class="card">
+						<p class="card__text">Card number</p>
+						<span class="card__number">F00234030</span>
+						<img src="./img/my-profile/icon-copy.png" alt="cope bufer" class="card__bufer">
+					</div>
+				</div>
+			</div>
+		</div>
+		<section id="section-welcom" class="welcom">
+			<div class="wrapper welcom__wrapper">
+				<div class="welcom__text-back">
+					<h2 class="welcom__text">welcome&nbsp;<br>
+						to the Brooklyn Library</h2>
+				</div>
+			</div>
+		</section>
+		<section id="section-about" class="about">
+			<div class="wrapper">
+				<h2 class="about__title">About</h2>
+				<h4 class="about__text">The Brooklyn Library is a free workspace, a large number of books and a cozy coffee
+					shop inside</h4>
+				<div class="about__conteiner">
+					<button id="btn-left" class="prew"> <img src="./img/about/prew.png" alt=" button"></button>
+					<div class="carousel-wrapper">
+						<div class="about__carousel ">
+							<img src="./img/about/image1.png" alt="" class="about__img">
+							<img src="./img/about/image2.png" alt="" class="about__img">
+							<img src="./img/about/image3-2.png" alt="" class="about__img">
+							<img src="./img/about/image3-1.png" alt="" class="about__img">
+							<img src="./img/about/image3.png" alt="" class="about__img">
+						</div>
+					</div>
+					<div class="about__carousel-buttons">
+						<button class=" about__button about-btn active"></button>
+						<button class="about__button about-btn"></button>
+						<button class="about__button about-btn"></button>
+						<button class="about__button about-btn none"></button>
+						<button class="about__button about-btn none"></button>
+					</div>
+					<button id="btn-right" class="next"> <img src="./img/about/next.png" alt="next button"></button>
+				</div>
+			</div>
+		</section>
+		<section id="section-favorites" class="favorites">
+			<div class="wrapper">
+				<h2 class="favorites__title">Favorites</h2>
+				<p class="favorites__title-text">Pick favorites of season</p>
+				<div class="favorites__radio-conteiner">
+					<div class="favorites__radio">
+						<input type="radio" id="favorites__radio-winter" name="favorites__radios" checked>
+						<label for="favorites__radio-winter">Winter</label>
+					</div>
+					<div class="favorites__radio">
+						<input type="radio" id="favorites__radio-spring" name="favorites__radios">
+						<label for="favorites__radio-spring">Spring</label>
+					</div>
+					<div class="favorites__radio">
+						<input type="radio" id="favorites__radio-summer" name="favorites__radios">
+						<label for="favorites__radio-summer">Summer</label>
+					</div>
+					<div class="favorites__radio">
+						<input type="radio" id="favorites__radio-autumn" name="favorites__radios">
+						<label for="favorites__radio-autumn">Autumn</label>
+					</div>
+				</div>
+				<div id="favorites__winter" class="visible books">
+					<div class="favorites__columns">
+						<div class="favorites__book book">
+							<h5>Staff Picks</h5>
+							<hr class="book__line">
+							<h6 class="book__name">The Book Eaters</h6>
+							<h6>By Sunyi Dean</h6>
+							<div class="book__text">An unusual sci-fi story about a book eater woman who tries desperately to
+								save
+								her dangerous mind-eater son from tradition and certain death. Complete with dysfunctional
+								family
+								values, light Sapphic romance, and a strong, complex protagonist. Not for the faint of heart.
+							</div>
+							<img src="./img/favorites/book/winter/Ellipse-2.png" alt="The Book Eaters" class="book__img">
+							<div class="book__button">
+								<button type="submit" class="button-normal-size button button_colored">Buy</button>
+							</div>
+						</div>
+						<div class="favorites__book book">
+							<h5>Staff Picks</h5>
+							<hr class="book__line">
+							<h6 class="book__name">Cackle</h6>
+							<h6>By Rachel Harrison</h6>
+							<div class="book__text">Are your Halloween movies of choice The Witches of Eastwick and Practical
+								Magic? Look no further than here - where a woman recovering from a breakup moves to a quaint
+								town in upstate New York and befriends a beautiful witch.
+							</div>
+							<img src="./img/favorites/book/winter/book-2.png" alt="The Book Eaters" class="book__img">
+							<div class="book__button">
+								<button type="submit" class="button-normal-size button button_colored">Buy</button>
+							</div>
+						</div>
+						<div class="favorites__book book">
+							<h5>Staff Picks</h5>
+							<hr class="book__line">
+							<h6 class="book__name">Dante: Poet of the Secular World</h6>
+							<h6>By Erich Auerbach</h6>
+							<div class="book__text">Auerbach's engaging book places the 'Comedy' within the tradition of epic,
+								tragedy, and philosophy in general, arguing for Dante's uniqueness as&nbsp;one who raised the
+								individual and his drama of soul into something of divine significance—an inspired introduction
+								to Dante's main themes.
+							</div>
+							<img src="./img/favorites/book/winter/book-1.png" alt="Dante" class="book__img">
+							<div class="book__button">
+								<button type="submit" class="button-normal-size button button_colored">Buy</button>
+							</div>
+						</div>
+						<div class="favorites__book book">
+							<h5>Staff Picks</h5>
+							<hr class="book__line">
+							<h6 class="book__name">The Last Queen</h6>
+							<h6>By Clive Irving</h6>
+							<div class="book__text">A timely and revelatory new biography of Queen Elizabeth (and her family)
+								exploring how the Windsors have evolved and thrived as the modern world has changed around them.
+							</div>
+							<img src="./img/favorites/book/winter/book.png" alt="The Last Queen" class="book__img">
+							<div class="book__button">
+								<button type="submit"
+									class="button-normal-size button button_colored button_disabled">buy</button>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div id="favorites__spring" class="none books">
+					<div class="favorites__columns two-columns">
+						<div class="favorites__book book">
+							<h5>Staff Picks</h5>
+							<hr class="book__line">
+							<h6 class="book__name">The Bod</h6>
+							<h6>By Stephen King</h6>
+							<div class="book__text">Powerful novel that takes you back to a nostalgic time, exploring both the
+								beauty and danger and loss of innocence that is youth.
+							</div>
+							<img src="./img/favorites/book/spring/king.png" alt="The Body" class="book__img">
+							<div class="book__button">
+								<button type="submit" class="button-normal-size button button_colored">Buy</button>
+							</div>
+						</div>
+						<div class="favorites__book book">
+							<h5>Staff Picks</h5>
+							<hr class="book__line">
+							<h6 class="book__name">Carry: A Memoir of Survival on Stolen Land</h6>
+							<h6> By Toni Jenson</h6>
+							<div class="book__text">This memoir about the author's relationship with gun violence feels both
+								expansive and intimate, resulting in a lyrical indictment of the way things are.
+							</div>
+							<img src="./img/favorites/book/spring/carry.png" alt="A Memoir of Survival on Stolen Land"
+								class="book__img">
+							<div class="book__button">
+								<button type="submit" class="button-normal-size button button_colored">Buy</button>
+							</div>
+						</div>
+						<div class="favorites__book book">
+							<h5>Staff Picks</h5>
+							<hr class="book__line">
+							<h6 class="book__name">Days of Distraction</h6>
+							<h6>By Alexandra Chang</h6>
+							<div class="book__text">A sardonic view of Silicon Valley culture, a meditation on race, and a
+								journal of displacement and belonging, all in one form-defying package of spare prose.
+							</div>
+							<img src="./img/favorites/book/spring/days.png" alt="Days of Distraction" class="book__img">
+							<div class="book__button">
+								<button type="submit" class="button-normal-size button button_colored">Buy</button>
+							</div>
+						</div>
+						<div class="favorites__book book">
+							<h5>Staff Picks</h5>
+							<hr class="book__line">
+							<h6 class="book__name">Dominicana</h6>
+							<h6>By Angie Cruz</h6>
+							<div class="book__text">A fascinating story of a teenage girl who marries a man twice her age with
+								the promise to bring her to America. Her marriage is an opportunity for her family to eventually
+								immigrate. For fans of Isabel Allende and Julia Alvarez.
+							</div>
+							<img src="./img/favorites/book/spring/gruz.png" alt="Dominicana" class="book__img">
+							<div class="book__button">
+								<button type="submit" class="button-normal-size button button_colored">Buy</button>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div id="favorites__summer" class="none books">
+					<div class="favorites__columns two-columns">
+						<div class="favorites__book book">
+							<h5>Staff Picks</h5>
+							<hr class="book__line">
+							<h6 class="book__name">Crude: A Memoir</h6>
+							<h6>By Pablo Fajardo & ​​Sophie Tardy-Joubert</h6>
+							<div class="book__text">Drawing and color by Damien Roudeau | This book illustrates the struggles
+								of
+								a group of indigenous Ecuadoreans as they try to sue the ChevronTexaco company for damage their
+								oil fields did to the Amazon and her people
+							</div>
+							<img src="./img/favorites/book/summer/crude.png" alt="Crude: A Memoir" class="book__img">
+							<div class="book__button">
+								<button type="submit" class="button-normal-size button button_colored">Buy</button>
+							</div>
+						</div>
+						<div class="favorites__book book">
+							<h5>Staff Picks</h5>
+							<hr class="book__line">
+							<h6 class="book__name">Let My People Go Surfing</h6>
+							<h6>By Yvon Chouinard</h6>
+							<div class="book__text">Chouinard—climber, businessman, environmentalist—shares tales of courage
+								and
+								persistence from his experience of founding and leading Patagonia, Inc. Full title: Let My
+								People Go Surfing: The Education of a Reluctant Businessman, Including 10 More Years of Business
+								Unusual.
+							</div>
+							<img src="./img/favorites/book/summer/people.png" alt="Let My People Go Surfing" class="book__img">
+							<div class="book__button">
+								<button type="submit" class="button-normal-size button button_colored">Buy</button>
+							</div>
+						</div>
+						<div class="favorites__book book">
+							<h5>Staff Picks</h5>
+							<hr class="book__line">
+							<h6 class="book__name">The Octopus Museum: Poems</h6>
+							<h6>By Brenda Shaughnessy</h6>
+							<div class="book__text">A sardonic view of Silicon Valley culture, a meditation on race, and a
+								journal of displacement and belonging, all in one form-defying package of spare prose.
+							</div>
+							<img src="./img/favorites/book/summer/octopus.png" alt="The Octopus Museum: Poems"
+								class="book__img">
+							<div class="book__button">
+								<button type="submit" class="button-normal-size button button_colored">Buy</button>
+							</div>
+						</div>
+						<div class="favorites__book book">
+							<h5>Staff Picks</h5>
+							<hr class="book__line">
+							<h6 class="book__name">Shark Dialogues: A Novel</h6>
+							<h6>By Kiana Davenport</h6>
+							<div class="book__text">An epic saga of seven generations of one family encompasses the tumultuous
+								history of Hawaii as a Hawaiian woman gathers her four granddaughters together in an erotic tale
+								of villains and dreamers, queens and revolutionaries, lepers and healers.
+							</div>
+							<img src="./img/favorites/book/summer/shark.png" alt="Shark Dialogues: A Novel" class="book__img">
+							<div class="book__button">
+								<button type="submit"
+									class="button-normal-size button button_colored button_colored">Buy</button>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div id="favorites__autumn" class="none books">
+					<div class="favorites__columns two-columns">
+						<div class="favorites__book book">
+							<h5>Staff Picks</h5>
+							<hr class="book__line">
+							<h6 class="book__name">Casual Conversation</h6>
+							<h6>By Renia White</h6>
+							<div class="book__text">White's impressive debut collection takes readers through and beyond the
+								concepts of conversation and the casual - both what we say to each other and what we don't,
+								examining the possibilities around how we construct and communicate identity.
+							</div>
+							<img src="./img/favorites/book/autemn/casual.png" alt="Casual Conversation" class="book__img">
+							<div class="book__button">
+								<button type="submit" class="button-normal-size button button_colored">Buy</button>
+							</div>
+						</div>
+						<div class="favorites__book book">
+							<h5>Staff Picks</h5>
+							<hr class="book__line">
+							<h6 class="book__name">The Great Fire</h6>
+							<h6>By Lou Ureneck</h6>
+							<div class="book__text">The harrowing story of an ordinary American and a principled Naval officer
+								who, horrified by the burning of Smyrna, led an extraordinary rescue effort that saved a quarter
+								of a million refugees from the Armenian Genocide
+							</div>
+							<img src="./img/favorites/book/autemn/great.png" alt="The Great Fire" class="book__img">
+							<div class="book__button">
+								<button type="submit" class="button-normal-size button button_colored">Buy</button>
+							</div>
+						</div>
+						<div class="favorites__book book">
+							<h5>Staff Picks</h5>
+							<hr class="book__line">
+							<h6 class="book__name">Rickey: The Life and Legend</h6>
+							<h6>By Howard Bryant</h6>
+							<div class="book__text">With the fall rolling around, one can't help but think of baseball's
+								postseason coming up! And what better way to prepare for it than reading the biography of one of
+								the game's all-time greatest performers, the Man of Steal, Rickey Henderson?
+							</div>
+							<img src="./img/favorites/book/autemn/riskey.png" alt="Rickey: The Life and Legend"
+								class="book__img">
+							<div class="book__button">
+								<button type="submit" class="button-normal-size button button_colored">Buy</button>
+							</div>
+						</div>
+						<div class="favorites__book book">
+							<h5>Staff Picks</h5>
+							<hr class="book__line">
+							<h6 class="book__name">Slug: And Other Stories</h6>
+							<h6>By Megan Milks</h6>
+							<div class="book__text">Exes Tegan and Sara find themselves chained together by hairballs of
+								codependency. A father and child experience the shared trauma of giving birth to gods from their
+								wounds.
+							</div>
+							<img src="./img/favorites/book/autemn/slug.png" alt="Slug: And Other Stories" class="book__img">
+							<div class="book__button">
+								<button type="submit" class="button-normal-size button button_colored">Buy</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section id="section-price" class="shop-price">
+			<div class="wrapper">
+				<h2>Coffee shop</h2>
+				<p class="shop-price__text">In our library, we have of cozy coffee shop, welcoming in customers with frothy
+					cappuccinos and friendly conversation. you can get a favorite book and read in coffee shop. Our barista
+					to cook you best coffee, and also you
+					can try desserts from bakery.</p>
+				<div class="two-columns shop-price__column">
+					<div class="shop-price__menu shop-price__menu-left">
+						<h3 class="shop-price__title shop-price__title_left">Coffee & Tea</h3>
+						<div class="price-teg">
+							<p class="price-teg__text">Cold Brew Coffee</p>
+							<hr class="price-teg__line">
+							<p class="price-teg__price">$3</p>
+						</div>
+						<div class="price-teg">
+							<p class="price-teg__text">French Press Pot</p>
+							<hr class="price-teg__line">
+							<p class="price-teg__price">$3</p>
+						</div>
+						<div class="price-teg">
+							<p class="price-teg__text">Espresso</p>
+							<hr class="price-teg__line">
+							<p class="price-teg__price">$2</p>
+						</div>
+						<div class="price-teg">
+							<p class="price-teg__text">Cappuccino</p>
+							<hr class="price-teg__line">
+							<p class="price-teg__price">$4</p>
+						</div>
+						<div class="price-teg">
+							<p class="price-teg__text">Hot tea</p>
+							<hr class="price-teg__line">
+							<p class="price-teg__price">$2</p>
+						</div>
+						<div class="price-teg">
+							<p class="price-teg__text">Cold tea</p>
+							<hr class="price-teg__line">
+							<p class="price-teg__price">$2</p>
+						</div>
+					</div>
+					<div class="shop-price__menu shop-price__menu-right">
+						<h3 class="shop-price__title shop-price__title_rigth">Desserts & Cakes </h3>
+						<div class="price-teg">
+							<p class="price-teg__text">Forest Gateau</p>
+							<hr class="price-teg__line">
+							<p class="price-teg__price">$16</p>
+						</div>
+						<div class="price-teg">
+							<p class="price-teg__text">Blue Moon</p>
+							<hr class="price-teg__line">
+							<p class="price-teg__price">$16</p>
+						</div>
+						<div class="price-teg">
+							<p class="price-teg__text">Truffle Cake</p>
+							<hr class="price-teg__line">
+							<p class="price-teg__price">$15</p>
+						</div>
+						<div class="price-teg">
+							<p class="price-teg__text">Chocolate Cake</p>
+							<hr class="price-teg__line">
+							<p class="price-teg__price">$18</p>
+						</div>
+						<div class="price-teg">
+							<p class="price-teg__text">Poet’s Dream Cake</p>
+							<hr class="price-teg__line">
+							<p class="price-teg__price">$16</p>
+						</div>
+						<div class="price-teg">
+							<p class="price-teg__text">Pineapple Cake</p>
+							<hr class="price-teg__line">
+							<p class="price-teg__price">$14</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section id="section-contacts" class="contacts">
+			<div class="wrapper">
+				<h2 class="contacts__title">Our Contacts</h2>
+				<div class="contacts__columns two-columns">
+					<div class="contacts__info">
+						<h5 class="contacts__info-title">For all Library inquiries:</h5>
+						<div class="contacts__phone">
+							<p>Please call
+								<a class="contacts__phone-num" href="tel:+617730-2370">(617) 730-2370</a>
+							</p>
+							<p>For TTY service, please call
+								<a class="contacts__phone-num" href="tel:+617730-2370">(617)
+									730-2370</a>
+							</p>
+							<p>Putterham Library:
+								<a class="contacts__phone-num" href="tel:+617730-2385">(617) 730-2385</a>
+							</p>
+						</div>
+						<div class="contacts__staff">
+							<h5 class="contacts__info-title">Senior Staff</h5>
+							<p>
+								<span class="contacts__staff-name">Library Director: </span><a class="contacts__staff-mail"
+									href="mailto:AmandaHirst@gmail.com">Amanda
+									Hirst</a>
+							</p>
+						</div>
+					</div>
+					<div class="contacts__map">
+						<img src="./img/contacts/Rectangle-4.png" alt="map">
+					</div>
+				</div>
+			</div>
+		</section>
+		<section id="section-payments" class="payments">
+			<!-- <div class="my-profile-payments">
+				<div class="my-profile__two-columns">
+					<div class="my-profile__left">
+						<p class="initials">s d</p>
+						<p class="my-profile__name">sdfsdf ssdsddfsfsdfssdfsfdfsfs111</p>
+					</div>
+					<div class="my-profile__right profile-info">
+						<p class="profile-info__title">My profile</p>
+						<img src="./img/header/close_btn_register-login.png" alt="close button" class="profile-info__close-btn">
+						<div class="my-profile__count-conteiner">
+							<div class="my-profile__count">
+								<p class="form__count__text">Visits</p>
+								<img src="./img/paymets/union.png" alt="person">
+								<p id="count-visits-profile" class="my-profile__count-number">1</p>
+							</div>
+							<div class="my-profile__count">
+								<p class="form__count__text">Bonuses</p>
+								<img src="./img/paymets/star 1.png" alt="star">
+								<p id="count-visits-bonuses" class="my-profile__count-number">0</p>
+							</div>
+							<div class="my-profile__count">
+								<p class="form__count__text">Books</p>
+								<img src="./img/paymets/book.png" alt="book">
+								<p id="count-visits-book" class="my-profile__count-number">0</p>
+							</div>
+						</div>
+						<p class="profile-info__rented">Rented books</p>
+						<ul class="profile-info__books">
+							<li>13</li>
+							<li>13</li>
+							<li>13</li>
+							<li>13</li>
+							<li>13</li>
+						</ul>
+						<div class="card">
+							<p class="card__text">Card number</p>
+							<span class="card__number">F00234030</span>
+							<img src="./img/my-profile/icon-copy.png" alt="cope bufer" class="card__bufer">
+						</div>
+					</div>
+				</div>
+			</div> -->
+			<div id="active-profile-card" class="wrapper payments-wrapper none">
+				<h2 class="payments__title">Digital Library Cards</h2>
+				<div class="payments__columns two-columns">
+					<div class="payments-form">
+						<p class="payments-form__text">Your Library card</p>
+						<form action="#" method="post" class="form form-active">
+							<div class="form__backgraund">
+								<p class="form__title">Brooklyn Public Library</p>
+								<input type="text" id="form-name-active" name="name" placeholder="Reader's name"
+									pattern="[a-zA-Z]+" required>
+								<input type="text" id="form-card-active" name="number" placeholder="Card number"
+									pattern="^([0-9]+\-)[0-9]+$" required>
+							</div>
+							<div class="count-conteiner">
+								<div class="form__count">
+									<p>Visits</p>
+									<img src="./img/paymets/union1.png" alt="person">
+									<p id="count-visits-profile">1</p>
+								</div>
+								<div class="form__count">
+									<p>Bonuses</p>
+									<img src="./img/paymets/star1.png" alt="star">
+									<p id="count-visits-bonuses">0</p>
+								</div>
+								<div class="form__count">
+									<p>Books</p>
+									<img src="./img/paymets/book.png" alt="book">
+									<p id="count-visits-book">0</p>
+								</div>
+							</div>
+						</form>
+					</div>
+					<div class="loggin">
+						<p class="loggin__title">Visit your profile</p>
+						<p class="loggin__text">With a digital library card you get free access to the Library’s wide array of
+							digital resources including e-books, databases, educational resources, and more.</p>
+						<div class="loggin__buttons-conteiner">
+							<button id="payments-profile-btn" data-target="my-profile" class="button-normal-size button button_colored">Profile</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div id="none-active-profile" class="wrapper payments-wrapper">
+				<h2 class="payments__title">Digital Library Cards</h2>
+				<div class="payments__columns two-columns">
+					<div class="payments-form">
+						<p class="payments-form__text">Find your Library card</p>
+						<form action="#" method="post" class="form">
+							<!-- <div class="form"> -->
+							<div class="form__backgraund">
+								<p class="form__title">Brooklyn Public Library</p>
+								<input type="text" id="form-name" name="name" placeholder="Reader's name" pattern="[a-zA-Z]+"
+									required>
+								<input type="text" id="form-card" name="number" placeholder="Card number"
+									pattern="^([0-9]+\-)[0-9]+$" required>
+							</div>
+							<button type="submit" class="form__button button button_colored">Check the card</button>
+							<!-- </div> -->
+						</form>
+					</div>
+					<div class="loggin">
+						<p class="loggin__title">Get a reader card</p>
+						<p class="loggin__text">You will be able to see a reader card after logging into account or you can
+							register a new account</p>
+						<div class="loggin__buttons-conteiner">
+							<button id="payments-register" class="loggin__button button button_colored">Sign Up</button>
+							<button id="payments-login" class="loggin__button button button_colored">Log in</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+	</main>
+	<footer class="footer">
+		<div class="wrapper footer__wrapper">
+			<div class="footer__columns">
+				<div class="footer__contacts">
+					<a href="https://www.google.com/maps/place/Biblioteka+Raczyńskich+Filia+4/@52.393953,16.8978942,17z/data=!3m1!4b1!4m6!3m5!1s0x470444d52b0c9a03:0xf004159aea6a1a46!8m2!3d52.393953!4d16.9000829!16s%2Fg%2F1tfcggdb?entry=ttu"
+						class="footer__contacts-addres">286 Cadman Plaza, New York, NY 11238, United States</a>
+					<ul class="footer__nav">
+						<li class="footer__contacts-link"><a href="https://twitter.com/your_username" target="_blank">
+								<object type="image/svg+xml" data="./img/footer/u_twitter-alt.svg"
+									class="icon icon--twit-object">
+									Your browser does not support SVG
+								</object>
+								<!-- <svg class="twit-svg" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path class="twit-path" d="M22.9912 3.95021C22.9913 3.77357 22.9447 3.60007 22.8559 3.44735C22.7671 3.29464 22.6395 3.16817 22.486 3.08084C22.3324 2.9935 22.1585 2.94842 21.9819 2.95017C21.8053 2.95193 21.6323 3.00046 21.4805 3.09083C20.8952 3.43921 20.265 3.70601 19.6075 3.88383C18.6685 3.07806 17.4708 2.63713 16.2335 2.64164C14.8761 2.6432 13.5724 3.17223 12.5977 4.11702C11.623 5.06181 11.0537 6.3484 11.0099 7.70512C8.33384 7.27838 5.90849 5.88164 4.19631 3.78126C4.09315 3.65609 3.9614 3.55757 3.81217 3.494C3.66295 3.43043 3.50062 3.40368 3.33889 3.41601C3.17725 3.42932 3.02128 3.4818 2.88448 3.56892C2.74768 3.65603 2.63416 3.77516 2.55373 3.91601C2.14126 4.63582 1.90436 5.44276 1.86228 6.27131C1.8202 7.09986 1.97412 7.92666 2.31154 8.68456L2.30959 8.68651C2.15794 8.77991 2.03278 8.91066 1.94609 9.06625C1.85941 9.22185 1.81409 9.39708 1.81447 9.57519C1.81263 9.72211 1.82145 9.86898 1.84084 10.0146C1.94298 11.2729 2.50062 12.4507 3.4092 13.3271C3.34756 13.4446 3.30994 13.5731 3.29854 13.7052C3.28714 13.8373 3.30218 13.9704 3.34279 14.0967C3.7389 15.3308 4.58129 16.3727 5.7051 17.0185C4.56334 17.46 3.33052 17.614 2.11525 17.4668C1.89032 17.4386 1.66248 17.4876 1.4691 17.6059C1.27572 17.7242 1.12828 17.9047 1.05097 18.1178C0.973654 18.3309 0.97106 18.5639 1.04361 18.7787C1.11616 18.9935 1.25955 19.1772 1.45025 19.2998C3.54034 20.646 5.97393 21.3617 8.46002 21.3613C11.2793 21.393 14.03 20.4921 16.2843 18.7988C18.5385 17.1054 20.17 14.7145 20.9248 11.998C21.2779 10.8146 21.4582 9.58648 21.46 8.35157C21.46 8.28614 21.46 8.21876 21.459 8.15138C21.9811 7.58831 22.3856 6.92668 22.6487 6.20527C22.9118 5.48387 23.0283 4.7172 22.9912 3.95021ZM19.6846 7.16212C19.5194 7.35746 19.4358 7.60891 19.4512 7.86427C19.461 8.02927 19.46 8.19527 19.46 8.35157C19.4579 9.39511 19.305 10.4329 19.0059 11.4326C18.3894 13.744 17.015 15.7817 15.103 17.2192C13.1909 18.6568 10.8517 19.4111 8.46002 19.3613C7.6009 19.3616 6.74474 19.2606 5.90924 19.0606C6.97465 18.7172 7.97083 18.1879 8.85162 17.4971C9.01385 17.3693 9.13257 17.1945 9.19151 16.9967C9.25044 16.7988 9.2467 16.5875 9.18079 16.3918C9.11489 16.1961 8.99005 16.0257 8.8234 15.9038C8.65675 15.7819 8.45647 15.7145 8.25002 15.7109C7.41885 15.698 6.62515 15.363 6.03615 14.7764C6.18557 14.7481 6.33401 14.7129 6.48147 14.6709C6.69748 14.6094 6.88651 14.477 7.01813 14.295C7.14975 14.1131 7.21629 13.8921 7.20704 13.6677C7.1978 13.4433 7.1133 13.2285 6.96715 13.058C6.82101 12.8874 6.62173 12.7711 6.40139 12.7275C5.91893 12.6323 5.46494 12.427 5.0747 12.1277C4.68447 11.8284 4.36852 11.4432 4.15139 11.002C4.33212 11.0266 4.514 11.0419 4.69631 11.0479C4.91289 11.0511 5.1249 10.9854 5.30169 10.8603C5.47847 10.7351 5.61086 10.5569 5.67971 10.3516C5.74569 10.1443 5.74229 9.92123 5.67004 9.7161C5.59778 9.51096 5.46061 9.33499 5.27932 9.21485C4.83947 8.92182 4.47916 8.52427 4.23068 8.0578C3.98219 7.59134 3.85328 7.07052 3.85549 6.54201C3.85549 6.47561 3.85744 6.4092 3.86135 6.34377C6.10261 8.43402 9.00967 9.66621 12.0703 9.82326C12.2248 9.82934 12.3787 9.80024 12.5203 9.73816C12.6619 9.67607 12.7875 9.58262 12.8877 9.46486C12.9869 9.34596 13.0571 9.20566 13.0929 9.05501C13.1286 8.90437 13.1289 8.74748 13.0937 8.5967C13.0366 8.35806 13.0074 8.11357 13.0068 7.86818C13.0077 7.01271 13.348 6.19254 13.9529 5.58764C14.5578 4.98274 15.378 4.64251 16.2334 4.64161C16.6736 4.64043 17.1092 4.7305 17.5127 4.90615C17.9163 5.0818 18.2791 5.3392 18.5781 5.66212C18.6935 5.7862 18.8386 5.87871 18.9998 5.93085C19.161 5.98299 19.3329 5.99303 19.499 5.96001C19.9098 5.88006 20.3147 5.7724 20.7109 5.63775C20.4407 6.19072 20.0953 6.70369 19.6846 7.16212Z" fill="#F5EFDB"/>
+									</svg> -->
+							</a></li>
+						<li><a href="https://www.instagram.com/your_username" target="_blank">
+								<object type="image/svg+xml" data="./img/footer/Vector.svg" class="icon icon--insta-object">
+									Your browser does not support SVG
+								</object>
+							</a></li>
+						<li><a href="https://www.facebook.com/" target="_blank">
+								<object type="image/svg+xml" data="./img/footer/Vector-1.svg" class="icon icon--face-object">
+									Your browser does not support SVG
+								</object>
+							</a></li>
+					</ul>
+				</div>
+				<div class="footer__time-work">
+					<p class="time-work">Mon - Fri<br>
+						08:00 am - 07:00 pm</p>
+					<p class="time-work">Sat - Sun<br>
+						10:00 am - 06:00 pm</p>
+				</div>
+			</div>
+			<div class="footer__end">
+				<p>2023</p>
+				<a href="https://rs.school/js-stage0/ " class="rss-link">The Rolling Scopes School</a>
+				<a href="https://github.com/Kravius" class="user-git">Kravius</a>
+			</div>
+		</div>
+	</footer>
+
+	<script type="module" src="./index.js"></script>
+</body>
+
+</html>
